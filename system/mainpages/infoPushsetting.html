@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>推送设置</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+
+    <!--框架必需end-->
+    <!--弹窗组件start-->
+    <script type="text/javascript" src="../../libs/js/popup/drag.js"></script>
+    <script type="text/javascript" src="../../libs/js/popup/dialog.js"></script>
+    <!--弹窗组件end-->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+
+</head>
+<body>
+<div class="page_content padding6">
+    <div class="groupTitle"><span><i class="fa fa-gears margin_right3"></i>推送设置</span></div>
+    <div style="width: 800px;margin: 0 auto;box-shadow: 0 0 3px #ccc;padding: 20px;">
+        <form>
+            <table class="tableStyle" formMode="transparent">
+                <input type="hidden" name="bo.id" value="<s:property value='bo.id' />" />
+                <tr>
+                    <td width="100">推送开关：</td>
+                    <td width="">
+                        <input type="button" id="switch1" value="" class="buttonswich" toggle="true" useMinWidth="false" name="toggle1" />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100"> <div class="groupTitle" style="border-bottom: 0;"><span>推送形式：</span></div></td>
+                </tr>
+                <tr>
+                    <td width="100">
+                        <input type="checkbox" id="yjts" name="ts-1" value="邮件推送"/><label for="yjts" class="hand"  style="position: relative;top:3px"></label>
+                        邮件推送：
+                    </td>
+                    <td width="">
+                        <input type="text" placeholder="输入邮箱">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100">
+                        <input type="checkbox" id="wxts" name="ts-2" value="微信公众号推送"/><label for="wxts" class="hand"  style="position: relative;top:3px"></label>
+                        微信公众号推送：
+                    </td>
+                    <td width="">
+                        <img src="images/weixewm.jpg" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100">
+                        <input type="checkbox" id="dxts" name="ts-3" value="短信推送"/><label for="dxts" class="hand"  style="position: relative;top:3px"></label>
+                        短信推送：
+                    </td>
+                    <td width="">
+                        <input type="text" placeholder="输入手机号">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100">
+                        <input type="checkbox" id="xtxx" name="ts-4" value="短信推送"/><label for="xtxx" class="hand"  style="position: relative;top:3px"></label>
+                        系统消息
+                    </td>
+                </tr>
+                <tr><td width="200"></td><td><input type="button" class="primary button" value="设置" onclick=""></td></tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

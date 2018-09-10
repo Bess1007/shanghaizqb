@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>专家详情</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+
+    <!-- 组合下拉框start -->
+    <script type="text/javascript" src="../../libs/js/form/selectCustom.js"></script>
+    <!-- 组合拉框end -->
+    <!-- 条件过滤器 start -->
+    <script type="text/javascript" src="../../libs/js/form/filter.js"></script>
+    <!-- 条件过滤器 end -->
+    <link rel="stylesheet" href="css/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <link rel="stylesheet" href="css/industryExpert.css">
+    <style>
+        .textinput{border: 1px solid #b4d1f0}
+        .px_box{color: #ef732d;}
+    </style>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox publishinfo">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <span>专家详情</span>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix">
+        <div class="w1000 clearfix">
+            <!--左边专家画像-->
+            <!--<ul class="expert_details fl">
+                &lt;!&ndash;中心的圆&ndash;&gt;
+                <li class="expert_name">
+                    <div class="containerTxt">张三</div>
+                </li>&lt;!&ndash;中心的圆 end&ndash;&gt;
+                <li class="expert_sex">
+                    <div class="containerTxt">男</div>
+                    <div class="connector">
+                        <span class="point_one"></span>
+                        <span class="point_two"></span>
+                    </div>
+                </li>
+                <li class="expert_age">
+                    <div class="containerTxt">40-50岁</div>
+                    <div class="connector">
+                        <span class="point_one"></span>
+                        <span class="point_two"></span>
+                    </div>
+                </li>
+                <li class="expert_company">
+                    <div class="containerTxt">华山医院</div>
+                    <div class="connector">
+                        <span class="point_one"></span>
+                        <span class="point_two"></span>
+                    </div>
+                </li>
+                <li class="expert_work">
+                    <div class="containerTxt">专注于肿瘤研究</div>
+                    <div class="connector">
+                        <span class="point_one"></span>
+                        <span class="point_two"></span>
+                    </div>
+                </li>
+                <li class="expert_position">
+                    <div class="containerTxt">副院长</div>
+                    <div class="connector">
+                        <span class="point_one"></span>
+                        <span class="point_two"></span>
+                    </div>
+                </li>
+                <li class="expert_id">
+                    <div class="containerTxt">复旦大学教授</div>
+                    <div class="connector">
+                        <span class="point_one"></span>
+                        <span class="point_two"></span>
+                    </div>
+                </li>
+            </ul>-->
+            <div class="fl left_expertpormtrait">
+                <!--辐射线-->
+                <div class="ray actived"><span class="point_one fa fa-angle-double-down"></span></div>
+                <div class="ray actived"><span class="point_one fa fa-angle-double-down"></span></div>
+                <div class="ray actived"><span class="point_one fa fa-angle-double-down"></span></div>
+                <div class="ray actived"><span class="point_one fa fa-angle-double-down"></span></div>
+                <div class="ray actived"><span class="point_one fa fa-angle-double-down"></span></div>
+                <div class="ray actived"><span class="point_one fa fa-angle-double-down"></span></div>
+                <div class="ray"><span class="point_one fa fa-angle-double-down" style="display: none"></span></div>
+                <div class="ray"><span class="point_one fa fa-angle-double-down" style="display: none"></span></div>
+                <!--辐射线 end
+
+                <!--中心圆-->
+                <div class="cen_circle">
+                    <div class="containerTxt">张三</div>
+                </div>
+                <!--中心圆 end-->
+                <ul class="circleBox">
+                    <li class="circleLis actived">
+                        <div class="containerTxt">男</div>
+                    </li>
+                    <li class="circleLis actived">
+                        <div class="containerTxt">40-45岁</div>
+                    </li>
+                    <li class="circleLis actived">
+                        <div class="containerTxt">华山医院</div>
+                    </li>
+                    <li class="circleLis actived">
+                        <div class="containerTxt">专注于肿瘤研究</div>
+                    </li>
+                    <li class="circleLis actived">
+                        <div class="containerTxt">副院长</div>
+                    </li>
+                    <li class="circleLis actived">
+                        <div class="containerTxt">复旦大学教授</div>
+                    </li>
+                    <li class="circleLis" style="display: none">
+                        <div class="containerTxt">暂无</div>
+                    </li>
+                    <li class="circleLis" style="display: none">
+                        <div class="containerTxt">暂无</div>
+                    </li>
+                </ul>
+            </div>
+            <!--右边详细内容-->
+            <div class="fr rightexpDet">
+                <div class="expertImg clearfix">
+                    <img src="images/headimgico.jpg" alt="" class="expert_hdimg fl">
+                    <div class="expert_name fl">
+                        <span class="expname">姓名：张三</span>
+                        <a class="dlResume" href="">简历下载</a>
+                    </div>
+                </div>
+                <!--简历-->
+                <div class="resume_con clearfix">
+                    <div class="fl">
+                        <span class="resume_ico"></span>
+                    </div>
+                    <div class="fl resume_con_txt">
+                        简历：曾就读于仁爱医院，荣获2001年最佳医师奖，并发表多篇学术论文。
+                    </div>
+                </div>
+                <!--专注领域-->
+                <div class="resume_con focusArea_con clearfix">
+                    <div class="fl">
+                        <span class="resume_ico"></span>
+                    </div>
+                    <div class="fl resume_con_txt">
+                        专注领域：肿瘤、癌细胞切除手术及生物制药细小微粒分子细菌感染的研究。
+                    </div>
+                </div>
+                <!--学术成就-->
+                <div class="resume_con academicAchievement clearfix">
+                    <div class="fl">
+                        <span class="resume_ico"></span>
+                    </div>
+                    <div class="fl resume_con_txt">
+                        学术成就：肿瘤、癌细胞切除手术及生物制药细小微粒分子细菌感染的研究。
+                    </div>
+                </div>
+                <!--科研项目-->
+                <div class="resume_con researchPro clearfix">
+                    <div class="fl">
+                        <span class="resume_ico"></span>
+                    </div>
+                    <div class="fl resume_con_txt">
+                        科研项目：肿瘤、癌细胞切除手术及生物制药细小微粒分子细菌感染的研究。
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function(){
+    //中心点横坐标
+        var dotLeft = ($(".circleBox").width()-$(".cen_circle").width())/2;
+    //中心点纵坐标
+        var dotTop = ($(".circleBox").height()-$(".cen_circle").height())/2;
+    //起始角度
+        var stard = 0;
+    //半径
+        var radius = 180;
+    //每一个BOX对应的角度;
+        var avd = 360/$(".circleBox .circleLis.actived").length;
+    //每一个BOX对应的弧度;
+        var ahd = avd*Math.PI/180;
+
+    //中心圆和周边圆半径的差值
+        var cdv = ($(".cen_circle").width()-$('.circleLis').width())/2;
+
+    //设置周边圆的背景颜色
+        var colorArr = ['#be775c','#5c75be','#f08c20','#049c8f','#975ea8','#5ca1be','#df98c0','#5cb6be'];
+
+    //设置圆的中心点的位置
+        $(".cen_circle").css({"left":dotLeft,"top":dotTop});
+        $(".circleBox .circleLis.actived").each(function(index, element){
+            $(this).css({"left":Math.sin((ahd*index))*radius+dotLeft+cdv,"top":Math.cos((ahd*index))*radius+dotTop+cdv,'backgroundColor':colorArr[index]});
+        });
+
+    //设置中心线位置
+        $("body .ray.actived").each(function(index, element){
+            var eachr = -avd;
+            $(this).css({"transform":"rotate("+(eachr*index)+"deg)"});
+        });
+
+        //设置箭头颜色
+        $('body .ray.actived .point_one').each(function (index,element) {
+            $(this).css({"color":colorArr[index]})
+        })
+
+    })
+</script>
+</body>
+</html>

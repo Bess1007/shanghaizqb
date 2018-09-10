@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件弹出框</title>
+
+   <!-- <link rel="stylesheet" href="css/base.css">-->
+    <link rel="stylesheet" href="css/shzqb.css">
+    <link rel="stylesheet" href="layer/skin/default/layer.css">
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!-- 日期控件start -->
+    <script type="text/javascript" src="../../libs/js/form/datePicker/WdatePicker.js"></script>
+    <!-- 日期控件end -->
+    <script type="text/javascript" src="layer/layer.js"></script>
+</head>
+<body>
+    <div class="page_content">
+        <a href="javascript:;" class="addnewevents">添加事件</a>
+        <div class="bcgray" style="width:980px;margin: 10px auto;height: 50px;background-color: #fafafa;padding-top: 10px;">
+            <input  type="text" class="date" value="2017-8-1" style="margin: auto;display:block;"/>
+        </div>
+        <ul class="camyeventlist">
+            <li>
+                <div class="evelistdivbox">
+                    <span style="width: 18%;">10:00-12:00</span>
+                    <span style="width: 52%;">去xx公司拜访xx</span>
+                    <a href="eventDetailed.html" target="_blank" style="width: 15%;">查看详细</a>
+                    <span style="width: 15%;cursor: pointer">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="evelistdivbox">
+                    <span style="width: 18%;">14:00-16:00</span>
+                    <span style="width: 52%;">去xx公司拜访xx</span>
+                    <a href="eventDetailed.html" target="_blank" style="width: 15%;">查看详细</a>
+                    <span style="width: 15%;cursor: pointer">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="evelistdivbox">
+                    <span style="width: 18%;">17:00-19:00</span>
+                    <span style="width: 52%;">去xx公司拜访xx</span>
+                    <a href="eventDetailed.html" target="_blank" style="width: 15%;">查看详细</a>
+                    <span style="width: 15%;cursor: pointer">删除</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        $('.addnewevents').click(function () {
+            layer.open({
+                type: 2,
+                title: '<sapn>添加事件</sapn>',
+                area: ['400px', '400px'],
+                closeBtn: 1,
+                shadeClose: true,
+                offset: '3px',
+                shade: false,
+                skin: 'addneweventsbox',
+                content: 'formaddev.html',
+                btn: ['保存', '取消','<a target="_blank" href="editevent.html">更多选项</a>']
+            })
+            $('.layui-layer-btn2').hide();
+        })
+    </script>
+</body>
+</html>

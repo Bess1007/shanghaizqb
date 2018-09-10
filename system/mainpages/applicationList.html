@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>我的项目详细列表页</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+
+    <link rel="stylesheet" href="layer/skin/default/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <script type="text/javascript" src="js/somePopUps.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <style>
+        .xmxxfkcon {
+            line-height: 28px;
+        }
+        .xmxxfkcon .dataspan {
+            width: 120px;
+        }
+        .xmxxfkcon .day_tit {
+             height: 75px;
+            line-height: 75px;
+            font-size:30px;
+        }
+        .xmxxfkcon .day_under {
+            height: 65px;
+            line-height: 65px;
+            font-size: 28px;
+        }
+        .xmxxfkcon .xmtxt {
+            float: left;
+            margin-left: -120px;
+            padding-left: 130px;
+            width: 100%;
+        }
+       .xmxxfkcon .gzstate {
+           float: none;
+           display:inline-block;
+       }
+        .pjRemarks {
+            display:block;
+            width: 100%;
+           white-space:nowrap;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            font-size: 12px;
+            line-height: 24px;
+            margin-top: 5px;
+        }
+       .xmxxfkcon .ipo_a {
+           margin-bottom: 0;
+           padding:10px 0;
+           border-bottom:2px solid #e8e6e6;
+       }
+        .bTxts {
+            /*margin-top: 10px;*/
+            font-size:12px;
+        }
+        .aplxmlx {
+            display:inline-block;
+            padding:0 5px ;
+            font-size: 12px;
+            background-color: #0088f0;
+            color: #fff;
+            line-height: 28px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox infofeedback">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <span>我的项目列表</span>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix">
+        <div class="w1080">
+            <ul class="xmxxfkcon"><!--默认每页最多显示十条-->
+                <li>
+                    <div class="ipo_a">
+                        <span class="xmtxt">
+                            <a href="javascript:openselfpro();" class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</a>
+                            <span class="xm_btns">
+                                <i class="aplxmlx">股权质押</i>
+                                <i class="gzstate jcz">接触中</i>
+                                <i class="gznum"><i class="fa fa-star"></i>36</i>
+                                <i class="custom-btn btn-5 inlineB infohandle"><span>处理</span></i>
+                            </span>
+                            <div>
+                                <span class="pjRemarks">备注：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+                            </div>
+                            <div class="bTxts">
+                                <span class="margin_right10">当前处理人：<i class="txtgray">张有春</i></span>
+                                <span class="margin_right10">请求状态：<i class="txtgray">已提交，待处理</i></span>
+                                <span class="margin_right10">申请日期：<i class="txtgray">2017-5-6</i></span>
+                                <span class="margin_right10">反馈日期：<i class="txtgray">2017-5-7</i></span>
+                            </div>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="ipo_a">
+                        <span class="xmtxt">
+                            <a href="javascript:openselfpro();" class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</a>
+                            <span class="xm_btns">
+                                <i class="aplxmlx">股权质押</i>
+                                <i class="gzstate jcz">接触中</i>
+                                <i class="gznum"><i class="fa fa-star"></i>36</i>
+                                <i class="custom-btn btn-5 inlineB infohandle"><span>处理</span></i>
+                            </span>
+                            <div>
+                                <span class="pjRemarks">备注：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+                            </div>
+                            <div class="bTxts">
+                                <span class="margin_right10">当前处理人：<i class="txtgray">张有春</i></span>
+                                <span class="margin_right10">请求状态：<i class="txtgray">已提交，待处理</i></span>
+                                <span class="margin_right10">申请日期：<i class="txtgray">2017-5-6</i></span>
+                                <span class="margin_right10">反馈日期：<i class="txtgray">2017-5-7</i></span>
+                            </div>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="ipo_a">
+                        <span class="xmtxt">
+                            <a href="javascript:openselfpro();" class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</a>
+                            <span class="xm_btns">
+                                <i class="aplxmlx">拟IPO</i>
+                                <i class="gzstate jcz">接触中</i>
+                                <i class="gznum"><i class="fa fa-star"></i>36</i>
+                            </span>
+                            <div>
+                                <span class="pjRemarks">备注：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+                            </div>
+                            <div class="bTxts">
+                                <span class="margin_right10">当前处理人：<i class="txtgray">张有春</i></span>
+                                <span class="margin_right10">请求状态：<i class="txtgray">已提交，待处理</i></span>
+                                <span class="margin_right10">申请日期：<i class="txtgray">2017-5-6</i></span>
+                                <span class="margin_right10">反馈日期：<i class="txtgray">2017-5-7</i></span>
+                            </div>
+                        </span>
+                    </div>
+                </li>
+                <!--<li>
+                    <div class="ipo_a">
+                        <span class="dataspan">
+                            <span class="day_tit">股 权</span>
+                            <span class="day_under">质 押</span>
+                        </span>
+                        <span class="xmtxt">
+                            <a href="javascript:openselfpro();" class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</a>
+                            <span class="xm_btns">
+                                <i class="gzstate jcz">接触中</i>
+                                <i class="gznum"><i class="fa fa-star"></i>36</i>
+                                <i class="custom-btn btn-5 inlineB infohandle"><span>处理</span></i>
+                            </span>
+                            <div>
+                                <span class="pjRemarks">备注：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+                            </div>
+                            <div class="bTxts">
+                                <span class="margin_right10">当前处理人：<i class="txtgray">张有春</i></span>
+                                <span class="margin_right10">请求状态：<i class="txtgray">已提交，待处理</i></span>
+                                <span class="margin_right10">申请日期：<i class="txtgray">2017-5-6</i></span>
+                                <span class="margin_right10">反馈日期：<i class="txtgray">2017-5-7</i></span>
+                            </div>
+                        </span>
+                    </div>
+                </li>-->
+            </ul>
+            <div class="l-panel-pagebar">
+                <div class="pageNumber" autorender="false">
+                    <span class="current prev">上一页</span>
+                    <span class="current">1</span>
+                    <a>2</a><a class="next">下一页</a>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //11-4新增，点击处理打开处理页面弹框
+    $('body').on('click','.infohandle',function(e){
+        layer.open({
+            type:2,
+            title:'信息',
+            maxmin:true,
+            area:['100%','100%'],
+            content:'handle.html'
+        });
+        e.stopPropagation()
+    });
+    //点击【我的项目】里项目的标题打开项目详细信息页面application.html
+    function openselfpro() {
+        layer.open({
+            type:2,
+            title:'项目',
+            maxmin:true,
+            area:['100%','100%'],
+            content:'application.html'
+        })
+    }
+</script>
+</body>
+</html>

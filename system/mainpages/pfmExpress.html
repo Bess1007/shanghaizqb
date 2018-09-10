@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>业绩快报</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+
+    <link rel="stylesheet" href="css/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <script type="text/javascript" src="js/base.js"></script>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <a href="ranking.html?tar=0" class="span_i ">行业公司排名</a>
+            <a href="ranking.html?tar=1" class="span_i ">公司排名</a>
+            <a href="ranking.html?tar=2" class="span_i">公司正反排名</a>
+            <a href="ranking.html?tar=3" class="span_i">上市公司停牌时间榜单</a>
+            <span>业绩快报</span>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix" style="padding: 5px;padding-top: 10px;">
+       <table class="mytablestyle3">
+           <tbody>
+           <tr>
+               <td rowspan="2" class="bcgray">序号</td>
+               <td rowspan="2" class="bcgray">股票代码 <span class="fa fa-caret-down th_arrow"></span></td>
+               <td rowspan="2" class="bcgray">股票简称</td>
+               <td rowspan="2" class="bcgray">公告日期 <span class="fa fa-caret-down th_arrow"></span></td>
+               <td rowspan="1" colspan="4"  class="th_tit bcgray2" style="border-right: 8px solid #fff;">营业收入（元）</td>
+               <td rowspan="1" colspan="4" class="th_tit bcgray2" style="border-left: 8px solid #ffffff;">净利润（元）</td>
+
+               <td class="bcgray" rowspan="2">每股收益（元）<span class="fa fa-caret-down th_arrow"></span></td>
+               <td class="bcgray" rowspan="2">每股净资产（元）<span class="fa fa-caret-down th_arrow"></span></td>
+               <td class="bcgray" rowspan="2">净资产收益率（%）<span class="fa fa-caret-down th_arrow"></span></td>
+               <td class="bcgray" rowspan="2">更多</td>
+           </tr>
+           <tr>
+               <td class="bcgray">营业收入（元）<span class="fa fa-caret-down th_arrow"></span></td>
+               <td class="bcgray">去年同期（元）<span class="fa fa-caret-down th_arrow"></span></td>
+               <td class="bcgray">同比增长（%）<span class="fa fa-caret-down th_arrow"></span></td>
+               <td class="bcgray">季度环比增长（%）<span class="fa fa-caret-down th_arrow"></span></td>
+
+               <td class="bcgray">净利润（元）<span class="fa fa-caret-down th_arrow"></span></td>
+               <td class="bcgray">去年同期（元）<span class="fa fa-caret-down th_arrow"></span></td>
+               <td class="bcgray">同比增长（%）<span class="fa fa-caret-down th_arrow"></span></td>
+               <td class="bcgray">季度环比增长（%）<span class="fa fa-caret-down th_arrow"></span></td>
+
+           </tr>
+
+           <tr class="cont_tr">
+               <td>1</td>
+               <td><a href="" class="blue_txt">600007</a></td>
+               <td><a href="" class="blue_txt gup">中国国贸</a></td>
+               <td class="data_td">2017-08-23</td>
+               <td>12.55亿</td>
+               <td>11.45亿</td>
+               <td class="red_txt">9.05</td>
+               <td class="green_txt">-3.80</td>
+               <td>2.95亿</td>
+               <td>3.77</td>
+               <td class="green_txt">-21.86</td>
+               <td class="red_txt">15.16</td>
+               <td>0.29</td>
+               <td>6.08</td>
+               <td class="red_txt">4.81</td>
+               <td class="more_txt"><a href="" class="blue_txt">详细</a></td>
+           </tr>
+           </tbody>
+       </table>
+    </div>
+</div>
+
+<!--backtop-->
+<div class="backtop" style="display: none;"><img src="./images/backtop.png" alt=""></div>
+
+<script type="text/javascript">
+    $(".th_arrow").on('click',function () {
+        if($(this).hasClass('fa-caret-down')){
+            $(this).removeClass('fa-caret-down').addClass('fa-caret-up')
+        }else{
+            $(this).removeClass('fa-caret-up').addClass('fa-caret-down')
+        }
+    })
+</script>
+</body>
+</html>

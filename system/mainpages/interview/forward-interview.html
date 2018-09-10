@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title></title>
+    <!--框架必需start-->
+    <link href="../../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="../skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <script type="text/javascript" src="../../../libs/js/form/datePicker/WdatePicker.js"></script>
+    <!-- 条件过滤器 start -->
+    <script type="text/javascript" src="../../../libs/js/form/filter.js"></script>
+    <!-- 条件过滤器 end -->
+    <!--引入提示下拉框脚本-->
+    <script type='text/javascript' src='../../../libs/js/form/suggestion.js'></script>
+
+    <link rel="stylesheet" href="../css/layer.css">
+    <script type="text/javascript" src="../layer/layer.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/shzqb.css">
+    <link rel="stylesheet" href="../css/industryExpert.css">
+    <link rel="stylesheet" href="../css/interview-form.css">
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox publishinfo">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <span>转发采访</span>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix">
+        <div class="w980 clearfix">
+
+            <!--转发采访-->
+            <div class="info_input interview-form-box">
+                <!--收件人-->
+                <div class="inputCellBox input_hum">
+                    <div class="interview-tb-tit">收件人</div>
+                    <div class="clearfix">
+                        <div class="input_cell">
+                            <label for="">收件人：</label>
+                            <input type="text" value="傲然">
+                        </div>
+                        <div class="input_cell">
+                            <label for="">部门：</label>
+                            <input type="text" value="资讯编辑部">
+                        </div>
+                    </div>
+                </div>
+                <!--收件人 end-->
+                <!--采访标题-->
+                <div class="inputCellBox input_hum">
+                    <div class="interview-tb-tit">采访标题</div>
+                    <div class="input_cell float_none">
+                        <label for="">采访标题：</label>
+                        <input type="text" value="" class="w-perc100">
+                    </div>
+                </div>
+                <!--采访标题 end-->
+                <!--采访时间-->
+                <div class="inputCellBox input_hum">
+                    <div class="interview-tb-tit">采访时间</div>
+                    <div class="input_cell float_none">
+                        <label for="">采访时间：</label>
+                        <input type="text" value="" class="w-perc100 date">
+                    </div>
+                </div>
+                <!--采访时间 end-->
+                <!--采访对象-->
+                <div class="inputCellBox input_hum">
+                    <div class="interview-tb-tit">采访对象</div>
+                    <div class="clearfix interview-obj-cell">
+                        <div class="input_cell">
+                            <label for="">姓名：</label>
+                            <input type="text" value="">
+                        </div>
+                        <div class="input_cell clearfix">
+                            <label for="" class="fl">公司：</label>
+                            <select data='{"list":[{"value":"1","key":""},{"value":"2","key":"上市公司"},{"value":"3","key":"基金公司"}]}' editable="true" id="sel-1"></select>
+                        </div>
+                        <div class="input_cell clearfix">
+                            <label for="" class="fl">职位：</label>
+                            <select data='{"list":[{"value":"1","key":""},{"value":"2","key":"董事长"},{"value":"3","key":"董秘"},{"value":"4","key":"证券事务代表"}]}' editable="true" id="sel-2"></select>
+                        </div>
+                        <div class="input_cell add-interview-obj">
+                            <span class="fa fa-plus"></span>
+                        </div>
+                    </div>
+                    <!--新增的采访对象-->
+                 <!--   <div class="clearfix interview-obj-cell">
+                        <div class="input_cell">
+                            <label for="">姓名：</label>
+                            <input type="text" value="">
+                        </div>
+                        <div class="input_cell clearfix">
+                            <label for="" class="fl">公司：</label>
+                            <select data='{"list":[{"value":"1","key":""},{"value":"2","key":"上市公司"},{"value":"3","key":"基金公司"}]}' editable="true" id="sel-1"></select>
+                        </div>
+                        <div class="input_cell clearfix">
+                            <label for="" class="fl">职位：</label>
+                            <select data='{"list":[{"value":"1","key":""},{"value":"2","key":"董事长"},{"value":"3","key":"董秘"},{"value":"4","key":"证券事务代表"}]}' editable="true" id="sel-2"></select>
+                        </div>
+                        <div class="input_cell remove-interview-obj">
+                            <span class="fa fa-remove"></span>
+                        </div>
+                    </div>-->
+
+                </div>
+                <!--采访对象 end-->
+                <!--采访类型-->
+                <div class="inputCellBox input_hum">
+                    <div class="interview-tb-tit">采访类型</div>
+                    <div class="clearfix interview-obj-cell">
+                        <div class="input_cell clearfix">
+                            <label for="" class="fl">采访类型：</label>
+                            <select name="" id="">
+                                <option value="">线上</option>
+                                <option value="">线下</option>
+                            </select>
+                        </div>
+                        <div class="input_cell "><!--线上对应选项-->
+                            <select name="" id="">
+                                <option value="">电话采访</option>
+                                <option value="">网络社交平台</option>
+                            </select>
+                        </div>
+                        <div class="input_cell clearfix"><!--线下对应选项-->
+                            <select data='{"list":[{"value":"1","key":""},{"value":"2","key":"主动走访调研"},{"value":"3","key":"股东大会"},{"value":"4","key":"机构调研"},{"value":"5","key":"路演活动"},{"value":"6","key":"媒体沟通说明会"},{"value":"7","key":"新闻发布会"}]}' editable="true" ></select>
+                        </div>
+                    </div>
+                    <div class="interview-obj-cell clearfix">
+                        <label for="" class="fl">是否有其他媒体或机构参加：</label>
+                        <select name="" id="">
+                            <option value="">是</option>
+                            <option value="">否</option>
+                        </select>
+                        <!--选项为‘是’时对应的输入框-->
+                        <div class="input_cell fl margin_left10">
+                            <input type="text" placeholder="请输入参加的媒体或机构">
+                        </div>
+                    </div>
+                </div>
+                <!--采访类型 end-->
+                <!--稿件正文-->
+                <div class="inputCellBox input_hum">
+                    <div class="interview-tb-tit">稿件正文</div>
+                    <div class="input_cell float_none clearfix">
+                        <label for="" class="fl">稿件正文：</label>
+                        <textarea name="" id="" cols="30" rows="10" class="fl"></textarea>
+                    </div>
+                </div>
+                <!--稿件正文 end-->
+                <!--添加附件-->
+                <div class="inputCellBox input_hum">
+                    <div class="interview-tb-tit">添加附件</div>
+                    <div class="interview-enclosure">
+                        <a href="javascript:;"><span class="fa fa-paperclip"></span>从电脑本地上传</a>
+                        <a href="javascript:open_interviewattachment();"><span class="fa fa-paperclip"></span>从我的采访上传</a>
+                    </div>
+                </div>
+                <!--添加附件 end-->
+                <!--按钮-->
+                <div class="btns_box">
+                    <input type="submit" value="保存" class="primary button">
+                    <input type="button" value="取消" class="button">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--采访附件弹框-->
+<div class="interview-att-pop" style="display: none;padding: 15px;">
+    <ul>
+        <li class="attachment-cell">
+            <input type="checkbox" id="att-1" name="hobby" value="1/">
+            <label class="hand" for="att-1">附件1</label>
+        </li>
+        <li class="attachment-cell">
+            <input type="checkbox" id="att-2" name="hobby" value="2/">
+            <label class="hand" for="att-2">附件2</label>
+        </li>
+        <li class="attachment-cell">
+            <input type="checkbox" id="att-3" name="hobby" value="3/">
+            <label class="hand" for="att-3">附件3</label>
+        </li>
+
+    </ul>
+</div>
+<!--采访附件弹框 end-->
+
+<script>
+    function open_interviewattachment() {
+        layer.open({
+            type:1,
+            title:'从我的采访上传',
+            area:['800px','500px'],
+            skin:'layer-interview-att-pop',
+            content:$('.interview-att-pop'),
+            shadeClose: true,
+            btn:['确认','取消']
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>分享反馈的项目列表</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <!--数据表格start-->
+    <script src="../../libs/js/table/quiGrid.js" type="text/javascript"></script>
+    <!--数据表格end-->
+
+    <link rel="stylesheet" href="layer/skin/default/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <style>
+        .maingrid_content{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            border: 1px solid #EEEEEE;
+            z-index: 99999;
+            margin-right: -100%;
+            box-shadow: -1px 0 3px #d3d8db;
+            display: none;
+        }
+        .oppContent{
+            width: 340px;
+            height: 40px;
+            float: left;
+        }
+        .searchContent{
+            width: 600px;
+            height: 40px;
+            position: absolute;
+            right: 0;
+        }
+
+        .xm_table td div.bcgray {
+            width: 200px;
+        }
+    </style>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <span>分享反馈<i style="line-height: 16px;display:inline-block;position: relative;margin: 0 6px;"><b class="blue_txt fz18">※</b></i>产业并购基金项目</span>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix" style="padding: 5px;padding-top: 10px;">
+        <div >
+            <div class="oppContent onexz">
+
+            </div>
+            <div class="searchContent">
+                <form id="queryForm" action="" method="post">
+                    <!-- <input name="parentId" id="parentId" type="hidden" value="1" truetype="hidden">-->
+                    <table style="float: right;">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input name="filterVal" class="textinput" id="searchInput" style="font-size: 14px;" type="text" placeholder="公司名称" truetype="textinput">
+                                <input class="textinput" style="width: 2px; font-size: 14px; display: none;" type="text" truetype="textinput">
+                            </td>
+                            <td>
+                                <button class="primary button" id="search" style="padding-left: 5px;" onclick="searchHandler()" type="button"><span class="icon_find" style="font-size: 14px; cursor: default;">查询</span></button>
+                            </td>
+                            <td>
+                                <button class="button" style="padding-left: 5px;" onclick="resetSearch()" type="reset"><span class="icon_clear" style="font-size: 14px; cursor: default;">重置</span></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <div class="clear"></div>
+            <div id="maingrid"></div>
+        </div>
+    </div>
+</div>
+<!--数据表格-->
+<script type="text/javascript">
+    var testData={"form.paginate.pageNo":1,"form.paginate.totalRows":13,"rows":[
+        {"stockName":"万科Ａ","stockCode":"000002","submitTime":"2018-01-04","djr":"666","projectState":"待审核"},
+        {"stockName":"万科Ａ","stockCode":"000002","submitTime":"2018-01-04","djr":"666","projectState":"待审核"}
+    ]};
+
+
+    //数据表格使用
+    var g;
+    function initComplete(){
+        g = $("#maingrid").quiGrid({
+            columns: [
+                { display: '股票名称', name: 'stockName', align: 'center',  width: "20%"},
+                { display: '股票代码', name: 'stockCode', align: 'center' , width: "20%"},
+                { display: '提交时间', name: 'submitTime',  align: 'center' , width: "20%"},
+                { display: '上市公司对接人', name: 'djr',  align: 'center', width: "20%" },
+                { display: '项目状态', name: 'projectState',  align: 'center', width: "20%" },
+                { display: '操作', isAllowHide: false, align: 'left', width: 80,
+                    render: function (rowdata, rowindex, value, column){
+                        return '<div class="grid_opp_container">'
+                            + '<span class="grid_opp_view" onclick="checkTable()">查看</span>'
+                            + '</div>';
+                    }
+                }
+            ], data:testData, pageSize: 20, rownumbers:true, checkbox:false,percentWidthMode:true,
+            height: '100%', width:"100%"
+        });
+    }
+    function onView(rowid){
+        top.Toast("showNoticeToast", "选择的记录Id是:" + rowid );
+    }
+
+    function onEdit(rowid){
+        top.Toast("showNoticeToast", "修改的记录Id是:" + rowid );
+        // for (var record in g.records){
+        //   if(g.records[record]['id']==rowid){
+        //     top.Toast("showNoticeToast", JSON.stringify(g.records[record]));
+        //   }
+        // }
+    }
+
+    function onDelete(rowid,rowidx){
+        top.Toast("showNoticeToast", "删除的记录Id是:" + rowid );
+    }
+</script>
+
+<!--end 数据表格-->
+
+<script type="text/javascript">
+    function checkTable() {
+        layer.open({
+            type: 1,
+            title: '特定股东增减持项目信息表',
+            area: ['1000px', '100%'],
+            content:$('.sharing_table'),
+            shadeClose:true
+
+        });
+    }
+
+</script>
+
+<div class="sharing_table" style="display:none;padding: 10px;">
+    <div class="addtabletr">
+            <!--产业并购基金项目-->
+            <table class="xm_table tableStyle edite_table">
+                <tbody>
+                <tr>
+                    <td class="bcgray">
+                        <div class="bcgray">
+                            <span class="star">*</span> 股票名称：
+                        </div>
+                    </td>
+                    <td>
+                        <div>万科A</div>
+                    </td>
+                    <td class="bcgray">
+                        <div class="bcgray">
+                            <span class="star">*</span> 股票代码：
+                        </div>
+                    </td>
+                    <td>
+                        <div>000002</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bcgray">
+                        <div class="bcgray">
+                            上市公司对接人：
+                        </div>
+                    </td>
+                    <td>
+                        <div>9</div>
+                    </td>
+                    <td class="bcgray">
+                        <div class="bcgray">
+                            对接人联系方式：
+                        </div>
+                    </td>
+                    <td>
+                        <div>xxxxx</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bcgray">
+                        <div class="bcgray">
+                            <span class="star">*</span>基金预设规模（亿元）：
+                        </div>
+                    </td>
+                    <td >
+                        <div>xx</div>
+                    </td>
+                    <td class="bcgray">
+                        <div class="bcgray">
+                            <span class="star">*</span>存续期（月）：
+                        </div>
+                    </td>
+                    <td >
+                        <div>xx</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bcgray">
+                        <div class="bcgray">
+                            <span class="star">*</span>基金类型：
+                        </div>
+                    </td>
+                    <td >
+                        <div>xx</div>
+                    </td>
+                    <td class="bcgray">
+                        <div class="bcgray">
+                            退出方式：
+                        </div>
+                    </td>
+                    <td >
+                        <div>xx</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bcgray">
+                        <div class="bcgray">
+                            基金普通合伙人（GP）：
+                        </div>
+                    </td>
+                    <td >
+                        <div>xx</div>
+                    </td>
+                    <td class="bcgray">
+                        <div class="bcgray">
+                            基金有限合伙人（LP）：
+                        </div>
+                    </td>
+                    <td >
+                        <div>xx</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bcgray">
+                        <div class="bcgray">
+                            其他重要事项：
+                        </div>
+                    </td>
+                    <td colspan="3">
+                        <div>其他重要事项其他重要事项</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!--产业并购基金项目 end-->
+        </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>日历</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/mycalendar.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--layer-->
+    <link rel="stylesheet" href="css/layer.css">
+    <!--收藏 layer-->
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <script type="text/javascript" src="js/somePopUps.js"></script>
+    <!--end 收藏-->
+
+    <!--日历-->
+    <link href='css/fullcalendar.min.css' rel='stylesheet' />
+    <link href='css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+    <script src='js/moment.min.js'></script>
+    <script src='js/fullcalendar.min.js'></script>
+    <script>
+        $(document).ready(function() {
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                monthNamesShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                dayNames: ["日", "一", "二", "三", "四", "五", "六"],
+                dayNamesShort: ["日", "一", "二", "三", "四", "五", "六"],
+                today: ["今天"],
+                firstDay: 1,
+
+                buttonText: {
+                    today: '今天',
+                    month: '月',
+                    week: '周',
+                    day: '日',
+                },
+                defaultDate: '2017-05-12',
+                navLinks: true, // can click day/week names to navigate views
+                selectable: true,
+                selectHelper: true,
+                /*select: function(start, end) {
+                    var title = prompt('Event Title:');
+                    var eventData;
+                    if (title) {
+                        eventData = {
+                            title: title,
+                            start: start,
+                            end: end
+                        };
+                        $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                    }
+                    $('#calendar').fullCalendar('unselect');
+                },*/
+                dayClick:function (date, jsEvent, view) {
+                    layer.open({
+                        type: 2,
+                        title: '<sapn>新建事件</sapn>',
+                        area: ['400px', '400px'],
+                        closeBtn: 1,
+                        shadeClose: true,
+                        offset: '3px',
+                        shade: false,
+                        skin: 'addneweventsbox',
+                        content: 'formaddev.html',
+                        btn: ['保存', '取消','<a target="_blank" href="editevent.html">更多选项</a>']
+                    })
+                    $('.layui-layer-btn2').hide();
+                },
+                eventClick:function () {
+                    layer.open({
+                        type: 1,
+                        title: '<sapn>编辑事件</sapn>',
+                        area: ['400px', '206px'],
+                        skin: 'editpop', //样式类名
+                        closeBtn: 1, //不显示关闭按钮
+                        anim: 2,
+                        shadeClose: true, //开启遮罩关闭
+                        content: '<div class="editpopcon"><div class="popxxtit"><h3 class="eventname">事件名称</h3><div><span>起:</span><i>2017年08月10日星期四</i></div><div><span>止：</span><i>2017年08月10日星期四</i></div></div>' +
+                        '<div class="popact"><a href="eventDetailed.html">查看详情</a><i>|</i><a href="editevent.html">编辑</a><i>|</i><a onclick="">删除</a></div>' +
+                        '</div>'
+                    });
+                },
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events: [
+                    {
+                        title: 'All Day Event',
+                        start: '2017-05-01'
+                    },
+                    {
+                        title: 'Long Event',
+                        start: '2017-05-07',
+                        end: '2017-05-10'
+                    },
+                    {
+                        id: 999,
+                        title: 'Repeating Event',
+                        start: '2017-05-09T16:00:00'
+                    },
+                    {
+                        id: 999,
+                        title: 'Repeating Event',
+                        start: '2017-05-16T16:00:00'
+                    },
+                    {
+                        title: 'Conference',
+                        start: '2017-05-11',
+                        end: '2017-05-13'
+                    },
+                    {
+                        title: 'Meeting',
+                        start: '2017-05-12T10:30:00',
+                        end: '2017-05-12T12:30:00'
+                    },
+                    {
+                        title: 'Lunch',
+                        start: '2017-05-12T12:00:00'
+                    },
+                    {
+                        title: 'Meeting',
+                        start: '2017-05-12T14:30:00'
+                    },
+                    {
+                        title: 'Happy Hour',
+                        start: '2017-05-12T17:30:00'
+                    },
+                    {
+                        title: 'Dinner',
+                        start: '2017-05-12T20:00:00'
+                    },
+                    {
+                        title: 'Birthday Party',
+                        start: '2017-05-13T07:00:00'
+                    }
+                ],
+
+            });
+
+        });
+$('.editpop').show();
+    </script>
+    <style>
+        #calendar {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /*日历样式改*/
+        .fc-scroller.fc-day-grid-container {
+            height: 672px!important;
+        }
+        .fc-basic-view .fc-body .fc-row ,.fc-content-skeleton{
+           height:112px!important;
+        }
+    </style>
+    <!--end 日历-->
+</head>
+<body class="bcstyle13 bclightblue contentStyle">
+
+<div class="mycalendar page_content">
+    <div class="header">
+        <div class="centerw clearfix">
+            <div class="fl icobox">
+                <a href="main.html"><img src="images/shzqlogo_blue.png" class="biglogo" width="160"></a>
+            </div>
+            <div class="fr">
+                <ul class="navabox">
+                    <li><a href="main.html">系统首页</a></li>
+                    <li class="active"><a href="mycalendar.html">日历</a></li>
+                    <li class=""><a href="attevents.html">关注的事件</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="centerw centerw_2">
+       <!-- <div class="upcal clearfix">
+            <div class="fl margin_right10">
+                <input type="text"><input type="button" class="primary button margin_left6 cenmr" value="搜索" onclick="">
+            </div>
+            <div class="dateselectbox clearfix margin_right10"></div>
+            <div class="fr">
+                <a href="editevent.html" class="newaddeventspan"><i>+</i>新建事件</a>
+            </div>
+        </div>-->
+        <div class="mygroupTitle clearfix hyzsk padding10">
+            <div class="fl margin_right10">
+                <input type="text"><input type="button" class="primary button margin_left6 cenmr" value="搜索" onclick="">
+            </div>
+
+            <div class="dateselectbox clearfix margin_right10"></div>
+            <div class="fr">
+                <a href="editevent.html" class="newaddeventspan"><i>+</i>新建事件</a>
+            </div>
+        </div>
+        <div class="detailcons padding20">
+            <div id='calendar'></div>
+        </div>
+
+    </div>
+</div>
+
+<!--fullcalendar日历 下拉框选择 -->
+<script>
+    var selectHtml = '';
+    var i = 0;
+    selectHtml +="<i id='fc-dateSelect' class='fc-header-title'>";
+    selectHtml +="<select name='fcs_date_year' id='fcs_date_year' class='selectable m_year mr15'>";
+    // 循环年份
+    for(i=2007;i<=2030;i++){
+        selectHtml +="<option value='"+i+"'>"+$.trim(i+"年")+"</option>";
+    }
+    selectHtml +="</select>";
+
+    selectHtml +="<select name='fcs_date_month' id='fcs_date_month' class='selectable m_year'>";
+    // 循环月份
+    var monthDigitCN = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
+    for(i=0;i<=11;i++){
+        selectHtml +="<option value='"+i+"'>" + $.trim(monthDigitCN[i]+"月") + "</option>";
+    }
+    selectHtml +="</select>";
+    selectHtml +="</i>";
+    $('.dateselectbox').append(selectHtml);
+    var mydate = new Date();
+    var cyear = mydate.getFullYear() + "";
+    var cmonth = (mydate.getMonth()) + "";
+    $("#fcs_date_year").val(cyear);
+    $("#fcs_date_month").val(cmonth);
+    $("#fc-dateSelect").delegate("select","change",function(){
+        var fcsYear = parseInt($("#fcs_date_year").val());
+        var fcsMonth =parseInt($("#fcs_date_month").val())+1;
+        $("#calendar").fullCalendar('gotoDate',fcsYear+""+'-'+""+fcsMonth);
+    })
+
+
+
+
+
+</script>
+<!--end fullcalendar日历-->
+</body>
+</html>

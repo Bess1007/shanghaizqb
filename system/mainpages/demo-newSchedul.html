@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>特定股东增减持项目调查表 </title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <!--引入提示组件start-->
+    <script type="text/javascript" src="../../libs/js/popup/toast.js"></script>
+    <script type="text/javascript" src="../../libs/js/popup/notice.js"></script>
+    <!--引入提示组件end-->
+
+    <!--自动提示框start-->
+    <script type='text/javascript' src='../../libs/js/form/suggestion.js'></script>
+    <!--自动提示框end-->
+
+    <style>
+        .textalign_right {
+            width: 100px;
+        }
+        label.textalign_right {
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox" style="min-height: 699px;">
+    <div class=" forwardBox newAgendaBox" style="height: 628px;">
+        <div class="sendMsTableBox">
+            <div class="sendMsTbCell">
+                <form id="calendarForm" method="post">
+                    <table class="sendmes" style="width: 100%;">
+                        <tbody>
+                        <tr class="agendaTheme longInp">
+                            <td class="textalign_right">主题：</td>
+                            <td><input value="" name="theme" type="text" class="validate[required] error-field textinput" truetype="textinput" yzid="1" access="false"></td>
+                        </tr>
+                        <tr>
+                            <td class="textalign_right" width="80">时间范围：</td>
+                            <td>
+                                <input value="" name="starttime" type="text" class="date datetimechange validate[required]" datefmt="yyyy-MM-dd HH:mm" truetype="date" yzid="2" access="true">
+                                -- <input value="" name="overtime" type="text" class="date date timechange validate[required]" datefmt="yyyy-MM-dd HH:mm" truetype="date" yzid="3" access="true">
+                            </td>
+
+                        </tr>
+                        <tr class="longInp">
+                            <td width="80%" class="textalign_right">类型：</td>
+                            <td>
+                                <div class="mainCon" style="z-index: 501;"><table cellspacing="0" cellpadding="0" style="border-style:none;"><tbody><tr><td class="ali01" style="border-style:none;padding:0;margin:0;"><input id="2_input" type="text" class="selectbox" autocomplete="off" readonly="readonly" style="width: 171px; cursor: pointer;"></td><td class="ali01" style="border-style:none;;padding:0;margin:0;"><input type="button" value=" " class="selBtn" id="2_button"></td></tr></tbody></table><div id="2_container" class="selectbox-wrapper" hasfocus="0" style="display: none; height: 290px; overflow-y: auto; overflow-x: hidden; width: 202px; top: 32px;"><ul><li id="2_input_1" class="selected">求证</li><li id="2_input_2">电话采访</li><li id="2_input_3">实地采访</li><li id="2_input_4">接访</li><li id="2_input_5">调研</li><li id="2_input_6">参会</li><li id="2_input_7">其他</li><li id="2_input_8">创新活动</li><li id="2_input_9">创新协议</li></ul></div><div class="loader" style="display: none;">数据加载中...</div></div><select name="state" id="state" onchange="changeState(this);" truetype="select" style="display: none;">
+                                <option value="1">求证</option>
+                                <option value="2">电话采访</option>
+                                <option value="3">实地采访</option>
+                                <option value="4">接访</option>
+                                <option value="5">调研</option>
+                                <option value="6">参会</option>
+                                <option value="7">其他</option>
+
+                                <option value="8">创新活动</option>
+                                <option value="9">创新协议</option>
+                            </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" style="padding-top: 8px;">
+                                <div style="display:inline-block">
+                                    <label class="fl textalign_right">专家姓名：</label><input type="text" class="fl" >
+                                </div>
+                                <div style="display:inline-block">
+                                    <label class="fl textalign_right">性别：</label>
+                                    <select name="" id="">
+                                        <option value="">男</option>
+                                        <option value="">女</option>
+                                    </select>
+                                </div>
+                                <div style="display:inline-block">
+                                    <label class="fl textalign_right">年龄范围：</label>
+                                    <select name="" id="">
+                                        <option value="">20-30</option>
+                                        <option value="">30-40</option>
+                                        <option value="">40-50</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding-top: 8px;">
+                                <div style="display:inline-block">
+                                    <label class="fl textalign_right">申万一级：</label>
+                                    <select name="" id="">
+                                        <option value="">医药</option>
+                                    </select>
+                                </div>
+                                <div style="display:inline-block">
+                                    <label class="fl textalign_right">联系方式：</label><input type="text" class="fl" >
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="longInp">
+                            <td width="80%" class="textalign_right">状态：</td>
+                            <td>
+                                <div class="mainCon"><table cellspacing="0" cellpadding="0" style="border-style:none;"><tbody><tr><td class="ali01" style="border-style:none;padding:0;margin:0;"><input id="3_input" type="text" class="selectbox" autocomplete="off" readonly="readonly" style="width: 171px; cursor: pointer;"></td><td class="ali01" style="border-style:none;;padding:0;margin:0;"><input type="button" value=" " class="selBtn" id="3_button"></td></tr></tbody></table><div id="3_container" class="selectbox-wrapper" hasfocus="0" style="display: none;"><ul><li id="3_input_1" class="selected">完成</li><li id="3_input_2">取消</li><li id="3_input_3">延迟</li></ul></div><div class="loader" style="display: none;">数据加载中...</div></div><select name="type" id="type" truetype="select" style="display: none;">
+                                <option value="1">完成</option>
+                                <option value="2">取消</option>
+                                <option value="3">延迟</option>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr class="longInp">
+                            <td class="textalign_right">公司：</td>
+                            <td><input type="text" readonly="" onclick="selectAttr();" id="companyabbr" name="companyabbr" value="" truetype="textinput" class="textinput"></td>
+                            <input type="hidden" name="secucode" id="secucode" value="" truetype="hidden">
+                        </tr>
+                        <tr class="receivep">
+                            <td class="textalign_right">
+                                参与人员：
+                            </td>
+                            <td class="clearfix">
+                                <div class="recipientBox" id="recipientBox" style="width: 88%;display: inline-block;height: 39px;"><!--选择的联系人--结果-->
+
+                                </div>
+                                <button type="button" style="background-color:#6BC1F2; float:right;" class="layui-btn layui-btn-primary button" onclick="onParticipants()">添加参与人</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="textalign_right" id="contentName">会访记录：</td>
+                            <td>
+                                <textarea name="content" cols="30" rows="10" style="width: 100%;height: 200px;" truetype="textarea" class="textarea"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="textalign_right">备注：</td>
+                            <td>
+                                <textarea name="remark" cols="30" rows="10" style="width: 100%;height: 200px;" truetype="textarea" class="textarea"></textarea>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    //表单查看页面输入框只读
+    $('.formDivbox input').attr('readonly','readonly');
+    $('.formDivbox textarea').attr('readonly','readonly');
+</script>
+
+</body>
+</html>

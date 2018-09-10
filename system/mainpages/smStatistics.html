@@ -1,0 +1,895 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="min-width:1200px;overflow-x: auto">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>系统管理-统计图表</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <!-- 日期选择框start -->
+    <script type="text/javascript" src="../../libs/js/form/datePicker/WdatePicker.js"></script>
+    <!-- 日期选择框end -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <!--8-28新引入-->
+    <style>
+        .w1200 {
+            width: 1200px;
+            margin:0 auto;
+        }
+        .rydlqkBox{
+            width: 1200px;
+            overflow-x: scroll;
+        }
+        .w-half.p10 {
+            padding: 10px;
+            width: 50%;
+            min-width: 600px;
+            float: left;
+            margin-bottom: 20px;
+        }
+        .commondiv {
+            width: 100%;
+            /*box-shadow: 0 0 8px #ccc;*/
+            border:1px solid #ccc;
+            border-radius:0 0 6px 6px;
+
+        }
+        .mr10 {
+            margin-right: 10px;
+        }
+        .commonTit {
+            overflow: hidden;
+            height: 40px;
+            line-height: 40px;
+            background-color: #576a80;
+            color: #fff;
+            padding:0 10px;
+            margin-top: 0;
+        }
+        .commonTit .fa {
+            float: right;
+            color: #fff;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+
+        }
+    </style>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox" style="min-height: 910px;overflow: auto">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <span>系统管理</span>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix" style="min-width: 1220px;padding: 10px;">
+       <div class="clearfix">
+           <div class="timeSelectBox">
+               <span>时间范围选择：</span>
+               <input type="text" id="beginTime" class="dateIcon" />
+               <input type="text" id="endTime" class="dateIcon" />
+               <button type="button" class="button">确定</button>
+           </div>
+           <div style="height: 20px;"></div>
+          <div class="p10 w-half">
+              <div class="commondiv mr10">
+                  <!--小块标题-->
+                  <div class="commonTit">
+                      <i>项目分类情况</i>
+                      <a class="fa fa-chevron-circle-right" href="xmflqk.html"></a>
+                  </div>
+                  <div id="xmflqk" style="width:100%;height: 450px;"></div>
+              </div>
+          </div>
+           <div class="p10 w-half">
+               <div class="commondiv">
+                   <!--小块标题-->
+                   <div class="commonTit">
+                       <i>人员登录情况</i>
+                       <a class="fa fa-chevron-circle-right" href="rydlqk.html"></a>
+                   </div>
+                   <div id="rydlqk" style="width:100%;height: 450px;"></div>
+               </div>
+           </div>
+           <div class="p10 w-half">
+               <div class="commondiv" >
+                   <!--小块标题-->
+                   <div class="commonTit">
+                       <i>项目落地情况</i>
+                       <a class="fa fa-chevron-circle-right" href="xmflqk.html"></a>
+                   </div>
+                   <div id="xmldqk" style="width:100%;height: 360px;"></div>
+               </div>
+           </div>
+           <div class="p10 w-half">
+                   <div class="commondiv" >
+                       <!--小块标题-->
+                       <div class="commonTit">
+                           <i>跟踪公司数据更新频率</i>
+                           <a class="fa fa-chevron-circle-right" href="gzgsgxqk.html"></a>
+                       </div>
+                       <div id="gzgssjgxpl" style="width:100%;height: 360px;"></div>
+                   </div>
+               </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+    var dateSkin = "blue";
+
+    function initComplete() {
+        //获取当前主题风格，用于设置日期控件的皮肤
+        try {
+            dateSkin = themeColor;
+        } catch(e) {}
+
+        //自定义点击触发日期控件
+        document.getElementById('beginTime').onfocus = function() {
+            var endtimeTf = $dp.$('endTime');
+            WdatePicker({
+                skin: dateSkin,
+                onpicked: function() {
+                    endtimeTf.focus();
+                },
+                maxDate: '#F{$dp.$D(\'endTime\')}'
+            });
+        };
+        document.getElementById('endTime').onfocus = function() {
+            //这里设置了最大日期为当前日期，如果不需要则把maxDate:'%y-%M-%d'去掉
+            WdatePicker({
+                skin: dateSkin,
+                minDate: '#F{$dp.$D(\'beginTime\')}'
+            });
+        }
+
+        //平面显示
+        WdatePicker({
+            skin: dateSkin,
+            eCont: 'div1',
+            onpicked: function(dp) {
+                top.Toast("showNoticeToast", '你选择的日期是:' + dp.cal.getDateStr())
+            }
+        })
+
+        document.getElementById('date-11').onfocus = function() {
+            WdatePicker({
+                skin: dateSkin,
+                maxDate: '%y-%M-%d'
+            });
+        }
+    }
+
+    //动态生成
+    function createDate() {
+        var $date = $('<input type="text" class="date" style="width:200px;" dateFmt="yyyy-MM-dd HH:mm:ss"/>');
+        $("#testBtn").after($date);
+        $date.render();
+    }
+
+    //设为不可用
+    function disableSelect() {
+        $("#date-8").attr("disabled", true);
+    }
+    //设为可用
+    function enableSelect() {
+        $("#date-8").attr("disabled", false);
+    }
+
+    //动态赋值
+    function setValue() {
+        $("#date-7").val("2012-07-08");
+    }
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var xmflqk = echarts.init(document.getElementById('xmflqk'));
+    var rydlqk = echarts.init(document.getElementById('rydlqk'));
+    var xmldqk = echarts.init(document.getElementById('xmldqk'));
+    var gzgssjgxpl = echarts.init(document.getElementById('gzgssjgxpl'));
+
+    // 指定图表的配置项和数据
+    //项目分类情况
+   /* var option1 = {
+        title: {
+            text: '项目分类情况'
+        },
+        color: ['#3398DB'],
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+
+        xAxis : [
+            {
+                type : 'category',
+                data : ['拟IPO项目', '股权质押', '并购卖方', '并购买方', '特定股东增减持', '股权激励', '产业并购基金','信贷项目','债券项目','投资理财'],
+                axisTick: {
+                    alignWithLabel: true
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'项目数量',
+                type:'bar',
+                barWidth: '50%',
+                data:[10, 52, 200, 334, 390, 330, 220,100,106,130],
+                itemStyle : { normal: {label : {show: true}}}
+            }
+        ]
+    };*/
+    option1 = {
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            x: 'left',
+            data:['产业并购基金项目','信贷项目','债券项目','并购买方项目','并购卖方项目','投资理财项目','拟IPO项目','特定股东增减持','股权激励项目','股权质押项目']
+        },
+        color: ['#ef4a5f', '#f9b296', '#aed5d7', '#68c8e8', '#7fcdc9', '#a7b4dc', "#fcd849", "#ecb4d0", "#80bfb0", "#c7a9d1"],
+        graphic:{
+            type:'text',
+            left:'center',
+            top:'center',
+            style:{
+                text:'',
+                textAlign:'center',
+                fill:'#000',
+                width:30,
+                height:30
+            }
+        },
+
+        series: [
+            {
+                name:'项目分类',
+                type:'pie',
+                selectedMode: 'single',
+                radius: [0, '30%'],
+
+                label: {
+                    normal: {
+                        position: 'inner'
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                }
+
+            },
+            {
+                name:'项目分类',
+                type:'pie',
+                radius: ['40%', '55%'],
+                label: {
+                  /*  normal: {
+                        formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                        backgroundColor: '#eee',
+                        borderColor: '#aaa',
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        // shadowBlur:3,
+                        // shadowOffsetX: 2,
+                        // shadowOffsetY: 2,
+                        // shadowColor: '#999',
+                        // padding: [0, 7],
+
+                    }*/
+                },
+                data:[
+                    {value:1, name:'产业并购基金项目'},
+                    {value:2, name:'信贷项目'},
+                    {value:2, name:'债券项目'},
+                    {value:2, name:'并购买方项目'},
+                    {value:4, name:'并购卖方项目'},
+                    {value:3, name:'投资理财项目'},
+                    {value:3, name:'拟IPO项目'},
+                    {value:3, name:'特定股东增减持'},
+                    {value:5, name:'股权激励项目'},
+                    {value:2, name:'股权质押项目'}
+                ]
+            }
+        ]
+    };
+    //人员登录情况
+    var option2 = {
+      /*  title: {
+            text: '人员登录情况'
+        },*/
+        color: ['#3398DB'],
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+
+        xAxis : [
+            {
+                type : 'category',
+                data : ['人员A', '人员B', '人员C', '人员D','人员E','人员F','人员G','人员H','人员I','人员J'],
+                axisTick: {
+                    alignWithLabel: true
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'登录次数(本周)',
+                type:'bar',
+                barWidth: '60%',
+                data:[36, 30, 29, 26, 20, 19, 15,10,7,4],
+                itemStyle : { normal: {label : {show: true}}}
+            }
+        ]
+    };
+    //项目落地情况
+    /*var option3 = {
+        backgroundColor: '#fff',
+
+      /!*  title: {
+            text: '项目落地情况'
+        },*!/
+
+      /!*  tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+*!/
+     /!*   visualMap: {
+            show: true,
+            min: 0,
+            max: 400,
+            inRange: {
+                colorLightness: [.5, 1]
+            }
+        },*!/
+        series : [
+            {
+                name:'项目情况',
+                type:'pie',
+                radius : '90%',
+                center: ['50%', '50%'],
+                data:[
+                    {value:200, name:'关注中'},
+                    {value:100, name:'接触中'},
+                    {value:50, name:'谈判中'},
+                    {value:13, name:'成功'}
+                ].sort(function (a, b) { return a.value - b.value; }),
+                roseType: 'radius',
+                label: {
+                    normal: {
+                        textStyle: {
+                            color: '#666'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        lineStyle: {
+                            color: '#666'
+                        },
+                        smooth: 0.2,
+                        length: 5,
+                        length2: 5
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        textStyle:{color:'#333'},
+                        color: '#9fc9ef',
+                        shadowBlur: 100,
+                        shadowColor: 'rgba(220, 227, 235, 0.5)',
+                        label:{
+                            show: true,
+                            formatter: '{b} : {c} ({d}%)'
+                        },
+                        labelLine :{show:true}
+                    }
+                },
+
+                animationType: 'scale',
+                animationEasing: 'elasticOut',
+                animationDelay: function (idx) {
+                    return Math.random() * 200;
+                }
+            }
+        ],
+    };*/
+    var appusage_data = [{
+
+        value: 100
+    }, {
+
+        value: 46
+    }, {
+
+        value: 53
+    }, {
+
+        value: 68
+    }];
+/*   var option3 = {
+        "tooltip": {
+            "trigger": "axis",
+            "axisPointer": { // 坐标轴指示器，坐标轴触发有效
+                "type": "shadow" // 默认为直线，可选为："line" | "shadow"
+            }
+        },
+        "grid": {
+            "left": "3%",
+            "right": "10%",
+            "bottom": "3%",
+            "containLabel": true
+        },
+        "yAxis": [{
+            "type": "category",
+            "data": ["成功", "谈判中", "接触中", "关注中"],
+            "axisLine": {
+                "show": false
+            },
+            "axisTick": {
+                "show": false,
+                "alignWithLabel": true
+            },
+            "axisLabel": {
+                "textStyle": {
+                    "color": "#ffb069"
+                }
+            }
+        }],
+        "xAxis": [{
+            "type": "value",
+            "axisLine": {
+                "show": false
+            },
+            "axisTick": {
+                "show": false
+            },
+            "axisLabel": {
+                "show": false
+            },
+            "splitLine": {
+                "show": false
+            }
+        }],
+
+        "series": [{
+            "name": "项目落地情况",
+            "type": "bar",
+            "data": appusage_data,
+            "barCategoryGap": "35%",
+            "label": {
+                "normal": {
+                    "show": true,
+                    "position": "right",
+                    "formatter": function(params) {
+                        return params.data.name;
+                    },
+                    "textStyle": {
+                        "color": "#bcbfff" //color of value
+                    }
+                }
+            },
+            "itemStyle": {
+                "normal": {
+                    "color": new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                        "offset": 0,
+                        "color": "#fad587" // 0% 处的颜色
+                    }, {
+                        "offset": 1,
+                        "color": "#ea4156" // 100% 处的颜色
+                    }], false)
+                }
+            }
+        }]
+    };*/
+  var option3 = {
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data:  ["成功", "谈判中", "接触中", "关注中"]
+        },
+      color: ['#0c9cd9', '#68c0b0', '#ff4242', '#fccf17'],
+        series : [
+            {
+                name: '项目落地情况',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:[
+                    {value:335, name:'成功'},
+                    {value:310, name:'谈判中'},
+                    {value:234, name:'接触中'},
+                    {value:135, name:'关注中'}
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    //跟踪公司数据跟新频率
+    /* var option4 = {
+        color: ['#88cccb','#81cbe8'],
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+
+        xAxis : [
+            {
+                type : 'category',
+                data : ['人员A', '人员B', '人员C', '人员D','人员E','人员F','人员G','人员H','人员I','人员J'],
+                axisTick: {
+                    alignWithLabel: true
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'更新次数(每周)',
+                type:'bar',
+                barWidth: '50%',
+                data:[36, 30, 29, 26, 20, 19, 15,10,7,4],
+                itemStyle : { normal: {label : {show: true}}}
+            }
+        ]
+    };*/
+
+
+    var dataMap = {};
+    function dataFormatter(obj) {
+        var pList = ['人员A','人员B','人员C','人员D','人员E','人员F','人员G','人员H','人员I','人员J'];
+        var temp;
+        for (var month = 1; month <= 12; month++) {
+            var max = 0;
+            var sum = 0;
+            temp = obj[month];
+            for (var i = 0, l = temp.length; i < l; i++) {
+                max = Math.max(max, temp[i]);
+                sum += temp[i];
+                obj[month][i] = {
+                    name : pList[i],
+                    value : temp[i]
+                }
+            }
+            obj[month + 'max'] = Math.floor(max / 100) * 100;
+            obj[month + 'sum'] = sum;
+        }
+        return obj;
+    }
+
+
+
+    dataMap.dataSI = dataFormatter({
+        //max : 26600,
+        1:[100,200,300,150,260,340,430,110,229,312],
+        2:[300,200,300,500,260,340,430,110,229,312],
+        3:[440,200,300,150,200,340,430,110,229,312],
+        4:[100,302,300,150,260,340,430,110,229,312],
+        5:[200,200,300,150,260,340,430,110,229,312],
+        6:[360,200,300,150,260,340,430,110,229,312],
+        7:[570,200,300,150,260,340,430,110,229,312],
+        8:[250,200,300,150,260,340,430,110,229,312],
+        9:[210,200,300,150,260,340,430,110,229,312],
+        10:[320,200,200,150,260,290,430,110,229,312],
+        11:[100,200,300,150,260,340,430,110,229,312],
+        12:[110,200,300,150,260,340,430,110,229,312]
+    });
+
+    dataMap.dataTI = dataFormatter({
+        //max : 25000,
+        1:[100,200,300,150,260,340,430,110,229,312],
+        2:[100,200,300,150,260,340,430,110,229,312],
+        3:[360,200,300,150,260,340,430,110,229,312],
+        4:[570,200,300,150,260,340,430,110,229,312],
+        5:[100,200,300,150,260,340,430,110,229,312],
+        6:[100,200,300,150,260,340,430,110,229,312],
+        7:[320,200,200,150,260,290,430,110,229,312],
+        8:[100,200,300,150,260,340,430,110,229,312],
+        9:[100,200,300,150,260,340,430,110,229,312],
+        10:[320,200,200,150,260,290,430,110,229,312],
+        11:[100,200,300,150,260,340,430,110,229,312],
+        12:[100,200,300,150,260,340,430,110,229,312]
+    });
+
+
+
+   var option4 = {
+        baseOption: {
+            timeline: {
+
+                // y: 0,
+                axisType: 'category',
+                // realtime: false,
+                // loop: false,
+                autoPlay: true,
+                // currentIndex: 2,
+                playInterval: 1000,
+                // controlStyle: {
+                //     position: 'left'
+                // },
+                data: [
+                    '01-01','02-01','03-01','04-01','05-01','06-01','07-01','08-01','09-01','10-01','11-01','12-01'
+                    /*{
+                        value: '2005-01-01',
+                        tooltip: {
+                            formatter: '{b} GDP达到一个高度'
+                        },
+                        symbol: 'diamond',
+                        symbolSize: 16
+                    },
+                    '2006-01-01', '2007-01-01','2008-01-01','2009-01-01','2010-01-01',
+                    {
+                        value: '2011-01-01',
+                        tooltip: {
+                            formatter: function (params) {
+                                return params.name + 'GDP达到又一个高度';
+                            }
+                        },
+                        symbol: 'diamond',
+                        symbolSize: 18
+                    },*/
+                ],
+                label: {
+                    formatter : function(s) {
+                        return s.slice(0, 2);
+                    }
+                }
+            },
+            title: {
+                subtext: '数据来自后台统计'
+            },
+            tooltip: {},
+            legend: {
+                x: 'right',
+                data: ['新增', '修改'],
+                selected: {
+
+                }
+            },
+            color:['#f36d40','#68c0b0'],
+            calculable : true,
+            grid: {
+                top: 80,
+                bottom: 100
+            },
+            xAxis: [
+                {
+                    'type':'category',
+                    'axisLabel':{'interval':0},
+                    'data':[
+                        '人员A','\n人员B','人员C','\n人员D','人员E','\n人员F','人员G','\n人员H','人员I','\n人员J'
+                    ],
+                    splitLine: {show: false}
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '更新次数',
+                    // max: 53500
+                    max: 800
+                }
+            ],
+            series: [
+                {name: '新增', type: 'bar'},
+                {name: '修改', type: 'bar'},
+                {
+                    name: 'GDP占比',
+                    type: 'pie',
+                    center: ['75%', '35%'],
+                    radius: '28%'
+                }
+            ]
+        },
+        options: [
+            {
+                title: {text: '1月跟踪公司数据更新'},
+                series: [
+                    {data: dataMap.dataSI['1']},
+                    {data: dataMap.dataTI['1']},
+                    {data: [
+                        {name: '新增', value: dataMap.dataSI['1sum']},
+                        {name: '修改', value: dataMap.dataTI['1sum']}
+                    ]}
+                ]
+            },
+            {
+                title : {text: '2月跟踪公司数据更新'},
+                series : [
+                    {data: dataMap.dataSI['2']},
+                    {data: dataMap.dataTI['2']},
+                    {data: [
+                        {name: '新增', value: dataMap.dataSI['2sum']},
+                        {name: '修改', value: dataMap.dataTI['2sum']}
+                    ]}
+                ]
+            },
+            {
+                title : {text: '3月跟踪公司数据更新'},
+                series : [
+                    {data: dataMap.dataSI['3']},
+                    {data: dataMap.dataTI['3']},
+                    {data: [
+                        {name: '新增', value: dataMap.dataSI['3sum']},
+                        {name: '修改', value: dataMap.dataTI['3sum']}
+                    ]}
+                ]
+            },
+            {
+                title : {text: '4月跟踪公司数据更新'},
+                series : [
+                    {data: dataMap.dataSI['4']},
+                    {data: dataMap.dataTI['4']},
+                    {data: [
+                        {name: '新增', value: dataMap.dataSI['4sum']},
+                        {name: '修改', value: dataMap.dataTI['4sum']}
+                    ]}
+                ]
+            },
+            {
+                title : {text: '5月跟踪公司数据更新'},
+                series : [
+                    {data: dataMap.dataSI['5']},
+                    {data: dataMap.dataTI['5']},
+                    {data: [
+                        {name: '新增', value: dataMap.dataSI['5sum']},
+                        {name: '修改', value: dataMap.dataTI['5sum']}
+                    ]}
+                ]
+            },
+            {
+                title : {text: '6月跟踪公司数据更新'},
+                series : [
+                    {data: dataMap.dataSI['6']},
+                    {data: dataMap.dataTI['6']},
+                    {data: [
+                        {name: '新增', value: dataMap.dataSI['6sum']},
+                        {name: '修改', value: dataMap.dataTI['6sum']}
+                    ]}
+                ]
+            },
+            {
+                title : {text: '7月跟踪公司数据更新'},
+                series : [
+                    {data: dataMap.dataSI['7']},
+                    {data: dataMap.dataTI['7']},
+                    {data: [
+                        {name: '新增', value: dataMap.dataSI['7sum']},
+                        {name: '修改', value: dataMap.dataTI['7sum']}
+                    ]}
+                ]
+            },
+            {
+                title : {text: '8月跟踪公司数据更新'},
+                series : [
+                    {data: dataMap.dataSI['8']},
+                    {data: dataMap.dataTI['8']},
+                    {data: [
+                        {name: '新增', value: dataMap.dataSI['8sum']},
+                        {name: '修改', value: dataMap.dataTI['8sum']}
+                    ]}
+                ]
+            },
+            {
+                title : {text: '9月跟踪公司数据更新'},
+                series : [
+                    {data: dataMap.dataSI['9']},
+                    {data: dataMap.dataTI['9']},
+                    {data: [
+                        {name: '新增', value: dataMap.dataSI['9sum']},
+                        {name: '修改', value: dataMap.dataTI['9sum']}
+                    ]}
+                ]
+            },
+            {
+                title : {text: '10月跟踪公司数据更新'},
+                series : [
+                    {data: dataMap.dataSI['10']},
+                    {data: dataMap.dataTI['10']},
+                    {data: [
+                        {name: '新增', value: dataMap.dataSI['10sum']},
+                        {name: '修改', value: dataMap.dataTI['10sum']}
+                    ]}
+                ]
+            },
+            {
+                title : {text: '11月跟踪公司数据更新'},
+                series : [
+                    {data: dataMap.dataSI['11']},
+                    {data: dataMap.dataTI['11']},
+                    {data: [
+                        {name: '新增', value: dataMap.dataSI['11sum']},
+                        {name: '修改', value: dataMap.dataTI['11sum']}
+                    ]}
+                ]
+            },
+            {
+                title : {text: '12月跟踪公司数据更新'},
+                series : [
+                    {data: dataMap.dataSI['12']},
+                    {data: dataMap.dataTI['12']},
+                    {data: [
+                        {name: '新增', value: dataMap.dataSI['12sum']},
+                        {name: '修改', value: dataMap.dataTI['12sum']}
+                    ]}
+                ]
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    xmflqk.setOption(option1);
+    rydlqk.setOption(option2);
+    xmldqk.setOption(option3);
+    gzgssjgxpl.setOption(option4);
+</script>
+</body>
+
+</html>

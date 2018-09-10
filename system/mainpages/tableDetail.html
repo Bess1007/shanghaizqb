@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>请求项目</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue"
+          positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin"
+          skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+
+    <link rel="stylesheet" href="layer/skin/default/layer.css"/>
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/shzqb.css"/>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk">
+            <span>拟IPO项目信息表</span>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix">
+        <table class="xm_table tableStyle edite_table">
+            <tbody>
+            <tr>
+                <td class="bcgray">项目标题：</td>
+                <td colspan="3"><div class="szFormDivbox formDivbox"><input type="text" readonly="readonly" truetype="textinput" class="textinput" style="font-family: 宋体; font-size: 12px;"></div></td>
+            </tr>
+            <tr>
+                <td class="bcgray">项目概要：</td>
+                <td colspan="3">
+                    <div class="szFormDivbox tbContentbox setMaxHeight">
+                        <p>
+                            项目概要。。。
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="bcgray"><span class="star">*</span>股票名称：</td>
+                <td><div class="formDivbox"><input type="text" class="validate[required] textinput" value="股票名称。。。" readonly="readonly" truetype="textinput" style="font-family: 宋体; font-size: 12px;"></div></td>
+                <td class="bcgray"><span class="star">*</span>股票代码：</td>
+                <td><div class="formDivbox"><input type="text" class="validate[required] textinput" value="股票代码。。。" readonly="readonly" truetype="textinput" style="font-family: 宋体; font-size: 12px;"></div></td>
+            </tr>
+            <tr>
+                <td class="bcgray"><span class="star">*</span>上市公司对接人：</td>
+                <td><div class="formDivbox"><input type="text" class="validate[required] textinput" readonly="readonly" truetype="textinput" style="font-family: 宋体; font-size: 12px;"></div></td>
+                <td class="bcgray"><span class="star">*</span>对接人联系方式：</td>
+                <td><div class="formDivbox"><input type="text" class="validate[required] textinput" readonly="readonly" truetype="textinput" style="font-family: 宋体; font-size: 12px;"></div></td>
+            </tr>
+            <tr>
+                <td class="bcgray"><span class="star">*</span>投资方：</td>
+                <td><div class="formDivbox"><input type="text" class="validate[required] textinput" readonly="readonly" truetype="textinput" style="font-family: 宋体; font-size: 12px;"></div></td>
+                <td class="bcgray">资金来源：</td>
+                <td><div class="formDivbox"><input type="text" readonly="readonly" truetype="textinput" class="textinput" style="font-family: 宋体; font-size: 12px;"></div></td>
+            </tr>
+            <tr>
+                <td class="bcgray"><span class="star">*</span>投资理财规模（万元）：</td>
+                <td><div class="formDivbox"><input type="text" class="validate[required] textinput" readonly="readonly" truetype="textinput" style="font-family: 宋体; font-size: 12px;"></div></td>
+                <td class="bcgray"><span class="star">*</span>投资理财期限（月）：</td>
+                <td><div class="formDivbox"><input type="text" class="validate[required] textinput" readonly="readonly" truetype="textinput" style="font-family: 宋体; font-size: 12px;"></div></td>
+            </tr>
+            <tr>
+                <td class="bcgray"><span class="star">*</span>预期年化收益(%)：</td>
+                <td><div class="formDivbox"><input type="text" class="validate[required] textinput" readonly="readonly" truetype="textinput" style="font-family: 宋体; font-size: 12px;"></div></td>
+                <td class="bcgray">取现周期(T+X)：</td>
+                <td><div class="formDivbox"><input type="text" readonly="readonly" truetype="textinput" class="textinput" style="font-family: 宋体; font-size: 12px;"></div></td>
+            </tr>
+            <tr>
+                <td class="bcgray">其他重要事项</td>
+                <td colspan="3"><div class="formDivbox"><input type="text" readonly="readonly" truetype="textinput" class="textinput" style="font-family: 宋体; font-size: 12px;"></div></td>
+            </tr>
+            <tr>
+                <td class="bcgray">备注:</td>
+                <td colspan="3"><div class="formDivbox"><input type="text" readonly="readonly" truetype="textinput" class="textinput" style="font-family: 宋体; font-size: 12px;"></div></td>
+            </tr>
+            <tr>
+                <td class="bcgray">填表说明：</td>
+                <td colspan="3"><div class="formDivbox red">T+X表示投资方意向X个交易日将资金取出</div></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="underxm_table">
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend>业务请求</legend>
+            </fieldset>
+            <div class="w1080 clearfix">
+                <textarea name="" id="" cols="30" rows="10" style="width: 100%;height: 200px;"></textarea>
+                <input type="submit" value="提交" class="primary button margin_top10 fr">
+            </div>
+        </div>
+        <div class="underxm_table">
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend>请求理由</legend>
+            </fieldset>
+            <div class="w1080 clearfix">
+                <ul class="reasons_ul"><!--默认每页最多显示十条-->
+                  <!--  <li>
+                         <span class="btn_span">&lt;!&ndash;只有张有春的界面显示同意和拒绝两个按钮&ndash;&gt;
+                             <input type="submit" value="同意" class="primary button agree_req">
+                             <input type="button" value="拒绝" class="button refuse_req">
+                         </span>
+                        <div class="fl img_box"><img src="images/headimgico.jpg" alt=""></div>
+                        <i class="gzstate gzz">关注中</i>
+                        <div class="fl">
+                            <p class="restxt">
+                                我正好有个项目和这个类似
+                            </p>
+                            <div class="restxt">
+                                <span class="gray_txt">张某某</span>
+                                <span class="gray_txt">（2017-8-11）</span>
+                                <span>【项目名称】.......</span>
+                            </div>
+                        </div>
+                    </li>-->
+                    <li>
+                         <span class="btn_span"><!--只有张有春的界面显示同意和拒绝两个按钮-->
+                             <input type="submit" value="同意" class="primary button agree_req">
+                             <input type="button" value="拒绝" class="button refuse_req">
+                         </span>
+                        <i class="gzstate gzz">关注中</i>
+                        <div class="fl">
+                            <p class="restxt">
+                                我正好有个项目和这个类似
+                            </p>
+                            <div class="restxt">
+                                <span class="gray_txt">张某某</span>
+                                <span class="gray_txt">（2017-8-11）</span>
+                                <span>【项目名称】.......</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="l-panel-pagebar">
+                    <div class="pageNumber" autorender="false">
+                        <span class="current prev">上一页</span>
+                        <span class="current">1</span>
+                        <a>2</a><a class="next">下一页</a>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".reasons_ul").on('click','.agree_req',function () {
+        layer.msg('已同意请求',{
+            time: 800
+        });
+    })
+    $(".reasons_ul").on('click','.refuse_req',function () {
+        layer.open({
+            title: ['拒绝理由：', 'font-size:16px;'],
+            type: 1,
+            area: ['620px', '420px'],
+            content: '<textarea name="" id="" cols="30" rows="10" style="width: 600px;margin:10px;height: 300px;" truetype="textarea" class="textarea"></textarea>'
+            ,btn: ['提交', '取消']
+        });
+    })
+</script>
+</body>
+</html>

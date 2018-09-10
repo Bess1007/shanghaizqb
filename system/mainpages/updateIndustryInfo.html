@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>行业信息录入</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue"
+          positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin"
+          skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+
+    <!--引入提示组件start-->
+    <script type="text/javascript" src="../../libs/js/popup/toast.js"></script>
+    <script type="text/javascript" src="../../libs/js/popup/notice.js"></script>
+    <!--引入提示组件end-->
+    <!--自动提示框start-->
+    <script type='text/javascript' src='../../libs/js/form/suggestion.js'></script>
+    <!--自动提示框end-->
+
+    <!-- 表单验证start -->
+    <script src="../../libs/js/form/validationRule.js" type="text/javascript"></script>
+    <script src="../../libs/js/form/validation.js" type="text/javascript"></script>
+    <!-- 表单验证end -->
+    <link rel="stylesheet" href="css/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="js/shzqbqui.js"></script>
+    <style>
+        .disTable {
+            width: 100%;
+            display:table;
+            position: relative;
+            padding-left: 100px;
+        }
+        .distcell {
+            display:table-cell;
+        }
+        .overtxtelli {
+            display:-webkit-box;
+            -webkit-line-clamp:1;
+            -webkit-box-orient: vertical;
+            width:100%;
+            max-width:430px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .relpos_box {
+            position: relative;
+            width: 100%;
+            padding-left: 100px;
+            margin-bottom: 15px;
+        }
+        .inlineB.relpos_box {
+            display: inline-block;
+            width:auto;
+            padding-left: 60px;
+        }
+        .inlineB.relpos_box label {
+            width: 120px;
+            display:inline-block;
+            text-align: right;
+        }
+    </style>
+</head>
+<body class="bclightblue ">
+<div class="page_content mystylebox p10">
+    <form id="form1" method="post" action="" failAlert="表单填写不正确，请按要求填写！">
+        <ul class="industryInfoBigBox">
+            <li class="industryInfoLi">
+                <fieldset class="layui-elem-field layui-field-title">
+                    <legend>选择行业</legend>
+                </fieldset>
+                <div class="underinfoTit">
+                    <ul class="disTable">
+                        <i class="line_blue"></i>
+                        <li class="distcell clearfix">
+                            <label for=""class="fl margin_right6">一级行业：</label>
+                            <select name="" id="" >
+                                <option value="">选择一级行业</option>
+                                <option value="">综合</option>
+                                <option value="">有色金属</option>
+                                <option value="">银行</option>
+                                <option value="">医药生物</option>
+                                <option value="">休闲服务</option>
+                                <option value="">休闲服务</option>
+                                <option value="">通信</option>
+                                <option value="">食品饮料</option>
+                                <option value="">商业贸易</option>
+                                <option value="">轻工制造</option>
+                                <option value="">汽车</option>
+                                <option value="">农林牧渔</option>
+                                <option value="">交通运输</option>
+                                <option value="">建筑装饰</option>
+                                <option value="">建筑材料</option>
+                                <option value="">家用电器</option>
+                                <option value="">计算机</option>
+                                <option value="">机械设备</option>
+                                <option value="">化工</option>
+                                <option value="">国防军工</option>
+                                <option value="">国防军事</option>
+                            </select>
+                        </li>
+                        <li class="distcell clearfix">
+                            <label for=""class="fl margin_right6">二级行业：</label>
+                            <select name="" id="" >
+                                <option value="">-选择二级行业-</option>
+                                <option value="">稀有金属</option>
+                                <option value="">金属非金属新材料</option>
+                                <option value="">黄金</option>
+                                <option value="">工业金属</option>
+                            </select>
+                        </li>
+                        <li class="distcell clearfix">
+                            <label for=""class="fl margin_right6">三级行业：</label>
+                            <select name="" id="" >
+                                <option value="">-选择三级行业-</option>
+                                <option value="">锂</option>
+                                <option value="">稀土</option>
+                                <option value="">钨</option>
+                                <option value="">其它稀有小金属</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <div class="relpos_box margin_top15">
+                        <i class="line_blue"></i>
+                        <table style="width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td style="width:100px;"><label for="" class="margin_right6"><span class="star">* </span>行业简介：</label></td>
+                                <td><textarea name="" id="" cols="30" rows="10" style="width: 100%; font-family: 宋体; font-size: 12px;" truetype="textarea" class="textarea validate[required]"></textarea></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </li>
+            <li class="industryInfoLi">
+                <fieldset class="layui-elem-field layui-field-title">
+                    <legend>法律法规</legend>
+                </fieldset>
+                <div class="underinfoTit">
+                    <div class="w1140">
+                        <div class="addbtn_box ">
+                            <input type="button" value="新增" class="primary button margin_top10" onclick="addLaw()" style="font-family: 宋体; font-size: 12px;">
+                        </div>
+                        <table class="mytable3">
+                            <thead>
+                            <tr>
+                                <th>法规名称</th>
+                                <th>出台日期</th>
+                                <th>出台机构</th>
+                                <th>法规详情</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="isClickTr">
+                                <td>
+                                   <span class="overtxtelli">
+                                        轻工、有色金属等238项行业标准
+                                   </span>
+                                </td>
+                                <td>2017-07-07</td>
+                                <td>工业和信息化部</td>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    <span class="edt_btn" onclick="addLaw()">修改</span>
+                                    <span class="edt_btn" onclick="addLaw()">查看</span>
+                                    <span class="delete_btn" onclick="">删除</span>
+                                </td>
+                            </tr>
+                            <tr class="isClickTr">
+                                <td>
+                                   <span class="overtxtelli">
+                                        轻工、有色金属等238项行业标准
+                                   </span>
+                                </td>
+                                <td>2017-07-07</td>
+                                <td>工业和信息化部</td>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    <span class="edt_btn" onclick="addLaw()">修改</span>
+                                    <span class="edt_btn" onclick="addLaw()">查看</span>
+                                    <span class="delete_btn" onclick="">删除</span>
+                                </td>
+                            </tr>
+                            <tr class="isClickTr">
+                                <td>
+                                   <span class="overtxtelli">
+                                        轻工、有色金属等238项行业标准
+                                   </span>
+                                </td>
+                                <td>2017-07-07</td>
+                                <td>工业和信息化部</td>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    <span class="edt_btn" onclick="addLaw()">修改</span>
+                                    <span class="edt_btn" onclick="addLaw()">查看</span>
+                                    <span class="delete_btn" onclick="">删除</span>
+                                </td>
+                            </tr>
+                            <tr class="isClickTr">
+                                <td>
+                                   <span class="overtxtelli">
+                                        轻工、有色金属等238项行业标准
+                                   </span>
+                                </td>
+                                <td>2017-07-07</td>
+                                <td>工业和信息化部</td>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    <span class="edt_btn" onclick="addLaw()">修改</span>
+                                    <span class="edt_btn" onclick="addLaw()">查看</span>
+                                    <span class="delete_btn" onclick="">删除</span>
+                                </td>
+                            </tr>
+                            <tr class="isClickTr">
+                                <td>
+                                   <span class="overtxtelli">
+                                        轻工、有色金属等238项行业标准
+                                   </span>
+                                </td>
+                                <td>2017-07-07</td>
+                                <td>工业和信息化部</td>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    <span class="edt_btn" onclick="addLaw()">修改</span>
+                                    <span class="edt_btn" onclick="addLaw()">查看</span>
+                                    <span class="delete_btn" onclick="">删除</span>
+                                </td>
+                            </tr>
+                            <tr class="isClickTr">
+                                <td>
+                                   <span class="overtxtelli">
+                                        轻工、有色金属等238项行业标准
+                                   </span>
+                                </td>
+                                <td>2017-07-07</td>
+                                <td>工业和信息化部</td>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    <span class="edt_btn" onclick="addLaw()">修改</span>
+                                    <span class="edt_btn" onclick="addLaw()">查看</span>
+                                    <span class="delete_btn" onclick="">删除</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="l-panel-pagebar">
+                            <div class="pageNumber" autorender="false">
+                                <span class="current prev">上一页</span>
+                                <span class="current">1</span>
+                                <a>2</a><a class="next">下一页</a>
+                                <div style="clear:both;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="industryInfoLi">
+                <fieldset class="layui-elem-field layui-field-title">
+                    <legend>图谱</legend>
+                </fieldset>
+                <div class="underinfoTit">
+                    <div class="relpos_box">
+                        <i class="line_cyan"></i>
+                        <table style="width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td style="width:100px;"><label for="" class="margin_right6" >产业链图谱：</label></td>
+                                <td><textarea name="" id="" cols="30" rows="10" style="width: 100% "></textarea></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="relpos_box">
+
+                        <table style="width: 100%;">
+                            <tbody>
+                            <tr style="position: relative">
+                                <td style="width:100px;"><label for="" class="margin_right6" >添加图谱：</label></td>
+                                <td>
+                                    <input type="file">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>  <img src="images/default.jpg" alt="" width="460" ></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </li>
+            <li class="industryInfoLi">
+                <fieldset class="layui-elem-field layui-field-title">
+                    <legend><span class="star">* </span>行业壁垒</legend>
+                </fieldset>
+                <div class="underinfoTit">
+                    <textarea name="" id="" cols="30" rows="10" style="width: 100% " class="validate[required]"></textarea>
+                </div>
+            </li>
+            <li class="industryInfoLi">
+                <fieldset class="layui-elem-field layui-field-title">
+                    <legend>行业相关机构</legend>
+                </fieldset>
+                <div class="underinfoTit">
+                    <div class="inlineB relpos_box">
+                        <i class="line_purple"></i>
+                        <label for=""><span class="star">* </span>行业龙头企业：</label>
+                        <input type="text" class="validate[required]">
+                    </div>
+                    <div class="inlineB relpos_box">
+                        <i class="line_purple"></i>
+                        <label for=""><span class="star">* </span>监管部门信息：</label>
+                        <input type="text" class="validate[required]">
+                    </div>
+                    <div class="inlineB relpos_box">
+                        <i class="line_purple"></i>
+                        <label for=""><span class="star">* </span>自律机构信息：</label>
+                        <input type="text" class="validate[required]">
+                    </div>
+                    <div class="inlineB relpos_box">
+                        <i class="line_purple"></i>
+                        <label for="">第三方机构信息：</label>
+                        <input type="text">
+                    </div>
+                    <div class="inlineB relpos_box">
+                        <i class="line_purple"></i>
+                        <label for="">重要网站：</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </li>
+            <li class="industryInfoLi">
+                <fieldset class="layui-elem-field layui-field-title">
+                    <legend>研究报告</legend>
+                </fieldset>
+                <div class="underinfoTit">
+                    <div class="w1140">
+                        <div class="addbtn_box ">
+                            <input type="button" value="新增" class="primary button margin_top10" onclick="addico2()" style="font-family: 宋体; font-size: 12px;">
+                        </div>
+                        <table class="mytable3">
+                            <thead>
+                            <tr>
+                                <th>报告名称</th>
+                                <th>发布人名称</th>
+                                <th>报告详情</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="isClickTr">
+                                <td>
+                                   <span class="overtxtelli">
+                                        轻工、有色金属等238项行业标准
+                                   </span>
+                                </td>
+                                <td>工业和信息化部</td>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    <span class="edt_btn" onclick="addico2()">修改</span>
+                                    <span class="edt_btn" onclick="addico2()">查看</span>
+                                    <span class="delete_btn" onclick="">删除</span>
+                                </td>
+                            </tr>
+                            <tr class="isClickTr">
+                                <td>
+                                   <span class="overtxtelli">
+                                        轻工、有色金属等238项行业标准
+                                   </span>
+                                </td>
+                                <td>工业和信息化部</td>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    <span class="edt_btn" onclick="addico2()">修改</span>
+                                    <span class="edt_btn" onclick="addico2()">查看</span>
+                                    <span class="delete_btn" onclick="">删除</span>
+                                </td>
+                            </tr>
+                            <tr class="isClickTr">
+                                <td>
+                                   <span class="overtxtelli">
+                                        轻工、有色金属等238项行业标准
+                                   </span>
+                                </td>
+                                <td>工业和信息化部</td>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    <span class="edt_btn" onclick="addico2()">修改</span>
+                                    <span class="edt_btn" onclick="addico2()">查看</span>
+                                    <span class="delete_btn" onclick="">删除</span>
+                                </td>
+                            </tr>
+                            <tr class="isClickTr">
+                                <td>
+                                   <span class="overtxtelli">
+                                        轻工、有色金属等238项行业标准
+                                   </span>
+                                </td>
+                                <td>工业和信息化部</td>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    <span class="edt_btn" onclick="addico2()">修改</span>
+                                    <span class="edt_btn" onclick="addico2()">查看</span>
+                                    <span class="delete_btn" onclick="">删除</span>
+                                </td>
+                            </tr>
+                            <tr class="isClickTr">
+                                <td>
+                                   <span class="overtxtelli">
+                                        轻工、有色金属等238项行业标准
+                                   </span>
+                                </td>
+                                <td>工业和信息化部</td>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    <span class="edt_btn" onclick="addico2()">修改</span>
+                                    <span class="edt_btn" onclick="addico2()">查看</span>
+                                    <span class="delete_btn" onclick="">删除</span>
+                                </td>
+                            </tr>
+                            <tr class="isClickTr">
+                                <td>
+                                   <span class="overtxtelli">
+                                        轻工、有色金属等238项行业标准
+                                   </span>
+                                </td>
+                                <td>工业和信息化部</td>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    <span class="edt_btn" onclick="addico2()">修改</span>
+                                    <span class="edt_btn" onclick="addico2()">查看</span>
+                                    <span class="delete_btn" onclick="">删除</span>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <div class="l-panel-pagebar">
+                            <div class="pageNumber" autorender="false">
+                                <span class="current prev">上一页</span>
+                                <span class="current">1</span>
+                                <a>2</a><a class="next">下一页</a>
+                                <div style="clear:both;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="industryInfoLi">
+                <fieldset class="layui-elem-field layui-field-title">
+                    <legend>平均</legend>
+                </fieldset>
+                <div class="underinfoTit">
+                    <div class="inlineB relpos_box">
+                        <i class="line_blue"></i>
+                        <label for="" style="width: 165px;">行业平均负债率（%）：</label>
+                        <input type="text">
+                    </div>
+                    <div class="inlineB relpos_box">
+                        <i class="line_blue"></i>
+                        <label for="">行业平均PE：</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </form>
+
+</div>
+<div class="backtop" style="display: none;"><img src="./images/backtop.png" alt=""></div>
+
+<script>
+    function addLaw() {
+     var index = layer.open({
+            type:2,
+            title:'新增法律法规',
+            area:['800px','100%'],
+            maxmin:true,
+            content:'addLawDetailed.html',
+            btn:['取消','保存']
+        })
+        layer.full(index);
+    }
+</script>
+</body>
+</html>

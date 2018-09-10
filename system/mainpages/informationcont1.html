@@ -1,0 +1,780 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="infohtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>资讯内容页</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+
+    <!--框架必需end-->
+    <!--弹窗组件start-->
+    <script type="text/javascript" src="../../libs/js/popup/drag.js"></script>
+    <script type="text/javascript" src="../../libs/js/popup/dialog.js"></script>
+    <!--弹窗组件end-->
+    <!-- 日期选择框start -->
+    <script type="text/javascript" src="../../libs/js/form/datePicker/WdatePicker.js"></script>
+    <!-- 日期选择框end -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <script type="text/javascript" src="js/base.js"></script>
+    <style>
+        .newsList {
+            display:none;
+        }
+        .newsList.active {
+            display:block;
+        }
+    </style>
+</head>
+<body style="background-color: #f0f2f5;">
+<div  class="page_conten">
+    <div class="commonhead header">
+        <div class=" clearfix" style="width: 100%;padding: 0 50px;min-width: 1260px">
+            <div class="fl icobox">
+                <a href="main.html"><img src="images/shzqlogo_blue.png" class="biglogo" width="166" style="margin-left: -14px;"></a>
+            </div>
+            <div class="fl">
+                <ul class="navabox clearfix">
+                    <li class="navCell active"><a href="javascript:;">重要财经媒体</a></li>
+                    <li class="navCell "><a href="javascript:;">新三板</a></li>
+                    <li class="navCell "><a href="javascript:;">司法事项</a></li>
+                    <li class="navCell "><a href="javascript:;">互动易平台</a></li>
+                    <li class="navCell "><a href="javascript:;">地方政策</a></li>
+                    <li class="navCell "><a href="javascript:;">部委消息</a></li>
+                    <li class="navCell "><a href="javascript:;">公司动态</a></li>
+                    <li class="navCell "><a href="javascript:;">定制栏目1</a></li>
+                    <li class="navCell "><a href="javascript:;">定制栏目2</a></li>
+                    <li><a href="javascript:;" class="fa fa-th morelmbtn"></a></li>
+
+                </ul>
+            </div>
+            <div class="fr" style="height: 50px;line-height: 50px;margin-right:30px;position: relative">
+                <a href="javascript:;" class="zxsearchlogo fa fa-search" style="height: 100%;line-height: 50px;"></a>
+                <!--搜索框-->
+                <div class="searchboxdiv">
+                    <table class="searchtablebox">
+                        <tr>
+                            <td class="fl"><input type="text" placeholder="输入关键词" style="width:200px;background-color: #fff;" />
+                                <div class="height_15"></div>
+                            </td>
+                            <td class="fl">
+                                <input type="text" class="date dateselect" />
+
+                                <div class="height_15"></div>
+                            </td>
+                            <td class="fl">
+                                <select>
+                                    <option value="">请选择</option>
+                                    <option value="0">标题1</option>
+                                    <option value="1">标题2</option>
+                                    <option value="2">标题3</option>
+                                </select>
+
+
+                                <div class="height_15"></div>
+                            </td>
+                            <td class="fl">
+                                <input type="button" class="primary button hideselectbox" value="搜索" />
+                                <input type="button" class=" button hideselectbox" value="取消" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--end 搜索框-->
+            </div>
+        </div>
+        <div class="dzlmbox">
+            <div style="background-color: rgba(255,255,255,.96);width: 100%;">
+                <div class="dzlmboxins">
+                    <div class="dzlmboxbtnbox">
+                        <span class="editbtn">编辑</span>
+                        <span class="savebtn">保存</span>
+                    </div>
+                    <div class="dzlmboxin dzlmboxin1" style="border-bottom: 1px solid #e6e6e6;">
+                        <span class="dzlmboxintit">已定制栏目 <i>最多可定制2个栏目</i></span>
+                        <ul class="ullmu clearfix">
+                            <li>
+                                <span class="rellmico">
+                                    <i class="fa fa-futbol-o"></i>
+                                    <span class="addminusicobox">
+                                        <i class="fa fa-plus-square"></i>
+                                        <i class="fa fa-minus-square"></i>
+                                    </span>
+                                </span>
+                                <i class="lmname">定制栏目1</i>
+                            </li>
+                            <li>
+                                <span class="rellmico">
+                                    <i class="fa fa-futbol-o"></i>
+                                    <span class="addminusicobox">
+                                        <i class="fa fa-plus-square"></i>
+                                        <i class="fa fa-minus-square"></i>
+                                    </span>
+                                </span>
+                                <i class="lmname">定制栏目2</i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dzlmboxin dzlmboxin2" >
+                        <span class="dzlmboxintit">推荐栏目 </span>
+                        <ul class="ullmu clearfix">
+                            <li>
+                                <span class="rellmico">
+                                    <i class="fa fa-futbol-o"></i>
+                                    <span class="addminusicobox">
+                                        <i class="fa fa-plus-square"></i>
+                                        <i class="fa fa-minus-square"></i>
+                                    </span>
+                                </span>
+                                <i class="lmname">栏目3</i>
+                            </li>
+                            <li>
+                                <span class="rellmico">
+                                    <i class="fa fa-futbol-o"></i>
+                                    <span class="addminusicobox">
+                                        <i class="fa fa-plus-square"></i>
+                                        <i class="fa fa-minus-square"></i>
+                                    </span>
+                                </span>
+                                <i class="lmname">栏目4</i>
+                            </li>
+                            <li>
+                                <span class="rellmico">
+                                    <i class="fa fa-futbol-o"></i>
+                                    <span class="addminusicobox">
+                                        <i class="fa fa-plus-square"></i>
+                                        <i class="fa fa-minus-square"></i>
+                                    </span>
+                                </span>
+                                <i class="lmname">栏目5</i>
+                            </li>
+                            <li>
+                                <span class="rellmico">
+                                    <i class="fa fa-futbol-o"></i>
+                                    <span class="addminusicobox">
+                                        <i class="fa fa-plus-square"></i>
+                                        <i class="fa fa-minus-square"></i>
+                                    </span>
+                                </span>
+                                <i class="lmname">栏目6</i>
+                            </li>
+                            <li>
+                                <span class="rellmico">
+                                    <i class="fa fa-futbol-o"></i>
+                                    <span class="addminusicobox">
+                                        <i class="fa fa-plus-square"></i>
+                                        <i class="fa fa-minus-square"></i>
+                                    </span>
+                                </span>
+                                <i class="lmname">栏目7</i>
+                            </li>
+                            <li>
+                                <span class="rellmico">
+                                    <i class="fa fa-futbol-o"></i>
+                                    <span class="addminusicobox">
+                                        <i class="fa fa-plus-square"></i>
+                                        <i class="fa fa-minus-square"></i>
+                                    </span>
+                                </span>
+                                <i class="lmname">栏目8</i>
+                            </li>
+                            <li>
+                                <span class="rellmico">
+                                    <i class="fa fa-futbol-o"></i>
+                                    <span class="addminusicobox">
+                                        <i class="fa fa-plus-square"></i>
+                                        <i class="fa fa-minus-square"></i>
+                                    </span>
+                                </span>
+                                <i class="lmname">栏目9</i>
+                            </li>
+                            <li>
+                                <span class="rellmico">
+                                    <i class="fa fa-futbol-o"></i>
+                                    <span class="addminusicobox">
+                                        <i class="fa fa-plus-square"></i>
+                                        <i class="fa fa-minus-square"></i>
+                                    </span>
+                                </span>
+                                <i class="lmname">栏目10</i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" clearfix padding_top20" style="width: 1200px;margin: 0 auto;">
+       <div class="fl w816 allNews">
+          <div class="newsList active">
+              <div class=" zxtit ainfotabs">
+                  <span class="active"><a href="javascript:;">宏观分析</a></span>
+                  <span><a href="javascript:;">财经时事</a></span>
+                  <span><a href="javascript:;">财经简评</a></span>
+                  <span><a href="javascript:;">栏目资讯</a></span>
+              </div>
+              <div class="ainfocons">
+                  <!--宏观分析-->
+                  <div class="infocon active">
+                      <div class="  bcwhite clearfix">
+                          <div class="leftw pl0">
+                              <img src="images/zximg1.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html"  target="_blank">央企打响煤炭钢铁去产能攻坚战</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html" target="_blank">化解过剩产能是深化供给侧结构性改革的重要任务,特别是在煤炭、钢铁领域,今年以来国有企业去产能的步伐正在显著加快。日前国资委总会计师沈莹在国新办例行发布会上透露,上半年央企累计化解钢铁过剩产能595万吨,已提前完成全年任务;化解煤炭过剩产能659万吨,重组煤炭产能1300万吨。
+                              </a>
+                              <span href="" class="ats">作者：杨烨、黄可</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix">
+                          <div class="leftw pl0">
+                              <img src="images/zximg5.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html"  target="_blank">理财规模缩减将倒逼银行变革</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html"  target="_blank">
+                                  2017年5月末,我国商业银行理财规模为28.4万亿元,环比净下降了1.6万亿元,为近十年来最大单月降幅,同比增速也罕见跌至个位数9%。这些年来,商业银行理财在丰富金融投资产品,满足社会公众多样化财富管理需求的同时,某种程度上也异化为规模扩张工具。
+                              </a>
+                              <span href="" class="ats">作者：杨烨、黄可</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix">
+                          <div class="leftw pl0">
+                              <img src="images/zximg6.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html"  target="_blank">摩根士丹利:比特币不过是一场投机游戏</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html"  target="_blank">　
+                                  摘要:大摩称,一年前,在互联网零售业500强中,有5个商家接受比特币,可是今年愿接受的商家只剩3个。几乎没有商家愿意接受比特币,与比特币的狂涨形成了一个鲜明的对比,比特币可能只是一场投机游戏。
+                              </a>
+                              <span href="" class="ats">作者：杨烨、黄可</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix">
+                          <div class="leftw pl0">
+                              <img src="images/zximg7.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html"  target="_blank">汪涛:金融工作会议的重心可能是什么</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html"  target="_blank">　
+                                  今年4月以来监管层出台了一系列金融监管强化政策,引发市场利率上升和债券市场调整,但最近几周货币政策和监管基调已出现明显放松迹象:央行和官媒重申要调整监管收紧步伐,避免引发金融风险事件;
+                              </a>
+                              <span href="" class="ats">作者：杨烨、黄可</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix">
+                          <div class="leftw pl0">
+                              <img src="images/zximg8.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">坚定不移践行中国特色现代国企制度</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">　
+                                  建立现代企业制度是国有企业改革的方向。党的十八大以来,以习近平同志为核心的党中央提出了一系列治国理政新理念新思想新战略,开辟了治国理政新境界,为全面深化国有企业改革、建立中国特色现代国企制度提供了有力的思想指引和基本遵循。
+                              </a>
+                              <span href="" class="ats">作者：杨烨、黄可</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix">
+                          <div class="leftw pl0">
+                              <img src="images/zximg7.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">汪涛:金融工作会议的重心可能是什么</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">　
+                                  今年4月以来监管层出台了一系列金融监管强化政策,引发市场利率上升和债券市场调整,但最近几周货币政策和监管基调已出现明显放松迹象:央行和官媒重申要调整监管收紧步伐,避免引发金融风险事件;
+                              </a>
+                              <span href="" class="ats">作者：杨烨、黄可</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix">
+                          <div class="leftw pl0">
+                              <img src="images/zximg8.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">坚定不移践行中国特色现代国企制度</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">　
+                                  建立现代企业制度是国有企业改革的方向。党的十八大以来,以习近平同志为核心的党中央提出了一系列治国理政新理念新思想新战略,开辟了治国理政新境界,为全面深化国有企业改革、建立中国特色现代国企制度提供了有力的思想指引和基本遵循。
+                              </a>
+                              <span href="" class="ats">作者：杨烨、黄可</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix">
+                          <div class="leftw pl0">
+                              <img src="images/zximg7.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">汪涛:金融工作会议的重心可能是什么</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">　
+                                  今年4月以来监管层出台了一系列金融监管强化政策,引发市场利率上升和债券市场调整,但最近几周货币政策和监管基调已出现明显放松迹象:央行和官媒重申要调整监管收紧步伐,避免引发金融风险事件;
+                              </a>
+                              <span href="" class="ats">作者：杨烨、黄可</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix">
+                          <div class="leftw pl0">
+                              <img src="images/zximg8.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">坚定不移践行中国特色现代国企制度</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">　
+                                  建立现代企业制度是国有企业改革的方向。党的十八大以来,以习近平同志为核心的党中央提出了一系列治国理政新理念新思想新战略,开辟了治国理政新境界,为全面深化国有企业改革、建立中国特色现代国企制度提供了有力的思想指引和基本遵循。
+                              </a>
+                              <span href="" class="ats">作者：杨烨、黄可</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix">
+                          <div class="leftw pl0">
+                              <img src="images/zximg8.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">坚定不移践行中国特色现代国企制度</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">　
+                                  建立现代企业制度是国有企业改革的方向。党的十八大以来,以习近平同志为核心的党中央提出了一系列治国理政新理念新思想新战略,开辟了治国理政新境界,为全面深化国有企业改革、建立中国特色现代国企制度提供了有力的思想指引和基本遵循。
+                              </a>
+                              <span href="" class="ats">作者：杨烨、黄可</span>
+                          </div>
+                      </div>
+                  </div>
+                  <!--end 宏观分析-->
+                  <!--财经时事-->
+                  <div class="infocon">
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg9.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">芝商所电子期权交易量二季度大幅增长</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  全球衍生品市场龙头芝商所(CMEGroup)发布的最新数据显示,第二季度芝商所电子期权产品在全球范围内的交易量大幅增长,较去年同期增长30%,达到220万份合约。
+                              </a>
+                              <span href="" class="ats">作者：杨博</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg10.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">“葛宇路”点中了城市道路命名软肋</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  近日,一则《如何在北京拥有一条以自己命名的路》的文章在网络上引发热传。文章中称,中央美术学院一位名叫葛宇路的学生从2013年起寻找地图上的空白路段,并贴上自制的“葛宇路”路牌。
+                              </a>
+                              <span href="" class="ats">作者：杨博</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg9.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">芝商所电子期权交易量二季度大幅增长</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  全球衍生品市场龙头芝商所(CMEGroup)发布的最新数据显示,第二季度芝商所电子期权产品在全球范围内的交易量大幅增长,较去年同期增长30%,达到220万份合约。
+                              </a>
+                              <span href="" class="ats">作者：杨博</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg10.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">“葛宇路”点中了城市道路命名软肋</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  近日,一则《如何在北京拥有一条以自己命名的路》的文章在网络上引发热传。文章中称,中央美术学院一位名叫葛宇路的学生从2013年起寻找地图上的空白路段,并贴上自制的“葛宇路”路牌。
+                              </a>
+                              <span href="" class="ats">作者：杨博</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg9.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">芝商所电子期权交易量二季度大幅增长</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  全球衍生品市场龙头芝商所(CMEGroup)发布的最新数据显示,第二季度芝商所电子期权产品在全球范围内的交易量大幅增长,较去年同期增长30%,达到220万份合约。
+                              </a>
+                              <span href="" class="ats">作者：杨博</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg10.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">“葛宇路”点中了城市道路命名软肋</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  近日,一则《如何在北京拥有一条以自己命名的路》的文章在网络上引发热传。文章中称,中央美术学院一位名叫葛宇路的学生从2013年起寻找地图上的空白路段,并贴上自制的“葛宇路”路牌。
+                              </a>
+                              <span href="" class="ats">作者：杨博</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg9.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">芝商所电子期权交易量二季度大幅增长</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  全球衍生品市场龙头芝商所(CMEGroup)发布的最新数据显示,第二季度芝商所电子期权产品在全球范围内的交易量大幅增长,较去年同期增长30%,达到220万份合约。
+                              </a>
+                              <span href="" class="ats">作者：杨博</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg10.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">“葛宇路”点中了城市道路命名软肋</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  近日,一则《如何在北京拥有一条以自己命名的路》的文章在网络上引发热传。文章中称,中央美术学院一位名叫葛宇路的学生从2013年起寻找地图上的空白路段,并贴上自制的“葛宇路”路牌。
+                              </a>
+                              <span href="" class="ats">作者：杨博</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg9.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">芝商所电子期权交易量二季度大幅增长</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  全球衍生品市场龙头芝商所(CMEGroup)发布的最新数据显示,第二季度芝商所电子期权产品在全球范围内的交易量大幅增长,较去年同期增长30%,达到220万份合约。
+                              </a>
+                              <span href="" class="ats">作者：杨博</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg10.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">“葛宇路”点中了城市道路命名软肋</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  近日,一则《如何在北京拥有一条以自己命名的路》的文章在网络上引发热传。文章中称,中央美术学院一位名叫葛宇路的学生从2013年起寻找地图上的空白路段,并贴上自制的“葛宇路”路牌。
+                              </a>
+                              <span href="" class="ats">作者：杨博</span>
+                          </div>
+                      </div>
+                  </div>
+                  <!--end 财经时事-->
+                  <!--财经简评-->
+                  <div class="infocon">
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg3.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">“双创”融资渠道将获拓展</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  国务院总理李克强7月12日主持召开国务院常务会议,讨论通过《关于强化实施创新驱动发展战略进一步推进大众创业万众创新深入发展的意见》,决定将《快递条例(草案)》向社会公开征求意见。
+                              </a>
+                              <span href="" class="ats">作者：林远</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg4.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">6月末M2增速再创新低个人房贷余额同比增长30.8%</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  6月末M2增速再创新低个人房贷余额同比增长30.8%
+                              </a>
+                              <span href="" class="ats">作者：张寿林</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg3.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">“双创”融资渠道将获拓展</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  国务院总理李克强7月12日主持召开国务院常务会议,讨论通过《关于强化实施创新驱动发展战略进一步推进大众创业万众创新深入发展的意见》,决定将《快递条例(草案)》向社会公开征求意见。
+                              </a>
+                              <span href="" class="ats">作者：林远</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg4.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">6月末M2增速再创新低个人房贷余额同比增长30.8%</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  6月末M2增速再创新低个人房贷余额同比增长30.8%
+                              </a>
+                              <span href="" class="ats">作者：张寿林</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg3.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">“双创”融资渠道将获拓展</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  国务院总理李克强7月12日主持召开国务院常务会议,讨论通过《关于强化实施创新驱动发展战略进一步推进大众创业万众创新深入发展的意见》,决定将《快递条例(草案)》向社会公开征求意见。
+                              </a>
+                              <span href="" class="ats">作者：林远</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg4.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">6月末M2增速再创新低个人房贷余额同比增长30.8%</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  6月末M2增速再创新低个人房贷余额同比增长30.8%
+                              </a>
+                              <span href="" class="ats">作者：张寿林</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg3.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">“双创”融资渠道将获拓展</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  国务院总理李克强7月12日主持召开国务院常务会议,讨论通过《关于强化实施创新驱动发展战略进一步推进大众创业万众创新深入发展的意见》,决定将《快递条例(草案)》向社会公开征求意见。
+                              </a>
+                              <span href="" class="ats">作者：林远</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg4.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">6月末M2增速再创新低个人房贷余额同比增长30.8%</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  6月末M2增速再创新低个人房贷余额同比增长30.8%
+                              </a>
+                              <span href="" class="ats">作者：张寿林</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg3.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">“双创”融资渠道将获拓展</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  国务院总理李克强7月12日主持召开国务院常务会议,讨论通过《关于强化实施创新驱动发展战略进一步推进大众创业万众创新深入发展的意见》,决定将《快递条例(草案)》向社会公开征求意见。
+                              </a>
+                              <span href="" class="ats">作者：林远</span>
+                          </div>
+                      </div>
+                      <div class="  bcwhite clearfix" >
+                          <div class="leftw pl0">
+                              <img src="images/zximg4.jpg" alt="" width="100%" height="100%">
+                          </div>
+                          <div class="righttxtw p10">
+                              <h3 class="htext"><a href="informationtxt.html">6月末M2增速再创新低个人房贷余额同比增长30.8%</a></h3>
+                              <a class="ptxt aptxt" href="informationtxt.html">
+                                  6月末M2增速再创新低个人房贷余额同比增长30.8%
+                              </a>
+                              <span href="" class="ats">作者：张寿林</span>
+                          </div>
+                      </div>
+                  </div>
+                  <!--end 财经简评-->
+                  <!--栏目资讯-->
+                  <div class="infocon">
+                      <div class="clearfix mb12">
+                          <a href="" class="fl bcblue w168" >
+                              <span>证券市场动态</span>
+                              <i>2017-07-13</i>
+                          </a>
+                          <a href="" class="fl w648 txtwhitebc">
+                              <h3 class="htext">
+                                  回望雄安概念行情百日 选股去伪存真 投资层层递进
+                              </h3>
+                              <p class="ptxt overflowtxt">
+                                  7月12日,距离设立雄安新区公布消息已经过去整整100天了,A股市场投资者似乎在这特殊时点重新拾起了曾经的回忆。
+                              </p>
+                              <span class="zzxm">作者：费天元</span>
+                          </a>
+                      </div>
+                      <div class="clearfix mb12">
+                          <a href="" class="fl bcblue w168" >
+                              <span>机构资讯</span>
+                              <i>2017-07-13</i>
+                          </a>
+                          <a href="" class="fl w648 txtwhitebc">
+                              <h3 class="htext">
+                                  上半年多数债券FOF 私募基金获正收益
+                              </h3>
+                              <p class="ptxt overflowtxt">
+                                  据私募排排网数据中心不完全统计,今年上半年成立时间满6个月且有业绩记录的债券策略私募基金产品总共有594只,其中首尾收益率相差高达67.15%,平均收益率为1.61%。
+                              </p>
+                              <span class="zzxm">作者：房佩燕</span>
+                          </a>
+                      </div>
+                      <div class="clearfix mb12">
+                          <a href="" class="fl bcblue w168" >
+                              <span>板块分析</span>
+                              <i>2017-07-13</i>
+                          </a>
+                          <a href="" class="fl w648 txtwhitebc">
+                              <h3 class="htext">
+                                  疯狂纸价隐现炒作链条 需求难撑价格虚高
+                              </h3>
+                              <p class="ptxt overflowtxt">
+                                  疯狂纸价隐现炒作链条 需求难撑价格虚高
+                              </p>
+                              <span class="zzxm">作者：赵黎昀</span>
+                          </a>
+                      </div>
+                      <div class="clearfix mb12">
+                          <a href="" class="fl bcblue w168" >
+                              <span>专题报道</span>
+                              <i>2017-07-13</i>
+                          </a>
+                          <a href="" class="fl w648 txtwhitebc">
+                              <h3 class="htext">
+                                  楼市供应结构性变化加速租赁时代到来
+                              </h3>
+                              <p class="ptxt overflowtxt">
+                                  在需求端调控告一段落之后,楼市的监管也从抑制需求“做减法”转向增加供应“做加法”。
+                              </p>
+                              <span class="zzxm">作者：李宇嘉</span>
+                          </a>
+                      </div>
+                      <div class="clearfix mb12">
+                          <a href="" class="fl bcblue w168" >
+                              <span>海外时评</span>
+                              <i>2017-07-13</i>
+                          </a>
+                          <a href="" class="fl w648 txtwhitebc">
+                              <h3 class="htext">
+                                  特斯拉要在澳大利亚建造全球最大容量的锂电池 可满足3万户居民用电
+                              </h3>
+                              <p class="ptxt overflowtxt">
+                                  特斯拉CEO埃隆·马斯克表示,特斯拉将于今年年底前在澳大利亚造出世界最大容量锂离子蓄电池组,用于储存风电。   　
+                              </p>
+                              <span class="zzxm">作者：韩沁珂</span>
+                          </a>
+                      </div>
+                  </div>
+                  <!--end 栏目资讯-->
+              </div>
+          </div>
+           <div class="newsList">
+               2
+           </div>
+           <div class="newsList">
+               3
+           </div>
+           <div class="newsList">
+                4
+           </div>
+           <div class="newsList">
+               5
+           </div>
+           <div class="newsList">
+               6
+           </div>
+           <div class="newsList">
+               7
+           </div>
+       </div>
+       <div class="fr w360">
+           <!--今日头条-->
+           <div class="frtt">
+               <span class="frtttit">
+                   <i class="fa fa-fire red"></i>&nbsp;今日头条
+               </span>
+               <ul class="ttul">
+                   <li class="ttli">
+                       <div class="ttlicon">
+                           <i class="ttranking ttfirst">1</i>
+                           <a href="#" class="ttatxt">央企打响煤炭钢铁去产能攻坚战</a>
+                       </div>
+                   </li>
+                   <li class="ttli">
+                       <div class="ttlicon">
+                           <i class="ttranking ttsecond">2</i>
+                           <a href="#" class="ttatxt">理财规模缩减将倒逼银行变革</a>
+                       </div>
+                   </li>
+                   <li class="ttli">
+                       <div class="ttlicon">
+                           <i class="ttranking ttthird">3</i>
+                           <a href="#" class="ttatxt">理财规模缩减将倒逼银行变革</a>
+                       </div>
+                   </li>
+                   <li class="ttli">
+                       <div class="ttlicon">
+                           <i class="ttranking">4</i>
+                           <a href="#" class="ttatxt">理财规模缩减将倒逼银行变革</a>
+                       </div>
+                   </li>
+                   <li class="ttli">
+                       <div class="ttlicon">
+                           <i class="ttranking">5</i>
+                           <a href="#" class="ttatxt">理财规模缩减将倒逼银行变革</a>
+                       </div>
+                   </li>
+                   <li class="ttli">
+                       <div class="ttlicon">
+                           <i class="ttranking">6</i>
+                           <a href="#" class="ttatxt">理财规模缩减将倒逼银行变革</a>
+                       </div>
+                   </li>
+                   <li class="ttli">
+                       <div class="ttlicon">
+                           <i class="ttranking">7</i>
+                           <a href="#" class="ttatxt">理财规模缩减将倒逼银行变革</a>
+                       </div>
+                   </li>
+                   <li class="ttli">
+                       <div class="ttlicon">
+                           <i class="ttranking">8</i>
+                           <a href="#" class="ttatxt">理财规模缩减将倒逼银行变革</a>
+                       </div>
+                   </li>
+                   <li class="ttli">
+                       <div class="ttlicon">
+                           <i class="ttranking">9</i>
+                           <a href="#" class="ttatxt">理财规模缩减将倒逼银行变革</a>
+                       </div>
+                   </li>
+                   <li class="ttli">
+                       <div class="ttlicon">
+                           <i class="ttranking">10</i>
+                           <a href="#" class="ttatxt">理财规模缩减将倒逼银行变革</a>
+                       </div>
+                   </li>
+               </ul>
+           </div>
+           <!--end 今日头条-->
+       </div>
+    </div>
+</div>
+<script>
+    $('.navabox .navCell').click(function () {
+        var index = $(this).index();
+        $(this).addClass('active').siblings('.navCell').removeClass('active');
+        $('.newsList').eq(index).addClass('active').siblings('.newsList').removeClass('active');
+    })
+</script>
+<!--/backtop-->
+<div class="backtop"><img src="./images/backtop.png" alt=""></div>
+
+</body>
+</html>

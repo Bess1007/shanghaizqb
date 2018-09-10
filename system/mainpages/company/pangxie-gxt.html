@@ -1,0 +1,198 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>螃蟹关系图</title>
+</head>
+
+
+<body>
+<div id="mychart"></div>
+<script src="../js/echarts.min.js" charset="utf-8"></script>
+<script>
+    var chartW = 500; // 图表的宽度
+    var chartH = 500; // 图表的高度
+    var bcColors = ['#0cb5d9', '#f36d40', '#0c9cd9'];
+    //设置图表的宽高
+    document.getElementById('mychart').style.width = chartW + 'px';
+    document.getElementById('mychart').style.height = chartH + 'px';
+
+    var myChart = echarts.init(document.getElementById('mychart'));
+    option = {
+        tooltip: {},
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        series: [
+            {
+                type: 'graph',
+                layout: 'force',
+                symbolSize: function(size) {
+                    return size;
+                },
+                focusNodeAdjacency: true,
+                roam: true,
+                label: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            fontSize: 12
+                        }
+                    }
+                },
+                force: {
+                    repulsion: 1000
+                },
+                tooltip: {
+                    formatter: function(node) { // 区分连线和节点，节点上额外显示其他数字
+                        if (!node.value) {
+                            return node.data.name;
+                        } else {
+                            return node.data.name + ":" + node.data.showNum;
+                        }
+                    }
+                },
+                lineStyle: {
+                    normal: {
+                        opacity: 0.9,
+                        width: 1,
+                        curveness: 0.3
+                    }
+                },
+                data: [{
+                    name: '上游',
+                    draggable: false, // 是否可以拖拽，默认 false
+                    number: 0, // 这是编号 非必须，目的仅为方便编写line
+                    value: 45, //图形大小
+                    x: chartW/3,
+                    y: chartW/2,
+                    fixed:true,
+                    showNum: 10, //节点需要显示的额外内容
+                    itemStyle: {
+                        normal: {
+                            color:bcColors[0]
+                        }
+                    }
+                }, {
+                    name: '航空货运与物流',
+                    number: 1,
+                    draggable: false,
+                    value: 45,
+                    x: chartW/2,
+                    y: chartW/2,
+                    fixed:true,
+                    showNum: 20,
+                    itemStyle: {
+                        normal: {
+                            color:bcColors[1]
+                        }
+                    }
+                }, {
+                    name: '下游',
+                    number: 2,
+                    draggable: false,
+                    value: 45,
+                    x: 2*chartW/3,
+                    y: chartW/2,
+                    fixed:true,
+                    showNum: 10,
+                    itemStyle: {
+                        normal: {
+                            color:bcColors[2]
+                        }
+                    }
+                }, {
+                    name: '运维1',
+                    number: 3,
+                    draggable: false,
+                    value: 40,
+                    itemStyle: {
+                        normal: {
+                            color:bcColors[0]
+                        }
+                    }
+                }, {
+                    name: '测试1',
+                    number: 4,
+                    draggable: false,
+                    value: 40,
+                    itemStyle: {
+                        normal: {
+                            color:bcColors[0]
+                        }
+                    }
+                }, {
+                    name: '应用1',
+                    number: 5,
+                    draggable: false,
+                    value: 40,
+                    itemStyle: {
+                        normal: {
+                            color:bcColors[0]
+                        }
+                    }
+                }, {
+                    name: '实施1',
+                    number: 6,
+                    draggable: false,
+                    value: 45,
+                    itemStyle: {
+                        normal: {
+                            color:bcColors[2]
+                        }
+                    }
+                }, {
+                    name: 'php',
+                    number: 7,
+                    draggable: false,
+                    value: 40,
+                    itemStyle: {
+                        normal: {
+                            color:bcColors[2]
+                        }
+                    }
+                }, {
+                    name: 'java',
+                    number: 8,
+                    draggable: false,
+                    value: 40,
+                    itemStyle: {
+                        normal: {
+                            color:bcColors[2]
+                        }
+                    }
+                }],
+                links: [{
+                    source: 0, // 可以用name 可以用number，但name不能重名
+                    target: 1
+                }, {
+                    source: 2,
+                    target: 1
+                }, {
+                    source: 0,
+                    target: 3
+                },{
+                    source: 0,
+                    target: 4
+                }, {
+                    source: 0,
+                    target: 5
+                }, {
+                    source: 2,
+                    target: 6
+                }, {
+                    source: 2,
+                    target: 7
+                }, {
+                    source: 2,
+                    target: 8
+                }]
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+</script>
+</body>
+</html>

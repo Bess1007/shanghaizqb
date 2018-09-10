@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>数据定制服务</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <!--弹窗组件start-->
+    <script type="text/javascript" src="../../libs/js/popup/drag.js"></script>
+    <script type="text/javascript" src="../../libs/js/popup/dialog.js"></script>
+    <!--弹窗组件end-->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <!--ueEditor编辑器start-->
+    <script>
+        window.UEDITOR_HOME_URL = "../../libs/thirdparty/ueditor/";
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../libs/thirdparty/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../libs/thirdparty/ueditor/ueditor.all.js"></script>
+
+    <!--ueEditor编辑器start-->
+    <!-- 上传文件列表start -->
+    <script type="text/javascript" src="../../libs/js/form/upload/fileUpload.js"></script>
+    <!-- 上传文件列表end -->
+    <!-- 日期控件start -->
+    <script type="text/javascript" src="../../libs/js/form/datePicker/WdatePicker.js"></script>
+    <!-- 日期控件end -->
+
+</head>
+<body>
+<div class="page_content padding6">
+    <div class="groupTitle"><span><i class="fa fa-gear margin_right3"></i>数据定制服务</span></div>
+
+    <div style="width: 900px;margin: 0 auto;">
+        <div class="needtit">
+            <p>需求标题：</p>
+            <table width="100%">
+                <tr>
+                    <td width="70%"><input type="text" style="width: 100%"></td>
+                    <td width="5%"></td>
+                    <td width="25%">
+                        <select style="width: 100%;">
+                            <option value="">选择分类</option>
+                            <option value="0">1</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="height_15"></div>
+        <div class="needcon">
+            <p>需求内容：</p>
+            <table class="tableStyle">
+                <tr>
+
+                    <td>
+                        <!--style给定宽度可以影响编辑器的最终宽度-->
+                        <script type="text/plain" id="myEditor">
+			        <p>在这里输入内容</p>
+			    </script>
+                    </td>
+                </tr>
+            </table>
+            <div class="height_15"></div>
+            <!--上传附件-->
+            <table class="formStyle">
+                <tr>
+                    <td width="10%">上传文件：</td>
+                    <td>
+                        <input type="file"/>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+
+                    <input type="checkbox" id="selgk" name="sele" value="" /><label for="selgk" class="hand">一个月不公开此数据</label>
+                </tr>
+            </table>
+            <div class="touchw">
+                <div>
+                        联系方式：<input type="radio" id="phone" name="touchw" value="手机" /><label for="phone" class="hand">手机</label>
+                        ​
+                        <input type="radio" id="QQ" name="touchw" value="QQ" /><label for="QQ" class="hand">QQ</label>
+                </div>
+                <div>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="height_5"></div>
+            <div class="touchtime">
+                <p>联系时间：</p>
+
+                    <input type="radio" id="tfast" name="touchtime" value="尽快联系" /><label for="tfast" class="hand">尽快联系</label>
+                    <div class="height_5"></div>
+                    <input type="radio" id="tyyue" name="touchtime" value="预约时间" />
+                    <label for="tyyue" class="hand">
+                        预约时间：<input type="text" class="date">
+                    </label>
+                </div>
+            </div>
+            <div style="margin: 10px 0;"> <input type="button" value="提交"/></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // 自定义的编辑器配置项,此处定义的配置项将覆盖editor_config.js中的同名配置
+    var editorOption = {
+    };
+    var editor_a = new baidu.editor.ui.Editor(editorOption);
+    editor_a.render( 'myEditor' );
+</script>
+</body>
+</html>

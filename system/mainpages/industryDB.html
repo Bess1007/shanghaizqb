@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>行业数据库</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layer.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <link rel="stylesheet" href="css/button.css">
+    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="layer/layer.js"></script>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox" style="min-height: 910px">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <span>行业数据库</span>
+            <input type="button" class=" button  margin_left6" value="录入" onclick="culturalMediaint()" style="height: 30px;line-height: 28px;text-align: center;padding-right: 15px;padding-left: 15px;">
+            <div class="fr ss">
+                <input type="text" style="width:300px;margin-right: 6px;" truetype="textinput" class="textinput fl" placeholder="请输入关键词"><input type="button" class="primary button fl margin_right0" value="搜索" onclick="">
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle">
+        <ul class="kbulbox">
+            <li>
+                <a href="dbDetail.html" class="kbli_a btnactived">文化传媒行业</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    $('.btnactived').addClass('button button-glow button-rounded button-primary-flat')
+</script>
+<script type="text/javascript">
+    function culturalMediaint() {
+        layer.open({
+            type:2,
+            title:  ['录入行业数据', 'font-size:18px;'],
+            area: ['100%', '100%'],
+            content:'culturalMediaint.html',
+            btn: ['提交', '取消']
+        });
+    }
+</script>
+</body>
+
+</html>

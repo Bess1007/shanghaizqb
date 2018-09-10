@@ -1,0 +1,856 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>公司详情</title>
+    <!--框架必需start-->
+    <link href="../../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="../skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+
+    <link rel="stylesheet" href="../layer/skin/default/layer.css">
+    <script type="text/javascript" src="../layer/layer.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+        .w1200 {
+            width: 1200px;
+            margin:0 auto;
+        }
+        .scordC {
+            padding: 20px;
+        }
+        .scordTable {
+            width: 100%;
+            border-spacing: 0 0;
+            border-bottom:1px solid #0c9cd9;
+        }
+
+        .firstClass {
+            background-color: #04649c;
+            vertical-align: middle;
+            padding: 10px;
+            color: #fff;
+            border-bottom:1px solid #fff;
+            text-align: center;
+        }
+        .secondClass {
+            background-color: #0f88cb;
+            vertical-align: middle;
+            padding: 10px;
+            color: #fff;
+            border-bottom:1px solid #fff;
+            text-align: center;
+        }
+        .thirdClass {
+            background-color: #0c9cd9;
+            vertical-align: middle;
+            padding: 10px;
+            color: #fff;
+            border-bottom:1px solid #fff;
+            text-align: center;
+        }
+        .fourthClass {
+            background-color: #fff;
+                /*vertical-align: middle;*/
+            padding: 3px;
+            padding-left: 40px;
+            color: #000;
+            border:1px solid #0c9cd9;
+            text-align: left;
+            border-bottom:0;
+        }
+        .fourthClass.bcgray {
+            background-color: #e3f0f6;
+        }
+         .submit_scoreC button{
+             background-color: #0c9cd9;
+             color: #fff;
+             display: block;
+             margin-top: 15px;
+             margin-right: 15px;
+             float: right;
+             transition: all .3s ease-in-out;
+             width: 100px;
+             border:0;
+             padding: 0;
+             height: 36px;
+             line-height: 36px;
+         }
+        .submit_scoreC button:hover {
+            background-color: #0088f0;
+            color: #fff;
+        }
+        .scoreTit {
+            position: relative;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .tittxt {
+            font-size: 18px;
+            line-height: 20px;
+            color: #000;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .afterLine {
+            display: inline-block;
+            width: 70px;
+            height: 2px;
+            background: linear-gradient(to right,#68c0b0,#0c9cd9,#f36d40);
+            
+        }
+        .scoreResult {
+            width: 500px;
+            height: 500px;
+
+            background:linear-gradient(to bottom,#0088f0,#fff 95%);
+
+            position: relative;
+        }
+        .scoreResult:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height:500px;
+            background:url("../images/scoreBc.png") no-repeat left bottom;
+            background-size: 100%   ;
+
+            top: 0;
+            left: 0;
+        }
+      .contentStyle .layui-layer-page .layui-layer-content {
+            overflow: hidden;
+        }
+       .contentStyle .layui-layer-setwin .layui-layer-close2 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="scordC w1200">
+    
+    <div class="scoreTit">
+        <span class="tittxt">企业评分卡</span>
+        <i class="afterLine"></i>
+    </div>
+    <table class="scordTable">
+        <tbody>
+        <tr>
+            <td rowspan="49" class="firstClass">
+                <span>企业信息</span>
+            </td>
+            <td rowspan="15" class="secondClass">
+                <span>企业基本信息</span>
+            </td>
+            <td rowspan="5" class="thirdClass">
+                <span>经济类型</span>
+            </td>
+
+            <!--企业信息》企业基本信息》经济类型-->
+            <td class="fourthClass">
+                <input type="radio" id="jjlx-1" name="jjlx" value="集体全资，国有全资" /><label for="jjlx-1" class="hand">集体全资，国有全资</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="jjlx-2" name="jjlx" value="三资（港、澳、台投资），外商投资" /><label for="jjlx-2" class="hand">三资（港、澳、台投资），外商投资</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="jjlx-3" name="jjlx" value="股份合作，联营" /><label for="jjlx-3" class="hand">股份合作，联营</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="jjlx-4" name="jjlx" value="私营，个体经营" /><label for="jjlx-4" class="hand">私营，个体经营</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="jjlx-5" name="jjlx" value="有限责任公司及其他" /><label for="jjlx-5" class="hand">有限责任公司及其他</label>
+            </td>
+        </tr>
+
+        <!--企业信息》企业基本信息》经营月数-->
+        <tr>
+            <td rowspan="5" class="thirdClass">
+                <span>经营月数</span>
+            </td>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="jyys-1" name="jyys" value="low <= 经营月数 < 12" /><label for="jyys-1" class="hand">low <= 经营月数 < 12</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="jyys-2" name="jyys" value="12 <= 经营月数 < 72" /><label for="jyys-2" class="hand">12 <= 经营月数 < 72</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="jyys-3" name="jyys" value="72 <= 经营月数< 120" /><label for="jyys-3" class="hand">72 <= 经营月数< 120</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="jyys-4" name="jyys" value="120 <= 经营月数 < 180" /><label for="jyys-4" class="hand">120 <= 经营月数 < 180</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="jyys-5" name="jyys" value="180 <= 经营月数 < high" /><label for="jyys-5" class="hand">180 <= 经营月数 < high</label>
+            </td>
+        </tr>
+
+        <!--企业信息》企业基本信息》注册资本到位率-->
+        <tr>
+            <td rowspan="2" class="thirdClass">
+                <span>注册资本到位率</span>
+            </td>
+            <td class="fourthClass">
+                <input type="radio" id="zczbdwl-1" name="zczbdwl" value="注册资本到位率 < 1 + 缺失" /><label for="zczbdwl-1" class="hand">注册资本到位率 < 1 + 缺失</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="zczbdwl-2" name="zczbdwl" value="注册资本到位率>= 1" /><label for="zczbdwl-2" class="hand">注册资本到位率>= 1</label>
+            </td>
+        </tr>
+
+        <!--企业信息》企业基本信息》和上下游主要客户的关系-->
+        <tr>
+            <td rowspan="3" class="thirdClass">
+                <span>和上下游主要客户的关系</span>
+            </td>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="hsxyzykhgx-1" name="hsxyzykhgx" value="被动接收交易条件" /><label for="hsxyzykhgx-1" class="hand">被动接收交易条件</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="hsxyzykhgx-2" name="hsxyzykhgx" value="有较好的商业合作伙伴，具有一定的谈判地位" /><label for="hsxyzykhgx-2" class="hand">有较好的商业合作伙伴，具有一定的谈判地位</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="hsxyzykhgx-3" name="hsxyzykhgx" value="有很好的商业合作伙伴，在合同签约方面处于主导地位" /><label for="hsxyzykhgx-3" class="hand">有很好的商业合作伙伴，在合同签约方面处于主导地位</label>
+            </td>
+        </tr>
+
+        <!--企业信息》债项信息》风险缓释率和担保方式的交叉变量-->
+        <tr>
+            <td rowspan="3" class="secondClass">
+                <span>债项信息</span>
+            </td>
+            <td rowspan="3" class="thirdClass">
+                <span>风险缓释率和担保方式的交叉变量</span>
+            </td>
+            <td class="fourthClass">
+                <input type="radio" id="fxhslhdbfs-1" name="fxhslhdbfs" value="担保方式是抵质押但抵押物缺失，或抵押物和主要担保方式都缺失" />
+                <label for="fxhslhdbfs-1" class="hand">担保方式是抵质押但抵押物缺失，或抵押物和主要担保方式都缺失</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="fxhslhdbfs-2" name="fxhslhdbfs" value="风险缓释率 >= 0.7， 或者主要担保方式为：信用, 一般保证，其它" />
+                <label for="fxhslhdbfs-2" class="hand">风险缓释率 >= 0.7， 或者主要担保方式为：信用, 一般保证，其它</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="fxhslhdbfs-3" name="fxhslhdbfs" value="风险缓释率 < 0.7，或有优质担保，或主要担保方式为：全额保证金" />
+                <label for="fxhslhdbfs-3" class="hand">风险缓释率 < 0.7，或有优质担保，或主要担保方式为：全额保证金</label>
+            </td>
+        </tr>
+
+        <!--企业信息》财务指标》主营业务收入-->
+        <tr>
+            <td rowspan="18" class="secondClass">
+                <span>财务指标</span>
+            </td>
+            <td rowspan="4" class="thirdClass">
+                <span>主营业务收入</span>
+            </td>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="zyywsr-1" name="zyywsr" value="缺失财报信息" />
+                <label for="zyywsr-1" class="hand">缺失财报信息</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="zyywsr-2" name="zyywsr" value="主营业务收入 < 1500000" />
+                <label for="zyywsr-2" class="hand">主营业务收入 < 1500000</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="zyywsr-3" name="zyywsr" value="1500000 <= 主营业务收入 < 8000000" />
+                <label for="zyywsr-3" class="hand">1500000 <= 主营业务收入 < 8000000</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="zyywsr-4" name="zyywsr" value="主营业务收入 >= 8000000" />
+                <label for="zyywsr-4" class="hand">主营业务收入 >= 8000000</label>
+            </td>
+        </tr>
+
+        <!--企业信息》财务指标》现金银行借款速动比率-->
+        <tr>
+            <td rowspan="3" class="thirdClass">
+                <span>现金银行借款速动比率</span>
+            </td>
+            <td class="fourthClass">
+                <input type="radio" id="xjyhjksdbl-1" name="xjyhjksdbl" value="low <= 现金银行借款速动比率 < 0.044" />
+                <label for="xjyhjksdbl-1" class="hand">low <= 现金银行借款速动比率 < 0.044</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="xjyhjksdbl-2" name="xjyhjksdbl" value="0.044 <= 现金银行借款速动比率 < 0.29 + 缺失财报信息或短期借款与长期借款之和为零" />
+                <label for="xjyhjksdbl-2" class="hand">0.044 <= 现金银行借款速动比率 < 0.29 + 缺失财报信息或短期借款与长期借款之和为零</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="xjyhjksdbl-3" name="xjyhjksdbl" value="0.29 <= 现金银行借款速动比率 < high" />
+                <label for="xjyhjksdbl-3" class="hand">0.29 <= 现金银行借款速动比率 < high</label>
+            </td>
+        </tr>
+
+        <!--企业信息》财务指标》净资产与年末贷款余额比率-->
+        <tr>
+            <td rowspan="4" class="thirdClass">
+                <span>净资产与年末贷款余额比率</span>
+            </td>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="jzcynmdkyebl-1" name="jzcynmdkyebl" value="low <= 净资产与年末贷款余额比率 < 0.96 + 财报信息缺失或年末贷款余额小于零" />
+                <label for="jzcynmdkyebl-1" class="hand">low <= 净资产与年末贷款余额比率 < 0.96 + 财报信息缺失或年末贷款余额小于零</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="jzcynmdkyebl-2" name="jzcynmdkyebl" value="0.96 <= 净资产与年末贷款余额比率 < 3" />
+                <label for="jzcynmdkyebl-2" class="hand">0.96 <= 净资产与年末贷款余额比率 < 3</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="jzcynmdkyebl-3" name="jzcynmdkyebl" value="3 <= 净资产与年末贷款余额比率 < 7.21" />
+                <label for="jzcynmdkyebl-3" class="hand">3 <= 净资产与年末贷款余额比率 < 7.21</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="jzcynmdkyebl-4" name="jzcynmdkyebl" value="净资产与年末贷款余额比率 >= 7.21" />
+                <label for="jzcynmdkyebl-4" class="hand">净资产与年末贷款余额比率 >= 7.21</label>
+            </td>
+        </tr>
+
+        <!--企业信息》财务指标》存货周转率-->
+        <tr>
+            <td rowspan="3" class="thirdClass">
+                <span>存货周转率</span>
+            </td>
+            <td class="fourthClass">
+                <input type="radio" id="chzzl-1" name="chzzl" value="财报信息缺失或平均存货<=0" />
+                <label for="chzzl-1" class="hand">财报信息缺失或平均存货</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="chzzl-2" name="chzzl" value="low <= 存货周转率 < 2.21" />
+                <label for="chzzl-2" class="hand">low <= 存货周转率 < 2.21</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="chzzl-3" name="chzzl" value="存货周转率 >= 2.21" />
+                <label for="chzzl-3" class="hand">存货周转率 >= 2.21</label>
+            </td>
+        </tr>
+
+        <!--企业信息》财务指标》净利润/总资产-->
+        <tr>
+            <td rowspan="4" class="thirdClass">
+                <span>净利润/总资产</span>
+            </td>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="jlrzzc-1" name="jlrzzc" value="low <= 净利润/总资产 < 0 + 缺失" />
+                <label for="jlrzzc-1" class="hand">low <= 净利润/总资产 < 0 + 缺失</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="jlrzzc-2" name="jlrzzc" value="0 <= 净利润/总资产 < 0.008" />
+                <label for="jlrzzc-2" class="hand">0 <= 净利润/总资产 < 0.008</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="jlrzzc-3" name="jlrzzc" value="0.008 <= 净利润/总资产 < 0.019" />
+                <label for="jlrzzc-3" class="hand">0.008 <= 净利润/总资产 < 0.019</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="jlrzzc-4" name="jlrzzc" value="净利润/总资产 >= 0.019" />
+                <label for="jlrzzc-4" class="hand">净利润/总资产 >= 0.019</label>
+            </td>
+        </tr>
+
+        <!--企业信息》行为信息》过去12个月平均存款对贷款的比例-->
+        <tr>
+            <td rowspan="9" class="secondClass">
+                <span>行为信息</span>
+            </td>
+            <td rowspan="3" class="thirdClass">
+                <span>过去12个月平均存款对贷款的比例</span>
+            </td>
+            <td class="fourthClass">
+                <input type="radio" id="pjckddkbl-1" name="pjckddkbl" value="新客户" />
+                <label for="pjckddkbl-1" class="hand">新客户</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="pjckddkbl-2" name="pjckddkbl" value="< 0.25" />
+                <label for="pjckddkbl-2" class="hand">< 0.25</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="pjckddkbl-3" name="pjckddkbl" value=">= 0.25" />
+                <label for="pjckddkbl-3" class="hand">>= 0.25</label>
+            </td>
+        </tr>
+
+        <!--企业信息》行为信息》过去12个月贷款本金连续逾期的最长天数-->
+        <tr>
+            <td rowspan="3" class="thirdClass">
+                <span>过去12个月贷款本金连续逾期的最长天数</span>
+            </td>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="dkbjlxyq-1" name="dkbjlxyq" value="新客户" />
+                <label for="dkbjlxyq-1" class="hand">新客户</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="dkbjlxyq-2" name="dkbjlxyq" value="< 1" />
+                <label for="dkbjlxyq-2" class="hand">< 1</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="dkbjlxyq-3" name="dkbjlxyq" value=">= 1" />
+                <label for="dkbjlxyq-3" class="hand"> >= 1</label>
+            </td>
+        </tr>
+
+        <!--企业信息》行为信息》过去12个月利息连续逾期的最长天数-->
+        <tr>
+            <td rowspan="3" class="thirdClass">
+                <span>过去12个月利息连续逾期的最长天数</span>
+            </td>
+            <td class="fourthClass">
+                <input type="radio" id="lxlxyqts-1" name="lxlxyqts" value="新客户" />
+                <label for="lxlxyqts-1" class="hand">新客户</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="lxlxyqts-2" name="lxlxyqts" value="< 1" />
+                <label for="lxlxyqts-2" class="hand">< 1</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="lxlxyqts-3" name="lxlxyqts" value=">= 1" />
+                <label for="lxlxyqts-3" class="hand"> >= 1</label>
+            </td>
+        </tr>
+
+        <!--企业信息》企业征信信息》企业征信中它行的贷款状态-->
+        <tr>
+            <td rowspan="4" class="secondClass">
+                <span>企业征信信息</span>
+            </td>
+            <td rowspan="4" class="thirdClass">
+                <span>企业征信中它行的贷款状态</span>
+            </td>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="qyzxthdkzt-1" name="qyzxthdkzt" value="贷款状态均正常" />
+                <label for="qyzxthdkzt-1" class="hand">贷款状态均正常</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="qyzxthdkzt-2" name="qyzxthdkzt" value="无信息" />
+                <label for="qyzxthdkzt-2" class="hand">无信息</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="qyzxthdkzt-3" name="qyzxthdkzt" value="贷款最差状态为关注" />
+                <label for="qyzxthdkzt-3" class="hand">贷款最差状态为关注</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="qyzxthdkzt-4" name="qyzxthdkzt" value="有不良类贷款" />
+                <label for="qyzxthdkzt-4" class="hand">有不良类贷款</label>
+            </td>
+        </tr>
+
+        <!--企业主信息》企业主基本信息》实际控制人的学历-->
+        <tr>
+            <td rowspan="19" class="firstClass">
+                <span>企业主信息</span>
+            </td>
+            <td rowspan="14" class="secondClass">
+                <span>企业主基本信息</span>
+            </td>
+            <td rowspan="3" class="thirdClass">
+                <span>实际控制人的学历</span>
+            </td>
+            <td class="fourthClass">
+                <input type="radio" id="sjkzrxl-1" name="sjkzrxl" value="初中，小学，未知" />
+                <label for="sjkzrxl-1" class="hand">初中，小学，未知</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="sjkzrxl-2" name="sjkzrxl" value="高中（中专）" />
+                <label for="sjkzrxl-2" class="hand">高中（中专）</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="sjkzrxl-3" name="sjkzrxl" value="大专及以上" />
+                <label for="sjkzrxl-3" class="hand">大专及以上</label>
+            </td>
+        </tr>
+
+        <!--企业主信息》企业主基本信息》实际控制人诚信-->
+        <tr>
+            <td rowspan="3" class="thirdClass">
+                <span>实际控制人诚信</span>
+            </td>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="sjkzrcx-1" name="sjkzrcx" value="未知" />
+                <label for="sjkzrcx-1" class="hand">未知</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="sjkzrcx-2" name="sjkzrcx" value="有瑕疵" />
+                <label for="sjkzrcx-2" class="hand">有瑕疵</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="sjkzrcx-3" name="sjkzrcx" value="有诚信" />
+                <label for="sjkzrcx-3" class="hand">有诚信</label>
+            </td>
+        </tr>
+
+        <!--企业主信息》企业主基本信息》实际控制人的从业时间-->
+        <tr>
+            <td rowspan="4" class="thirdClass">
+                <span>实际控制人的从业时间</span>
+            </td>
+            <td class="fourthClass">
+                <input type="radio" id="sjkzrcysj-1" name="sjkzrcysj" value="low <= 实际控制人的从业时间 < 24 + 缺失" />
+                <label for="sjkzrcysj-1" class="hand">low <= 实际控制人的从业时间 < 24 + 缺失</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="sjkzrcysj-2" name="sjkzrcysj" value="24 <= 实际控制人的从业时间 < 120" />
+                <label for="sjkzrcysj-2" class="hand">24 <= 实际控制人的从业时间 < 120</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="sjkzrcysj-3" name="sjkzrcysj" value="120 <= 实际控制人的从业时间 < 216" />
+                <label for="sjkzrcysj-3" class="hand">120 <= 实际控制人的从业时间 < 216</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="sjkzrcysj-4" name="sjkzrcysj" value="216 <= 实际控制人的从业时间 < high" />
+                <label for="sjkzrcysj-4" class="hand">216 <= 实际控制人的从业时间 < high</label>
+            </td>
+        </tr>
+
+        <!--企业主信息》企业主基本信息》实际控制人家庭总资产/总负债-->
+        <tr>
+            <td rowspan="4" class="thirdClass">
+                <span>实际控制人家庭总资产/总负债</span>
+            </td>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="sjkzrjtzzc-1" name="sjkzrjtzzc" value="<1.2" />
+                <label for="sjkzrjtzzc-1" class="hand"><1.2</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="sjkzrjtzzc-2" name="sjkzrjtzzc" value=">=1.2，<2" />
+                <label for="sjkzrjtzzc-2" class="hand">>=1.2，<2</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="sjkzrjtzzc-3" name="sjkzrjtzzc" value=">=2，<5" />
+                <label for="sjkzrjtzzc-3" class="hand">>=2，<5</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass bcgray">
+                <input type="radio" id="sjkzrjtzzc-4" name="sjkzrjtzzc" value=">=5" />
+                <label for="sjkzrjtzzc-4" class="hand">>=5</label>
+            </td>
+        </tr>
+
+        <!--企业主信息》企业主征信信息》实际控制人的信用记录-->
+        <tr> <td rowspan="5" class="secondClass">
+            <span>企业主征信信息</span>
+        </td>
+
+            <td rowspan="5" class="thirdClass">
+                <span>实际控制人的信用记录</span>
+            </td>
+            <td class="fourthClass">
+                <input type="radio" id="sjkzrxyjl-1" name="sjkzrxyjl" value="有借款记录，无逾期" />
+                <label for="sjkzrxyjl-1" class="hand">有借款记录，无逾期</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="sjkzrxyjl-2" name="sjkzrxyjl" value="无借款记录" />
+                <label for="sjkzrxyjl-2" class="hand">无借款记录</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="sjkzrxyjl-3" name="sjkzrxyjl" value="逾期1-3次" />
+                <label for="sjkzrxyjl-3" class="hand">逾期1-3次</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="sjkzrxyjl-4" name="sjkzrxyjl" value="逾期4-6次" />
+                <label for="sjkzrxyjl-4" class="hand">逾期4-6次</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="fourthClass">
+                <input type="radio" id="sjkzrxyjl-5" name="sjkzrxyjl" value="逾期6+次" />
+                <label for="sjkzrxyjl-5" class="hand">逾期6+次</label>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!--提交按钮-->
+    <div class="submit_scoreC clearfix">
+        <button onclick="scoreRs()">
+            提交
+        </button>
+    </div>
+</div>
+
+<!--评分结果-->
+<div class="scoreResult" style="display: none">
+    <div id="scoreEchart" style="width: 500px;height: 500px;margin: 10px auto;"></div>
+</div>
+<script type="text/javascript" src="../js/echarts.min.js"></script>
+<script>
+    var myChart = echarts.init(document.getElementById('scoreEchart'));
+    option = {
+        tooltip : {
+            formatter: "{a} <br/>{b} : {c}%"
+        },
+        series: [
+            {
+                name: '业务指标',
+                type: 'gauge',
+                radius:'60%',
+                endAngle:90,
+                startAngle:225,
+                detail: {formatter:'{value}%'},
+                axisLine:{//仪表圈
+                    show:true,
+                    lineStyle:{
+                        color:[[1, 'transparent']],//F0F0F0
+                        width:10
+                    }
+                },
+                splitLine:{//分割线
+                    show:false,
+                    length:20
+                },
+                axisTick:{//刻度线
+                    show:true,
+                    splitNumber:2,
+                    length:20,
+                    lineStyle:{
+                        color:'#fff',
+                        width:2
+                    }
+
+                },
+                axisLabel:{//刻度标签
+                    show:false
+                },
+                pointer:{//指针
+                    show:false
+                },
+                title:{
+                    show:true,
+                    offsetCenter:[0, '-20%'],
+                    textStyle:{
+                        color:'#fff',
+                        fontSize:20
+                    }
+                },
+                detail:{
+                    formatter: '{value}',
+                    offsetCenter: [0, '5%'],
+                    textStyle:{
+                        color:'#fff',
+                        fontSize:32
+                    }
+                },
+                data: [{value: 50, name: '企业综合评分'}]
+            },
+            {
+                name: '业务指标',
+                type: 'gauge',
+                radius:'60%',
+                endAngle:-45,
+                startAngle:91,
+                detail: {formatter:'{value}%'},
+                axisLine:{//仪表圈
+                    show:true,
+                    lineStyle:{
+                        color:[[1, 'transparent']],//F0F0F0
+                        width:10
+                    }
+                },
+                splitLine:{//分割线
+                    show:false,
+                    length:20
+                },
+                axisTick:{//刻度线
+                    show:true,
+                    splitNumber:2,
+                    length:20,
+                    lineStyle:{
+                        width:2,
+                        color:'rgba(0,0,0,.2)'
+                    }
+
+                },
+                axisLabel:{//刻度标签
+                    show:false
+                },
+                pointer:{//指针
+                    show:false
+                },
+                title:{
+                    show:false
+                },
+                detail:{
+                    show:false
+                },
+                data: []
+            },
+            {//空仪表,中间白色空白
+                name: '',
+                type: 'gauge',
+                radius:'63%',
+                detail: {formatter:'{value}%'},
+                axisLine:{//仪表圈
+                    show:true,
+                    lineStyle:{
+                        color:[[1, 'transparent']],
+                        width:10
+                    }
+                },
+                splitLine:{//分割线
+                    show:false
+                },
+                axisTick:{//刻度线
+                    show:false
+                },
+                axisLabel:{//刻度标签
+                    show:false
+                },
+                pointer:{//指针
+                    show:false
+                },
+                detail:{
+                    show:false
+                },
+                data: []
+            },
+            {//空仪表,最外层边框
+                name: '',
+                type: 'gauge',
+                radius:'64%',
+                detail: {formatter:'{value}%'},
+                axisLine:{//仪表圈
+                    show:true,
+                    lineStyle:{
+                        color:[[1, 'transparent']],
+                        width:4
+                    }
+                },
+                splitLine:{//分割线
+                    show:false
+                },
+                axisTick:{//刻度线
+                    show:false
+
+                },
+                axisLabel:{//刻度标签
+                    show:false
+                },
+                pointer:{//指针
+                    show:false
+                },
+                detail:{
+                    show:false
+                },
+                data: []
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+
+</script>
+<script>
+    function scoreRs() {
+        layer.open({
+            type: 1,
+            area: ['500px', '510px'], //宽高
+            content: $(".scoreResult"),
+            title:false,
+            shadeClose:true
+        });
+    }
+</script>
+</body>
+</html>

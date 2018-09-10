@@ -1,0 +1,126 @@
+.float_none {
+    float: none;
+}
+.input_cell.float_none {
+    float: none;
+}
+.input_cell .w-perc100 {
+    width: 850px;
+}
+.interview-form-box  .interview-tb-tit {
+    font-size: 16px;
+    font-weight:bold;
+    line-height: 36px;
+    height: 36px;
+    margin-left: -10px;
+}
+.interview-form-box .inputCellBox  {
+    padding-left: 10px;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+.add-interview-obj,.remove-interview-obj {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    padding-top: 4px;
+    line-height: 26px;
+    cursor: pointer;
+    color: #0b96e9;
+    font-size: 18px;
+ /*   border:1px solid #ddd;
+    border-radius: 50%;*/
+}
+.remove-interview-obj {
+    color: #e60012;
+}
+.interview-obj-cell {
+    margin-bottom: 10px;
+}
+.interview-enclosure .fa {
+    margin-right: 4px;
+    font-size: 16px;
+}
+.interview-enclosure a {
+    margin-right: 15px;
+}
+.enclosureBox {
+    margin-top: 15px;
+}
+.enclosure-tit {
+    border: 3px solid #e6e9f0;
+    background-color: #e6e9f0;
+    padding: 0 10px;
+    line-height: 34px;
+    color: #000327;
+    font-size: 18px;
+}
+.enclosure-tit .enclosure-ico {
+    color: #819ab8;
+    margin-right: 8px;
+}
+.enclosure-tit .enclosure-num {
+    font-size: 16px;
+    color: #261f19;
+}
+.enclosure-cont {
+    padding: 16px 14px;
+    border: 3px solid #e6e9f0;
+    border-top: 0;
+}
+.enclosure-cell {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.inlineB {
+    display: inline-block;
+}
+.file-ico {
+    font-size: 24px;
+    color: #5192b8;
+    margin-right: 10px;
+}
+.enclosure-name, .enclosure-opt {
+    display: block;
+}
+.text-gray {
+    color: #989898;
+}
+.enclosure-name {
+    padding-right: 30px;
+}
+.enclosure-name:hover {
+    color: #0b96e9;
+}
+.enclosure-cell .inlineB .soundToWords{
+    right: 0;
+}
+.enclosure-cell .inlineB {
+  /*  padding-right: 30px;*/
+    position: relative;
+}
+.attachment-ico {
+    display:inline-block;
+    font-size: 18px;
+    line-height: 42px;
+    margin-right: 6px;
+}
+.xmxxfkcon_abtn .attachment-num {
+    font-size: 14px;
+}
+.xmxxfkcon_abtn  .fa-paperclip {
+    font-size: 16px;
+}
+/*新增从我的采访附件选择*/
+.interview-att-pop .attachment-cell label {
+    font-size: 14px;
+    box-sizing: content-box;
+}
+.interview-att-pop [type="checkbox"]:not(:checked)+ label:before,.interview-att-pop [type="checkbox"]:checked+ label:before{
+    box-sizing: content-box;
+    top: 50%;
+    margin-top: -7px;
+}
+.interview-att-pop [type="checkbox"]:not(:checked)+ label:after, [type="checkbox"]:checked+ label:after {
+    top: 0;
+}

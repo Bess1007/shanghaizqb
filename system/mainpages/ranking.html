@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>排名综合页面</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+
+    <link rel="stylesheet" href="css/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <!--8-28新引入-->
+    <script type="text/javascript" src="js/base.js"></script>
+
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox" style="min-height: 910px;overflow: auto">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <i class="span_i actived">行业公司排名</i>
+            <i class="span_i ">公司排名</i>
+            <i class="span_i">公司正反排名</i>
+            <i class="span_i">上市公司停牌时间榜单</i>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix">
+        <div class="w1080">
+            <!--行业公司排名-->
+            <div class="infotblist_li actived" >
+                <div class="widget-content clearfix  ">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>【农、林、牧、渔业】</legend>
+                    </fieldset>
+                    <div class="widget-container fluid-height">
+                        <!-- Table -->
+                        <table class="table table-filters">
+                            <thead>
+                            <tr>
+                                <th>排名</th>
+                                <th>名称</th>
+                                <th>市盈率</th>
+                                <th>市净率</th>
+                                <th>市现率</th>
+                                <th>市销率</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="filter-category blue">
+                                    <div class="arrow-left"></div>
+                                    <i class="fa fa-trophy"></i>
+                                </td>
+                                <td>华侨城A</td>
+                                <td>11.90</td>
+                                <td>1.52</td>
+                                <td>-274.45</td>
+                                <td>1.78</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category green">
+                                    <div class="arrow-left"></div>
+                                    <i class="">2</i>
+                                </td>
+                                <td>黄山B股</td>
+                                <td>22.19</td>
+                                <td>2.28</td>
+                                <td>12.91</td>
+                                <td>4.36</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category orange">
+                                    <div class="arrow-left"></div>
+                                    <i class="">3</i>
+                                </td>
+                                <td>
+                                    丽江旅游
+                                </td>
+                                <td>28.69</td>
+                                <td>2.75</td>
+                                <td>14.08</td>
+                                <td>7.67</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category red">
+                                    <div class="arrow-left"></div>
+                                    <i class="">4</i>
+                                </td>
+                                <td>
+                                    启迪桑德
+                                </td>
+                                <td>29.03</td>
+                                <td>4.04</td>
+                                <td>-62.67</td>
+                                <td>3.97</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category blue">
+                                    <div class="arrow-left"></div>
+                                    <i class="">5</i>
+                                </td>
+                                <td>
+                                    峨眉山A
+                                </td>
+                                <td>31.47</td>
+                                <td>3.13</td>
+                                <td>36.96</td>
+                                <td>5.99</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category magenta">
+                                    <div class="arrow-left"></div>
+                                    <i class="">6</i>
+                                </td>
+                                <td>
+                                    峨眉山A
+                                </td>
+                                <td>31.47</td>
+                                <td>3.13</td>
+                                <td>36.96</td>
+                                <td>5.99</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category green">
+                                    <div class="arrow-left"></div>
+                                    <i class="">7</i>
+                                </td>
+                                <td>黄山B股</td>
+                                <td>22.19</td>
+                                <td>2.28</td>
+                                <td>12.91</td>
+                                <td>4.36</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category orange">
+                                    <div class="arrow-left"></div>
+                                    <i class="">8</i>
+                                </td>
+                                <td>
+                                    丽江旅游
+                                </td>
+                                <td>28.69</td>
+                                <td>2.75</td>
+                                <td>14.08</td>
+                                <td>7.67</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category red">
+                                    <div class="arrow-left"></div>
+                                    <i class="">9</i>
+                                </td>
+                                <td>
+                                    启迪桑德
+                                </td>
+                                <td>29.03</td>
+                                <td>4.04</td>
+                                <td>-62.67</td>
+                                <td>3.97</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category blue">
+                                    <div class="arrow-left"></div>
+                                    <i class="">10</i>
+                                </td>
+                                <td>
+                                    峨眉山A
+                                </td>
+                                <td>31.47</td>
+                                <td>3.13</td>
+                                <td>36.96</td>
+                                <td>5.99</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="widget-content clearfix  ">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>【采矿业】</legend>
+                    </fieldset>
+                    <div class="widget-container fluid-height">
+                        <!-- Table -->
+                        <table class="table table-filters">
+                            <thead>
+                            <tr>
+                                <th>排名</th>
+                                <th>名称</th>
+                                <th>市盈率</th>
+                                <th>市净率</th>
+                                <th>市现率</th>
+                                <th>市销率</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="filter-category blue">
+                                    <div class="arrow-left"></div>
+                                    <i class="fa fa-trophy"></i>
+                                </td>
+                                <td>华侨城A</td>
+                                <td>11.90</td>
+                                <td>1.52</td>
+                                <td>-274.45</td>
+                                <td>1.78</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category green">
+                                    <div class="arrow-left"></div>
+                                    <i class="">2</i>
+                                </td>
+                                <td>黄山B股</td>
+                                <td>22.19</td>
+                                <td>2.28</td>
+                                <td>12.91</td>
+                                <td>4.36</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category orange">
+                                    <div class="arrow-left"></div>
+                                    <i class="">3</i>
+                                </td>
+                                <td>
+                                    丽江旅游
+                                </td>
+                                <td>28.69</td>
+                                <td>2.75</td>
+                                <td>14.08</td>
+                                <td>7.67</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category red">
+                                    <div class="arrow-left"></div>
+                                    <i class="">4</i>
+                                </td>
+                                <td>
+                                    启迪桑德
+                                </td>
+                                <td>29.03</td>
+                                <td>4.04</td>
+                                <td>-62.67</td>
+                                <td>3.97</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category blue">
+                                    <div class="arrow-left"></div>
+                                    <i class="">5</i>
+                                </td>
+                                <td>
+                                    峨眉山A
+                                </td>
+                                <td>31.47</td>
+                                <td>3.13</td>
+                                <td>36.96</td>
+                                <td>5.99</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category magenta">
+                                    <div class="arrow-left"></div>
+                                    <i class="">6</i>
+                                </td>
+                                <td>
+                                    峨眉山A
+                                </td>
+                                <td>31.47</td>
+                                <td>3.13</td>
+                                <td>36.96</td>
+                                <td>5.99</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category green">
+                                    <div class="arrow-left"></div>
+                                    <i class="">7</i>
+                                </td>
+                                <td>黄山B股</td>
+                                <td>22.19</td>
+                                <td>2.28</td>
+                                <td>12.91</td>
+                                <td>4.36</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category orange">
+                                    <div class="arrow-left"></div>
+                                    <i class="">8</i>
+                                </td>
+                                <td>
+                                    丽江旅游
+                                </td>
+                                <td>28.69</td>
+                                <td>2.75</td>
+                                <td>14.08</td>
+                                <td>7.67</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category red">
+                                    <div class="arrow-left"></div>
+                                    <i class="">9</i>
+                                </td>
+                                <td>
+                                    启迪桑德
+                                </td>
+                                <td>29.03</td>
+                                <td>4.04</td>
+                                <td>-62.67</td>
+                                <td>3.97</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category blue">
+                                    <div class="arrow-left"></div>
+                                    <i class="">10</i>
+                                </td>
+                                <td>
+                                    峨眉山A
+                                </td>
+                                <td>31.47</td>
+                                <td>3.13</td>
+                                <td>36.96</td>
+                                <td>5.99</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--行业公司排名end-->
+            <!--公司排名-->
+            <div class="infotblist_li">
+                <div class="widget-content clearfix  ">
+                    <div class="widget-container fluid-height">
+                        <!-- Table -->
+                        <table class="table table-filters">
+                            <thead>
+                            <tr>
+                                <th>排名</th>
+                                <th>名称</th>
+                                <th>市盈率</th>
+                                <th>市净率</th>
+                                <th>市现率</th>
+                                <th>市销率</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="filter-category blue">
+                                    <div class="arrow-left"></div>
+                                    <i class="fa fa-trophy"></i>
+                                </td>
+                                <td>华侨城A</td>
+                                <td>11.90</td>
+                                <td>1.52</td>
+                                <td>-274.45</td>
+                                <td>1.78</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category green">
+                                    <div class="arrow-left"></div>
+                                    <i class="">2</i>
+                                </td>
+                                <td>黄山B股</td>
+                                <td>22.19</td>
+                                <td>2.28</td>
+                                <td>12.91</td>
+                                <td>4.36</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category orange">
+                                    <div class="arrow-left"></div>
+                                    <i class="">3</i>
+                                </td>
+                                <td>
+                                    丽江旅游
+                                </td>
+                                <td>28.69</td>
+                                <td>2.75</td>
+                                <td>14.08</td>
+                                <td>7.67</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category red">
+                                    <div class="arrow-left"></div>
+                                    <i class="">4</i>
+                                </td>
+                                <td>
+                                    启迪桑德
+                                </td>
+                                <td>29.03</td>
+                                <td>4.04</td>
+                                <td>-62.67</td>
+                                <td>3.97</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category blue">
+                                    <div class="arrow-left"></div>
+                                    <i class="">5</i>
+                                </td>
+                                <td>
+                                    峨眉山A
+                                </td>
+                                <td>31.47</td>
+                                <td>3.13</td>
+                                <td>36.96</td>
+                                <td>5.99</td>
+                            </tr>
+                            <tr>
+                                <td class="filter-category magenta">
+                                    <div class="arrow-left"></div>
+                                    <i class="">6</i>
+                                </td>
+                                <td>
+                                    峨眉山A
+                                </td>
+                                <td>31.47</td>
+                                <td>3.13</td>
+                                <td>36.96</td>
+                                <td>5.99</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--公司排名end-->
+            <!--公司正反排名-->
+            <div class="infotblist_li">
+                <div class="widget-content  clearfix  ">
+                    <div class="fl" style="width: 50%;">
+                        <div class="widget-container fluid-height">
+                            <!-- Table -->
+                            <table class="table table-filters">
+                                <thead>
+                                <tr>
+                                    <th>正排名</th>
+                                    <th>名称</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="filter-category blue">
+                                        <div class="arrow-left"></div>
+                                        <i class="fa fa-trophy"></i>
+                                    </td>
+                                    <td>
+                                        <a href="">华侨城A</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="filter-category green">
+                                        <div class="arrow-left"></div>
+                                        <i class="">2</i>
+                                    </td>
+                                    <td>
+                                        黄山B股
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="filter-category orange">
+                                        <div class="arrow-left"></div>
+                                        <i class="">3</i>
+                                    </td>
+                                    <td>
+                                        丽江旅游
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="filter-category red">
+                                        <div class="arrow-left"></div>
+                                        <i class="">4</i>
+                                    </td>
+                                    <td>
+                                        启迪桑德
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="filter-category blue">
+                                        <div class="arrow-left"></div>
+                                        <i class="">5</i>
+                                    </td>
+                                    <td>
+                                        峨眉山A
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="filter-category magenta">
+                                        <div class="arrow-left"></div>
+                                        <i class="">6</i>
+                                    </td>
+                                    <td>
+                                        峨眉山A
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="fl" style="width: 50%;">
+                        <div class="widget-container fluid-height">
+                            <!-- Table -->
+                            <table class="table table-filters">
+                                <thead>
+                                <tr>
+                                    <th>反排名</th>
+                                    <th>名称</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="filter-category blue">
+                                        <div class="arrow-left"></div>
+                                        <i class="">1</i>
+                                    </td>
+                                    <td>
+                                        华侨城B
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="filter-category green">
+                                        <div class="arrow-left"></div>
+                                        <i class="">2</i>
+                                    </td>
+                                    <td>
+                                        黄山C股
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="filter-category orange">
+                                        <div class="arrow-left"></div>
+                                        <i class="">3</i>
+                                    </td>
+                                    <td>
+                                        九华旅游
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="filter-category red">
+                                        <div class="arrow-left"></div>
+                                        <i class="">4</i>
+                                    </td>
+                                    <td>
+                                        西安旅游
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="filter-category blue">
+                                        <div class="arrow-left"></div>
+                                        <i class="">5</i>
+                                    </td>
+                                    <td>
+                                        张家界
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="filter-category magenta">
+                                        <div class="arrow-left"></div>
+                                        <i class="">6</i>
+                                    </td>
+                                    <td>
+                                        三特索道
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--公司正反排名end-->
+            <!--上市公司停牌时间榜单-->
+            <div class="infotblist_li">
+                <!--上市公司停牌时间榜单-->
+                <div class="widget-container clearfix susptime">
+                    <table class="tableStyle">
+                        <tbody class="susptimetbody">
+                        <tr>
+                            <th class="th" style="width: 64px;">证券代码 </th>
+                            <th class="th">证券名称</th>
+                            <th class="th" style="width:200px;">停牌时间（天）</th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--end 上市公司停牌时间榜单-->
+            </div>
+            <!--上市公司停牌时间榜单end -->
+
+        </div>
+    </div>
+</div>
+
+<!--/backtop-->
+<div class="backtop"><img src="./images/backtop.png" alt=""></div>
+
+<script type="text/javascript">
+    var ur =location.href;
+    var tar=ur.split('?')[1].split("=")[1];
+    $('.span_i').eq(tar).addClass('actived').siblings('.span_i').removeClass('actived');
+    $('.infotblist_li').eq(tar).show().siblings('.infotblist_li').hide();
+</script>
+<script type="text/javascript">
+    $('.span_i').click(function () {
+        var index = $(this).index();
+        $(this).addClass('actived').siblings('.span_i').removeClass('actived');
+        $('.infotblist_li').eq(index).show().siblings('.infotblist_li').hide();
+    })
+</script>
+<!--停牌天数-->
+<script type="text/javascript">
+    var dayarr = [
+        {'zqdm':'000982.SZ','zqmc':'中银绒业','tpdays':'436'},
+        {'zqdm':'002558.SZ','zqmc':'世纪游轮','tpdays':'373'},
+        {'zqdm':'002602.SZ','zqmc':'世纪华通','tpdays':'334'},
+        {'zqdm':'002015.SZ','zqmc':'*ST霞客','tpdays':'316'},
+        {'zqdm':'000403.SZ','zqmc':'ST生化','tpdays':'281'},
+        {'zqdm':'600155.SH','zqmc':'宝硕股份','tpdays':'239'},
+        {'zqdm':'600258.SH','zqmc':'首旅酒店','tpdays':'232'},
+        {'zqdm':'002137.SZ','zqmc':'实益达','tpdays':'229'},
+        {'zqdm':'002137.SZ','zqmc':'实益达','tpdays':'220'},
+        {'zqdm':'002137.SZ','zqmc':'实益达','tpdays':'210'}
+    ];
+    /* console.log(dayarr[1].tpdays);*/
+    var susptimetr = '';
+    for(var i = 0;i<dayarr.length;i++){
+        console.log(daysnum);
+        susptimetr+= '<tr><td>'+dayarr[i].zqdm+'</td><td><a href="">'+dayarr[i].zqmc+'</a></td><td><span class="suspdays" >'+dayarr[i].tpdays+'</span></td></tr>';
+
+    };
+
+    $('.susptimetbody').append(susptimetr);
+    var dayr = 150/(dayarr[0].tpdays);
+    for(var i = 0;i<$('.susptimetbody .suspdays').length;i++){
+        var daysnum = parseInt(dayarr[i].tpdays)*dayr+'px';
+        $('.susptimetbody .suspdays').eq(i).css('width',daysnum)
+    }
+</script>
+<!--end 停牌天数-->
+</body>
+</html>

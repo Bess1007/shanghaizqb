@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>牌照公司列表</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <!--数据表格start-->
+    <script src="../../libs/js/table/quiGrid.js" type="text/javascript"></script>
+    <!--数据表格end-->
+
+    <link rel="stylesheet" href="css/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <style>
+        .maingrid_content{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            border: 1px solid #EEEEEE;
+            z-index: 99999;
+            margin-right: -100%;
+            box-shadow: -1px 0 3px #d3d8db;
+            display: none;
+        }
+        .oppContent{
+            width: 340px;
+            height: 40px;
+            float: left;
+        }
+        .searchContent{
+            width: 600px;
+            height: 40px;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <span>牌照公司列表</span>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix" style="padding: 5px;padding-top: 10px;">
+        <div >
+            <div class="oppContent">
+                <div class="buttonGroup js-opt-content" style="width: 160px;">
+                    <span class="leftButton icon_add" style="width: 79px;" onclick="addLctb()">新增</span>
+                    <span class="rightButton icon_delete" style="width: 79px;" onclick="deleteUnit()">删除</span>
+                </div>
+            </div>
+            <div class="searchContent">
+                <form id="queryForm" action="" method="post">
+                    <!-- <input name="parentId" id="parentId" type="hidden" value="1" truetype="hidden">-->
+                    <table style="float: right;">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <select name="" id=""">
+                                    <option value="">选择省份</option>
+                                    <option value="">安徽省</option>
+                                    <option value="">内蒙古</option>
+                                </select>
+                                <input name="filterVal" class="textinput" id="searchInput" style="font-size: 14px;margin-left: 3px;" type="text" placeholder="公司名称" truetype="textinput">
+                                <input class="textinput" style="width: 2px; font-size: 14px; display: none;" type="text" truetype="textinput">
+                            </td>
+                            <td>
+                                <button class="primary button" id="search" style="padding-left: 5px;" onclick="searchHandler()" type="button"><span class="icon_find" style="font-size: 14px; cursor: default;">查询</span></button>
+                            </td>
+                            <td>
+                                <button class="button" style="padding-left: 5px;" onclick="resetSearch()" type="button"><span class="icon_clear" style="font-size: 14px; cursor: default;">重置</span></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <div class="clear"></div>
+            <div id="maingrid"></div>
+        </div>
+    </div>
+</div>
+<!--数据表格-->
+<script type="text/javascript">
+    var testData={"form.paginate.pageNo":1,"form.paginate.totalRows":13,"rows":[
+        {"name":"公司名称1","Codename":"code1","stocks":"股票代码1","areaname":"安徽省","licensedname":"第三方支付"},
+        {"name":"公司名称2","Codename":"code2","stocks":"股票代码2","areaname":"安徽省","licensedname":"第三方支付"}
+
+    ]};
+
+
+    //数据表格使用
+    var g;
+    function initComplete(){
+        g = $("#maingrid").quiGrid({
+            columns: [
+                { display: '公司名称', name: 'name', align: 'center',  width: "20%"},
+                { display: '公司CODE', name: 'Codename', align: 'center' , width: "20%"},
+                { display: '股票代码', name: 'stocks',  align: 'center' , width: "20%"},
+                { display: '区域名称', name: 'areaname',  align: 'center', width: "20%" },
+                { display: '持牌名称', name: 'licensedname',  align: 'center', width: "20%" },
+                { display: '操作', isAllowHide: false, align: 'left', width: 130,
+                    render: function (rowdata, rowindex, value, column){
+                        return '<div class="grid_opp_container">'
+                            + '<span class="grid_opp_view" onclick="addLctb()">编辑</span>'
+                            + '<span class="grid_opp_delete" onclick="">删除</span>'
+                            + '</div>';
+                    }
+                }
+            ], data:testData, pageSize: 20, rownumbers:true, checkbox:true,percentWidthMode:true,
+            height: '100%', width:"100%"
+        });
+    }
+    function onView(rowid){
+        top.Toast("showNoticeToast", "选择的记录Id是:" + rowid );
+    }
+
+    function onEdit(rowid){
+        top.Toast("showNoticeToast", "修改的记录Id是:" + rowid );
+        // for (var record in g.records){
+        //   if(g.records[record]['id']==rowid){
+        //     top.Toast("showNoticeToast", JSON.stringify(g.records[record]));
+        //   }
+        // }
+    }
+
+    function onDelete(rowid,rowidx){
+        top.Toast("showNoticeToast", "删除的记录Id是:" + rowid );
+    }
+</script>
+
+<!--end 数据表格-->
+<script type="text/javascript">
+    function addLctb() {
+        layer.open({
+            type: 1,
+            title:  ['新增持牌公司', 'font-size:18px;'],
+            area: ['860px', '90%'],
+            content:$(".addLctb"),
+            btn: ['提交', '取消']
+        });
+    }
+</script>
+</body>
+<div class="addLctb" style="display: none">
+    <div class="edite_tablebox" style="width: 700px;margin: 0 auto;">
+        <ul class="licCompanyinput">
+            <li class="lci_li clearfix">
+                <i class="line_blue"></i>
+                <span class="lci_name fl">
+                        公司名称：
+                    </span>
+                <span class="lci_value fl">
+                        <input type="text" >
+                    </span>
+            </li>
+            <li class="lci_li clearfix">
+                <i class="line_cyan"></i>
+                <span class="lci_name fl">公司CODE：</span>
+                <span class="lci_value fl">
+                        <input type="text" placeholder="输入公司CODE">
+                    </span>
+            </li>
+            <li class="lci_li clearfix">
+                <i class="line_purple"></i>
+                <span class="lci_name fl">
+                        股票代码：
+                    </span>
+                <span class="lci_value fl">
+                        <input type="text" placeholder="输入股票代码">
+                    </span>
+            </li>
+            <li class="lci_li clearfix">
+                <i class="line_blue"></i>
+                <span class="lci_name fl">区域选择：</span>
+                <span class="lci_value fl">
+                        <select name="" id="">
+                            <option value="">选择区域</option>
+                            <option value="">安徽省</option>
+                            <option value="">内蒙古</option>
+                        </select>
+                    </span>
+            </li>
+            <li class="lci_li clearfix">
+                <i class="line_cyan"></i>
+                <span class="lci_name fl">持牌名称：</span>
+                <span class="lci_value fl">
+                        <select name="" id="">
+                            <option value="">持牌类型选择</option>
+                            <option value="">第三方支付</option>
+                            <option value="">保险</option>
+                        </select>
+                    </span>
+            </li>
+
+        </ul>
+    </div>
+</div>
+</html>

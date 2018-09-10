@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>网站监控</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+
+    <!--框架必需end-->
+    <!--弹窗组件start-->
+    <script type="text/javascript" src="../../libs/js/popup/drag.js"></script>
+    <script type="text/javascript" src="../../libs/js/popup/dialog.js"></script>
+    <!--弹窗组件end-->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+
+</head>
+<body>
+
+
+<div class="groupTitle"><span><i class="fa fa-eye margin_right3"></i>网站监控</span></div>
+
+<div class="page_content padding5">
+
+    <div style="width:700px;margin: 0 auto;padding: 40px;box-shadow: 0 0 3px #ccc">
+        <form>
+            <table class="formStyle newlmsbox">
+                <tr>
+                    <td class="ali03">网站名称：</td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td class="ali03">网站地址：</td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td class="ali03">栏目名称：</td>
+                    <td><input type="text" /></td>
+                    <td class="ali03">栏目地址：</td>
+                    <td><input type="text" /><span class="star">*</span></td>
+                    <td><i class="fa fa-plus-square addnewlm"></i></td>
+                </tr>
+
+            </table>
+            <table>
+                <tr>
+                    <td colspan="2" class="ali02"><input type="submit" value="提交" class="primary" />&nbsp;<input type="reset" value="重置"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    var newlms = '<tr>' +
+        '<td class="ali03">栏目名称：</td>' +
+        '<td><input type="text" truetype="textinput" class="textinput" /></td>' +
+        '<td class="ali03">栏目地址：</td>' +
+        ' <td><input type="text"  truetype="textinput" class="textinput" />' +
+        '<span class="star">*</span></td><td><i class="fa fa-plus-square addnewlm"></i><i class="margin_left6 fa fa-minus-square reducenewlm"></i></td>' +
+        '</tr>';
+    $('.newlmsbox').on('click','.addnewlm',function () {
+        if($(this).closest('tr').index() >= 3){
+            $(this).hide()
+        }
+       console.log($(this).closest('tr').index())
+        $('.newlmsbox').append(newlms)
+    });
+    $('.newlmsbox').on('click','.reducenewlm',function () {
+        $(this).closest('tr').hide();
+    })
+
+//    function addnewlms() {
+//            $('.newlmsbox').append(newlms)
+//    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>草稿编辑</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+
+    <!-- 组合下拉框start -->
+    <script type="text/javascript" src="../../libs/js/form/selectCustom.js"></script>
+    <!-- 组合拉框end -->
+    <!-- 条件过滤器 start -->
+    <script type="text/javascript" src="../../libs/js/form/filter.js"></script>
+    <!-- 条件过滤器 end -->
+    <link rel="stylesheet" href="css/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+</head>
+<body class=" padding10">
+<div class="page_content mystylebox">
+    <div class="undermygroupTitle clearfix" style="padding: 0;">
+        <div style="width: 930px;margin: 0 auto;padding: 0;">
+            <div class="ita_rightcon">
+                <ul class="ita_rightconul">
+                    <li class="ita_hideli actived">
+                        <table class="sendmes">
+                            <tbody>
+                            <tr>
+                                <td class="textalign_right">发送人：</td>
+                                <td>李四</td>
+                            </tr>
+                            <tr class="receivep">
+                                <td class="textalign_right">接收人：</td>
+                                <td class="clearfix">
+                                    <div class="selectCustom fl margin_right6" boxWidth="500" multiMode="true" id="selectCostom7">
+                                        <div id="customContent7">
+                                            <div class="filter" id="filter1" keepDefaultStyle="true" groupMode="true" data='{"list":[{"name":"部门1","list":[{"key":"员工1","value":"11","iconClass":"icon_user"},{"key":"员工2","value":"12","iconClass":"icon_user"},{"key":"员工3","value":"13","iconClass":"icon_user_female"},{"key":"员工2","value":"12","iconClass":"icon_user"},{"key":"员工3","value":"13","iconClass":"icon_user"}]},{"name":"部门2","list":[{"key":"员工4","value":"21","iconClass":"icon_user_female"},{"key":"员工5","value":"22","iconClass":"icon_user"},{"key":"员工6","value":"23","iconClass":"icon_user_worker"}]},{"name":"部门3","list":[{"key":"员工1","value":"11","iconClass":"icon_user"},{"key":"员工2","value":"12","iconClass":"icon_user"},{"key":"员工3","value":"13","iconClass":"icon_user"},{"key":"员工2","value":"12","iconClass":"icon_user"},{"key":"员工3","value":"13","iconClass":"icon_user"}]},{"name":"部门4","list":[{"key":"员工4","value":"21","iconClass":"icon_user"},{"key":"员工5","value":"22","iconClass":"icon_user"},{"key":"员工6","value":"23","iconClass":"icon_user"}]}]}' id="filter13"></div>
+                                        </div>
+                                    </div>
+                                    <input type="button" value="重置" class="fl" onclick="resetValue7()" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="textalign_right">标题：</td>
+                                <td><input type="text" style="width: 100%;"></td>
+                            </tr>
+                            <tr>
+                                <td class="textalign_right">相关附件：</td>
+                                <td class="fjtdbox">
+                                    <div class="clearfix xgfj">
+                                        <input type="file" style="width: 300px" class="fl">
+                                        <span class="fa fa-plus-square-o fl addfj"></span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="textalign_right">消息内容：</td>
+                                <td>
+                                    <textarea name="" id="" cols="30" rows="10" style="width: 100%;margin: 5px 0;height: 300px;"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td colspan="2" class="ali02">
+                                    <input type="submit" value="发送" class="primary button">&nbsp;
+                                    <input type="submit" value="保存为草稿" class="primary button">&nbsp;
+                                    <input type="reset" value="重置" class="button">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--添加附件-->
+<script type="text/javascript">
+    var newfj = '<div class="clearfix xgfj">'+
+        '<input type="file" style="width: 187px" class="fl">'+
+        '<span class="fa fa-close fl delfj"></span>'+
+        '<span class="fa fa-plus-square-o fl addfj"></span>'+
+        '</div>'
+    $('.fjtdbox').on('click','.addfj',function () {
+        $('.fjtdbox').append(newfj)
+    });
+    $('.fjtdbox').on('click','.delfj',function () {
+        $(this).closest('.xgfj').hide()
+    });
+    $('.addlxr').on('click',function () {
+        layer.prompt(function(val, index){
+            layer.msg('得到了'+val);
+            layer.close(index);
+        });
+    })
+</script>
+<!--end 添加附件-->
+
+<!--组合下拉框与条件过滤器组合-->
+<script type="text/javascript">
+    function initComplete() {
+        //示例7相关
+        $("#filter1").render();
+        $("#selectCostom7").bind("boxClose", function () {
+            $("#selectCostom7").setValue($("#filter1").attr("relValue"), $("#filter1").attr("relText"));
+        })
+
+        //示例7相关
+        function getValue7() {
+            top.Toast("showNoticeToast", "选中文本：" + $("#selectCostom7").attr("relText") + "<br/>选中id：" + $("#selectCostom7").attr("relValue"));
+        }
+    }
+    function resetValue7() {
+        $("#selectCostom7").setValue("", "请选择");
+        $("#filter1").removeData("data");
+        $("#filter1").resetValue()
+    }
+</script>
+<!--end 组合下拉框与条件过滤器组合-->
+
+</body>
+</html>

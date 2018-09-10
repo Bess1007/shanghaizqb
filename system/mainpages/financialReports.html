@@ -1,0 +1,626 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>定期财务报告</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <!--弹窗组件start-->
+    <script type="text/javascript" src="../../libs/js/popup/drag.js"></script>
+    <script type="text/javascript" src="../../libs/js/popup/dialog.js"></script>
+    <!--弹窗组件end-->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+
+    <!--自动提示框start-->
+    <script type='text/javascript' src='../../libs/js/form/suggestion.js'></script>
+    <!--自动提示框end-->
+    <!-- 日期选择框start -->
+    <script type="text/javascript" src="../../libs/js/form/datePicker/WdatePicker.js"></script>
+    <!-- 日期选择框end -->
+    <!--数字分页start-->
+    <script type="text/javascript" src="../../libs/js/nav/pageNumber.js"></script>
+    <!--数字分页end-->
+
+    <!-- ztree start -->
+    <script type="text/javascript" src="../../libs/js/tree/ztree/ztree.js"></script>
+    <link href="../../libs/js/tree/ztree/ztree.css" rel="stylesheet" type="text/css"/>
+    <!-- ztree end -->
+  <!--  <style>
+        li.level1 .chk:nth-child(2) {
+            display: none;
+        }
+        li.level2 .chk:nth-child(2) {
+            display: inline-block;
+        }
+    </style>-->
+</head>
+<body>
+
+<div class="page_content padding6" style="overflow: auto;">
+    <table class="tjjg">
+        <tbody>
+            <tr>
+                <td class="doubleselect" style="vertical-align: top">
+                    <div class="groupTitle"><span>板块和指标选择</span></div>
+                    <div>
+                        <ul id="tree-1" class="ztree"></ul>
+                    </div>
+                    <input type="button" value="确认选择" onclick="getSelectValue();" class="default"/>
+
+                </td>
+              <!--  <td style="width: 16px;background-color: #f0f0f0;" class="contrbtn">
+                    <span class="fa fa-angle-double-left" style="display: inline-block;width:16px;text-align: center;font-size: 20px;"></span>
+                </td>-->
+                <td style="vertical-align: top">
+                    <div class="groupTitle clearfix">
+                        <span style="height: 33px;">
+                        <i class="fa fa-file-text-o margin_right3">
+                        
+                        </i>定期财务报告 
+
+                        </span>
+                        <i style="display:inline-block" class="selectdatei">
+                            <select name="" id="">
+                                <option value="">全部</option>
+                                <option value="">年报</option>
+                                <option value="">第一季度季报</option>
+                                <option value="">半年报</option>
+                                <option value="">第三季度季报</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">2011</option>
+                                <option value="">2012</option>
+                                <option value="">2013</option>
+                                <option value="">2014</option>
+                                <option value="">2015</option>
+                                <option value="">2016</option>
+                                <option value="">2017</option>
+                            </select>
+                        </i>
+                    </div>
+                    <div class="zbtable clearfix">
+       <table class="tableStyle mytablestyle" style="width:100%;">
+           <tr>
+               <th>证券代码</th>
+               <th>证券简称</th>
+               <th>每股净资产<br>BPS<br>【报告期】<br>2016年报<br>【单位】元</th>
+               <th>每股净资产BPS【报告期】2015年报【单位】元</th>
+               <th>扣除非经常性损益后的净利润【报告期】2016年报【单位】元</th>
+               <th>扣除非经常性损益后的净利润【报告期】2015年报【单位】元</th>
+               <th>净资产收益率ROE（加权）【报告期】2016年报【单位】%</th>
+               <th>净资产收益率ROE（加权）【报告期】2015年报【单位】%</th>
+           </tr>
+           <tr>
+               <td>603009.SH</td>
+               <td>北特科技</td>
+               <td>9.6697</td>
+               <td>4.7048</td>
+               <td>55,686,161.2600</td>
+               <td>44,110,416.8800</td>
+               <td>6.1600</td>
+               <td>10.2700</td>
+           </tr>
+           <tr>
+               <td>002479.SZ</td>
+               <td>富春环保</td>
+               <td>3.5863</td>
+               <td>3.4290</td>
+               <td>228,546,179.0800</td>
+               <td>169,744,364.1200</td>
+               <td>8.8300</td>
+               <td>7.5200</td>
+           </tr>
+           <tr>
+               <td>300561.SZ</td>
+               <td>汇金科技</td>
+               <td>11.0806</td>
+               <td>5.6400</td>
+               <td>75,300,322.8900</td>
+               <td>63,606,100.0000</td>
+               <td>27.9900</td>
+               <td>34.3800</td>
+           </tr>
+           <tr>
+               <td>000838.SZ</td>
+               <td>财信发展</td>
+               <td>1.4823</td>
+               <td>4.8882</td>
+               <td>111,024,604.3200</td>
+               <td>35,760,406.6700</td>
+               <td>7.0455</td>
+               <td>11.6300</td>
+           </tr>
+       </table>
+       <!--分页-->
+       <div class="pageNumber margin_top15" total="200" showInput="true" id="page-6"></div>
+   </div>
+                    <div class="tjjg">
+                        <div class="groupTitle"><span>选择结果</span></div>
+                        <div class="xzjgclassbox">
+                            <span class="titxz"><i class="firstxz">指标选择</i><i class="blue">※</i><i class="secondxz">财报统计</i></span>
+                            <div class="xztables margin_bottom15" >
+                                <ul class="selectresul clearfix">
+                                    <li class="selectresli">
+                                        <table class="tableStyle mytablestyle margin_top15">
+                                            <tr>
+                                                <td style="vertical-align: middle"  rowspan="2" class="trtdfirst">披露家数</td>
+                                                <td class="redbgc">披露家数</td>
+                                                <td class="redbgc">盈利家数</td>
+                                                <td class="redbgc">亏损家数</td>
+                                                <td class="greenbgc">亏损比例(%)</td>
+                                                <td class="greenbgc">上年同期亏损比例(%)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2950 </td>
+                                                <td>2776</td>
+                                                <td>174</td>
+                                                <td>5.90</td>
+                                                <td>9.74 </td>
+                                            </tr>
+                                        </table>
+                                    </li>
+                                    <li class="selectresli">
+                                        <table class="tableStyle mytablestyle margin_top15">
+                                            <tr>
+                                                <td style="vertical-align: middle"  rowspan="2" class="trtdfirst">ST公司披露家数</td>
+                                                <td class="redbgc">ST公司披露家数</td>
+                                                <td class="redbgc">盈利家数</td>
+                                                <td class="redbgc">亏损家数</td>
+                                                <td class="greenbgc">亏损比例(%)</td>
+                                                <td class="greenbgc">上年同期亏损比例(%)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>56 </td>
+                                                <td>23</td>
+                                                <td>33 </td>
+                                                <td>58.93</td>
+                                                <td>87.50</td>
+                                            </tr>
+                                        </table>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="xzjgclassbox">
+                            <span class="titxz"><i class="firstxz">指标选择</i><i class="blue">※</i><i class="secondxz">业绩总体情况</i></span>
+                            <div class="xztables margin_bottom15" >
+                                <ul class="selectresul clearfix">
+                                    <li class="selectresli">
+                                        <table class="tableStyle mytablestyle margin_top15">
+                                            <tr>
+                                                <td style="vertical-align: middle"  rowspan="2" class="trtdfirst">上市公司业绩情况</td>
+                                                <td class="redbgc">盈利增长家数</td>
+                                                <td class="redbgc">盈利减少家数</td>
+                                                <td class="redbgc">亏损家数</td>
+                                                <td class="redbgc">扭亏家数</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1720 </td>
+                                                <td>734</td>
+                                                <td>174</td>
+                                                <td>236</td>
+                                            </tr>
+                                        </table>
+                                    </li>
+                                    <li class="selectresli">
+                                        <table class="tableStyle mytablestyle margin_top15">
+                                            <tr>
+                                                <td style="vertical-align: middle"  rowspan="2" class="trtdfirst">营业收入</td>
+                                                <td class="redbgc">其中：营业收入[报告期] 2016年报[单位] 亿元</td>
+                                                <td class="redbgc">其中：营业收入[报告期] 2016年报[单位] 亿元【可比】</td>
+                                                <td class="redbgc">其中：营业收入[报告期] 2015年报[单位] 亿元【可比】</td>
+                                                <td class="greenbgc">同比（％）</td>
+                                                <td class="redbgc">GDP[报告期] 2016年[单位] 亿元</td>
+                                                <td class="greenbgc">占GDP百分比（％）</td>
+                                            </tr>
+                                            <tr>
+                                                <td>302648.80  </td>
+                                                <td>301491.15 </td>
+                                                <td>282959.71  </td>
+                                                <td>6.55 </td>
+                                                <td>744127</td>
+                                                <td>40.67 </td>
+                                            </tr>
+                                        </table>
+                                    </li>
+                                    <li class="selectresli">
+                                        <table class="tableStyle mytablestyle margin_top15">
+                                            <tr>
+                                                <td style="vertical-align: middle"  rowspan="4" class="trtdfirst">沪深300指数成份股</td>
+                                                <td class="redbgc">其中：营业收入[报告期] 2016年报[单位] 亿元【可比】</td>
+                                                <td class="redbgc">归属于母公司所有者的净利润[报告期] 2016年报[单位] 亿元【可比】</td>
+                                                <td class="greenbgc">同比(%)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>202235.49 </td>
+                                                <td>194038.37</td>
+                                                <td>4.22 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="redbgc">其中：营业收入[报告期] 2015年报[单位] 亿元【可比】</td>
+                                                <td class="redbgc">归属于母公司所有者的净利润[报告期] 2015年报[单位] 亿元【可比】</td>
+                                                <td class="greenbgc">同比(%)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>20310.00</td>
+                                                <td>20718.54</td>
+                                                <td>-1.97 </td>
+                                            </tr>
+                                        </table>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="xzjgclassbox">
+                            <span class="titxz"><i class="firstxz">板块选择</i><i class="blue">※</i><i class="secondxz">常用指数成分</i></span>
+                            <div class="xztables margin_bottom15" >
+                                <ul class="selectresul clearfix">
+                                    <li class="selectresli">
+                                        <table class="tableStyle mytablestyle margin_top15">
+                                            <tr>
+                                                <td style="vertical-align: middle"  rowspan="4" class="trtdfirst">沪深300指数成份股</td>
+                                                <td class="redbgc">其中：营业收入[报告期] 2016年报[单位] 亿元【可比】</td>
+                                                <td class="redbgc">归属于母公司所有者的净利润[报告期] 2016年报[单位] 亿元【可比】</td>
+                                                <td class="greenbgc">同比(%)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>202235.49 </td>
+                                                <td>194038.37</td>
+                                                <td>4.22 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="redbgc">其中：营业收入[报告期] 2015年报[单位] 亿元【可比】</td>
+                                                <td class="redbgc">归属于母公司所有者的净利润[报告期] 2015年报[单位] 亿元【可比】</td>
+                                                <td class="greenbgc">同比(%)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>20310.00</td>
+                                                <td>20718.54</td>
+                                                <td>-1.97 </td>
+                                            </tr>
+                                        </table>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+   </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<script type="text/javascript">
+    var dateSkin = "blue";
+
+    function initComplete() {
+        //获取当前主题风格，用于设置日期控件的皮肤
+        try {
+            dateSkin = themeColor;
+        } catch (e) {
+        }
+
+        //自定义点击触发日期控件
+        document.getElementById('beginTime').onfocus = function () {
+            var endtimeTf = $dp.$('endTime');
+            WdatePicker({
+                skin: dateSkin,
+                onpicked: function () {
+                    endtimeTf.focus();
+                },
+                maxDate: '#F{$dp.$D(\'endTime\')}'
+            });
+        }
+        document.getElementById('endTime').onfocus = function () {
+            //这里设置了最大日期为当前日期，如果不需要则把maxDate:'%y-%M-%d'去掉
+            WdatePicker({
+                skin: dateSkin,
+                minDate: '#F{$dp.$D(\'beginTime\')}'
+            });
+        }
+
+        //平面显示
+        WdatePicker({
+            skin: dateSkin,
+            eCont: 'div1',
+            onpicked: function (dp) {
+                top.Toast("showNoticeToast", '你选择的日期是:' + dp.cal.getDateStr())
+            }
+        })
+
+        document.getElementById('date-11').onfocus = function () {
+            WdatePicker({
+                skin: dateSkin,
+                maxDate: '%y-%M-%d'
+            });
+        }
+    }
+
+    //动态生成
+    function createDate() {
+        var $date = $('<br/><br/><input type="text" class="date" style="width:250px;" dateFmt="yyyy-MM-dd HH:mm:ss"/>');
+        $("#testBtn").after($date);
+        $date.render();
+    }
+
+    //设为不可用
+    function disableSelect() {
+        $("#date-8").attr("disabled", true);
+    }
+    //设为可用
+    function enableSelect() {
+        $("#date-8").attr("disabled", false);
+    }
+
+    //动态赋值
+    function setValue() {
+        $("#date-7").val("2012-07-08");
+    }
+</script>
+<script type="text/javascript">
+
+
+    var listdata = {
+        "list": [
+            {value: "1", key: "[600000]浦发银行", suggest: "600000浦发银行|pufayinhang|pfyh"},
+            {value: "2", key: "[600004]白云机场", suggest: "600004白云机场|baiyunjichang|byjc"},
+            {value: "3", key: "[600006]东风汽车", suggest: "600006东风汽车|dongfengqiche|dfqc"},
+            {value: "4", key: "[600007]中国国贸", suggest: "600007中国国贸|zhongguoguomao|zggm"}
+        ]
+    };
+    $(function () {
+        $("#suggestion1").data("data", listdata);
+        $("#suggestion1").render();
+
+        $(".navIconSmall").each(function () {
+            $(this).hover(function () {
+                $(this).addClass("navIconSmall_hover");
+            }, function () {
+                $(this).removeClass("navIconSmall_hover");
+            })
+            $(this).click(function () {
+                $(".navIconSmall").removeClass("navIconSmall_current");
+                $(this).addClass("navIconSmall_current");
+                $("#selectCostom5").setValue($(this).attr("id"), $(this).text().trim());
+            })
+        })
+    })
+
+    //手动触发验证，被验证的表单元素是containerId容器里的。 可以验证整个表单，也可以验证部分表单。
+    function validateForm(containerId) {
+        var valid = $(containerId).validationEngine({returnIsValid: true, showOnMouseOver: false});
+        if (valid == true) {
+            top.Toast("showNoticeToast", '进行提交处理');
+        } else {
+            top.Toast("showErrorToast", '表单填写不正确，请按要求填写！');
+        }
+    }
+
+
+</script>
+<!--分页-->
+<script>
+    $(function () {
+        $("#page-1").bind("pageChange", function (e, index) {
+            top.Toast("showNoticeToast", index)
+        })
+
+        $("#page-4").bind("sizeChange", function (e, num) {
+            top.Toast("showNoticeToast", num)
+        })
+
+        $("#page-6").bind("pageChange", function (e, index) {
+            top.Toast("showNoticeToast", index)
+        })
+
+        $("#page-7").bind("pageChange", function (e, index) {
+            top.Toast("showNoticeToast", "触发分页事件，当前页：" + (index + 1))
+        })
+        $("#page-7").bind("sizeChange", function (e, num) {
+            top.Toast("showNoticeToast", "触发条数改变事件，每页条数：" + num)
+        })
+    })
+    function addPager() {
+        var $pager = $('<div class="pageNumber" total="200" showSelect="true" showInput="true"></div>');
+        $pager.attr("total", 300);
+        var $pagerCon = $('<div class="float_left padding5">左侧要放置的内容。如没有可去掉。</div><div class="float_right padding5"></div><div class="clear"></div>');
+        $pagerCon.eq(1).append($pager);
+        $("#pageContent").append($pagerCon);
+        $pager.render();
+        $pager.bind("pageChange", function (e, index) {
+            top.Toast("showNoticeToast", index)
+        })
+        $pager.bind("sizeChange", function (e, num) {
+            top.Toast("showNoticeToast", num)
+        })
+    }
+    function changePager() {
+        $("#page-9").attr("total", 300);
+        $("#page-9").render();
+    }
+
+</script>
+
+
+<!--树组件复选框-->
+<script type="text/javascript">
+
+    var setting1 = {
+        check: {
+            enable: true
+        }
+    };
+
+    var zNodes1 = [
+        { id:1,  parentId:0, name:"指标选择", open: true},
+        { id:11, parentId:1, name:"财报统计", open: true},
+        { id:1101, parentId:11, name:"披露家数"},
+        { id:1102, parentId:11, name:"ST公司披露家数"},
+        { id:12, parentId:1, name:"业绩总体情况", open: true},
+        { id:1201, parentId:12, name:"营业收入"},
+        { id:1202, parentId:12, name:"归母后净利润"},
+        { id:1203, parentId:12, name:"投资收益"},
+        { id:1204, parentId:12, name:"营业利润"},
+        { id:1205, parentId:12, name:"利润总额"},
+        { id:1206, parentId:12, name:"销售毛利率"},
+        { id:1207, parentId:12, name:"基本每股收益"},
+        { id:1208, parentId:12, name:"每股净资产"},
+        { id:1209, parentId:12, name:"净资产收益率"},
+        { id:1210, parentId:12, name:"经营性现金流"},
+        { id:13, parentId:1, name:"行业数据", open: true},
+        { id:1301, parentId:13, name:"房地产公司月度经营数据"},
+        { id:2,  parentId:0, name:"板块选择", open: true},
+        { id:201,  parentId:2, name:"全部上市公司"},
+        { id:202,  parentId:2, name:"非金融类上市公司"},
+        { id:203,  parentId:2, name:"非金融类（剔除两桶油）"},
+        { id:204,  parentId:2, name:"上证上市公司"},
+        { id:205,  parentId:2, name:"深证上市公司"},
+        { id:206,  parentId:2, name:"中小板"},
+        { id:207,  parentId:2, name:"创业板"},
+        { id:208,  parentId:2, name:"全部A股"},
+        { id:209,  parentId:2, name:"上证A股"},
+        { id:210,  parentId:2, name:"深证A股"},
+        { id:211,  parentId:2, name:"常用指数成份", open: true},
+        { id:21101,  parentId:211, name:"沪深300"},
+        { id:21102,  parentId:211, name:"上证50"},
+        { id:21103,  parentId:211, name:"上证180"},
+        { id:21104,  parentId:211, name:"深证100"},
+        { id:21105,  parentId:211, name:"深证成指"},
+        { id:21106,  parentId:211, name:"中证500"},
+        { id:21107,  parentId:211, name:"中证800"}
+
+    ];
+
+
+    var setting2 = {
+        check: {
+            enable: true,
+            chkboxType: { "Y" : "ps", "N" : "ps" }
+        }
+    };
+
+    var setting3 = {
+        check: {
+            enable: true
+        },
+        callback: {
+            beforeCheck: beforeCheck3,
+            onCheck: onCheck3
+        }
+    };
+
+    function initComplete(){
+        $.fn.zTree.init($("#tree-1"), setting1, zNodes1);
+        $.fn.zTree.init($("#tree-2"), setting2, zNodes1);
+        $.fn.zTree.init($("#tree-3"), setting3, zNodes1);
+        //显示“父子关联关系”用的 实际项目中不用
+        setCheck();
+    }
+
+    //选择结果
+    function getSelectValue(){
+
+        //获取zTree对象
+        var zTree = $.fn.zTree.getZTreeObj("tree-1");
+        //得到选中的数据集
+        var checkedNodes = zTree.getCheckedNodes(true);
+        //得到未选中的数据集
+        var checkedNodes2 = zTree.getCheckedNodes(false);
+
+        var msg = "";
+        var msg2 = "";
+
+        for(var i = 0; i < checkedNodes.length; i++){
+            msg += "," + checkedNodes[i].id;
+        }
+        if(msg == ""){
+            msg = "无选择";
+        }else{
+            msg = msg.substring(1);
+        }
+
+        for(var j = 0; j < checkedNodes2.length; j++){
+            msg2 = msg2 + "," + checkedNodes2[j].id;
+        }
+        if(msg2 == ""){
+            msg2 = "无选择";
+        }else{
+            msg2 = msg2.substring(1);
+        }
+
+        top.Toast("showNoticeToast", "已选中:"+msg+"；未选中："+msg2);
+    }
+
+
+    function beforeCheck3(treeId, treeNode) {
+        appendToLog3("beforeCheck", treeNode.id, treeNode.name);
+    }
+
+    function onCheck3(event, treeId, treeNode) {
+        appendToLog3("onCheck", treeNode.id, treeNode.name);
+    }
+
+    //追加日志信息
+    function appendToLog3(eventName, nodeId, nodeName){
+        $('#log3').val( function(index, val){
+            return val + "【" + eventName + "】 " + nodeId + "  " + nodeName + "\n";
+        });
+    }
+
+
+    //勾选
+    function checkNode(){
+        var zTree = $.fn.zTree.getZTreeObj("tree-3");
+        var node = zTree.getNodeByParam('id', '13');
+        //4个参数：① 节点 ② 勾选true/取消勾选false ③checkTypeFlag设置父子关联true/设置父子不关联false ④是否回调，调用回调函数true，否则false
+        zTree.checkNode(node, true, true, true);
+    }
+
+
+    //取消勾选
+    function disCheckNode(){
+        var zTree = $.fn.zTree.getZTreeObj("tree-3");
+        var node = zTree.getNodeByParam('id', '13');
+        zTree.checkNode(node, false, true, true);
+    }
+
+
+    //------------------------ 父子关联 代码显示 ----------------------------//
+    var code;
+
+    function setCheck() {
+        var zTree = $.fn.zTree.getZTreeObj("tree-2"),
+            py = $("#py").attr("checked")? "p":"",
+            sy = $("#sy").attr("checked")? "s":"",
+            pn = $("#pn").attr("checked")? "p":"",
+            sn = $("#sn").attr("checked")? "s":"",
+            type = { "Y":py + sy, "N":pn + sn};
+        zTree.setting.check.chkboxType = type;
+        $("#code").val('setting.check.chkboxType = { "Y" : "' + type.Y + '", "N" : "' + type.N + '" }');
+    }
+
+
+
+</script>
+
+<!--end 树组件复选框-->
+<script>
+/*   setInterval(function () {
+       $(' li.level1 .chk:eq(0)').hide();
+   },100)*/
+</script>
+</body>
+</html>

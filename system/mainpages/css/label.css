@@ -1,0 +1,174 @@
+/************3-23标签筛选重整**************/
+.allFilterBox {
+    background-color: #fff;
+    padding-top: 5px;
+    margin-bottom: 15px;
+    position: relative;
+    font-size: 12px;
+    border:1px solid #eaedf4;
+}
+.filtersingleBox {
+    padding:5px;
+    border-bottom:1px dotted #eaedf4;
+}
+.filt_leftLabel {
+    width: 90px;
+    color: #000;
+    line-height: 24px;
+    text-align: right;
+
+    position: relative;
+    z-index: 10;
+    font-weight:bold;
+}
+.filter-rs .filt_leftLabel {
+    font-weight:normal;
+}
+.filt_leftLabel span {
+    display: block;
+}
+.filt_leftLabel .gray_txt {
+    color: #aaa;
+    line-height: 18px;
+}
+.filt_right_box {
+    width: 100%;
+    padding-left: 90px;
+    margin-left: -90px;
+    position: relative;
+    padding-right: 50px;
+}
+
+.filtersingleBox.filter-rs {
+    border-bottom:1px solid #eaedf4;
+    /*padding-right: 50px;*/
+    position: relative;
+}
+.clearAllfilter {
+    position: absolute;
+    width: 50px;
+    text-align: center;
+    top: -1px;
+    right: 0;
+    height: 24px;
+    line-height: 24px;
+}
+.clearAllfilterbtn {
+    color: #e60012;
+    line-height: 24px;
+}
+
+.filtRsCell {
+    position: relative;
+    float: left;
+    margin-right: 4px;
+    margin-bottom: 3px;
+    height: 22px;
+    line-height: 20px;
+    padding-left: 5px;
+    padding-right: 20px;
+    border:1px solid #0b96e9;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    width: 80px;
+    color: #0b96e9;
+
+}
+.del_rs {
+    position: absolute;
+    height: 20px;
+    line-height: 18px;
+    width: 20px;
+    text-align: center;
+    top: 0;
+    right: 0;
+    font-size: 16px;
+    color: #e60012;
+}
+.moreLabelBtn {
+    position: absolute;
+    color: #0b96e9;
+    width: 50px;
+    text-align: center;
+    top: -1px;
+    right: 0px;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+}
+.rightLabel {
+    float: left;
+    margin-right: 6px;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+.rightLabel.haveSonLabel {
+    position: relative;
+}
+.rightLabel.haveSonLabel .label_txt{
+    padding-right: 20px;
+
+}
+.openSon_btn {
+    position: absolute;
+    height: 22px;
+    line-height: 22px;
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+    top: 0;
+    right:0;
+    z-index: 100;
+    color: #d19738;
+}
+.label_txt {
+    display:block;
+    white-space: nowrap;
+    padding:0px 5px;
+    height: 22px;
+    line-height: 20px;
+    border:1px solid #ddd;
+    color: #000;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+.label_txt.actived {/*标签选中时状态*/
+    color: #0b96e9;
+}
+.label_txt.notOpt {/*不可选的标签样式*/
+    /*color: gray;*/
+}
+.labelSonbox {
+    display: none;
+
+}
+.labelSonbox .rightLabel {
+    float: none;
+    border: 0;
+    margin-bottom: 6px;    background-color: #f5f5f5;
+}
+.labelSonbox .rightLabel .label_txt {
+    border: 0;
+    border-bottom:1px solid #bbb;
+}
+.labelBox_sonLevel_1 {
+    border:1px solid #ddd;
+}
+.labelSonbox.labelBox_sonLevel_1 {
+    max-height: 260px;
+    overflow: auto;
+}
+.popLabelBox {
+    padding: 10px;
+}
+.popLabelBox .rightLabel {
+    margin: 5px;
+}
+/************3-23标签筛选重整 end**************/

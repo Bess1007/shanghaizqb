@@ -1,0 +1,729 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>持牌公司录入</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue"
+          positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin"
+          skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+
+    <link rel="stylesheet" href="css/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="js/shzqbqui.js"></script>
+</head>
+<body class="bclightblue ">
+<div class="page_content mystylebox">
+    <div class="mygroupTitle clearfix hyzsk">
+        <span>行业数据库录入</span>
+        <div class="fr ss" style="margin-top: 0;">
+            <div class="fr">
+                <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix">
+
+        <div class="edite_tablebox ">
+            <div class="lci_li clearfix w1140">
+                <i class="line_blue"></i>
+                <span class="lci_name fl">
+                    行业名称：
+                </span>
+                <span class="lci_value fl">
+                    <input type="text" truetype="textinput" class="textinput" value="文化传媒行业">
+                </span>
+            </div>
+            <ul class="licCompanyinput">
+                <!--基本信息-->
+                <li>
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>影片基本信息</legend>
+                    </fieldset>
+                    <div class="w1140">
+                        <ul class="mvname_ulint mvname_ulint1 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_cyan"></i>
+                                <span class="lci_name fl">
+                                    片名（中文名）：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    片名（外文名）：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    其它译名：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="mvname_ulint mvname_ulint1 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_cyan"></i>
+                                <span class="lci_name fl">
+                                    出品时间：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    出品公司：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    发行公司：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="mvname_ulint mvname_ulint2 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_cyan"></i>
+                                <span class="lci_name fl">
+                                    制片地区：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    制片成本：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    拍摄地点：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    拍摄日期：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="mvname_ulint mvname_ulint1 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_cyan"></i>
+                                <span class="lci_name fl">
+                                    导 演：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    编 剧：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    制片人：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="mvname_ulint mvname_ulint3 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_cyan"></i>
+                                <span class="lci_name fl">
+                                    类 型：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    主 演：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="mvname_ulint mvname_ulint3 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_cyan"></i>
+                                <span class="lci_name fl">
+                                    片 长：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    上映时间：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="mvname_ulint mvname_ulint1 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_cyan"></i>
+                                <span class="lci_name fl">
+                                    对白语言：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    色 彩：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                   imdb编码：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="mvname_ulint mvname_ulint3 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_cyan"></i>
+                                <span class="lci_name fl">
+                                    介绍图片：
+                                </span>
+                                <input type="file" style="width: 300px;" class="fl" >
+
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!--演员表-->
+                <li class="relpos_li">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>演员表</legend>
+                    </fieldset>
+                    <div class="w1140">
+                        <div class="addbtn_box ">
+                            <input type="submit" value="新增" class="primary button margin_top10 addico">
+                        </div>
+                        <ul class="mvname_ulint mvname_ulint1 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_purple"></i>
+                                <span class="lci_name fl">
+                                    姓名：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    英文名：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    饰演的角色：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" >
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!--职员表-->
+                <li class="relpos_li">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>职员表</legend>
+                    </fieldset>
+                    <div class="w1140">
+                        <ul class="mvname_ulint mvname_ulint1 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_blue"></i>
+                                <span class="lci_name fl">
+                                    制作人：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    导演：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    副导演（助理）：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="mvname_ulint mvname_ulint1 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_blue"></i>
+                                <span class="lci_name fl">
+                                    编剧：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    摄影：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    配乐：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="mvname_ulint mvname_ulint1 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_blue"></i>
+                                <span class="lci_name fl">
+                                    剪辑：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    美术设计：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    动作指导：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!--票房-->
+                <li class="relpos_li">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>票房</legend>
+                    </fieldset>
+                    <div class="w1140">
+                        <ul class="mvname_ulint mvname_ulint1 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_cyan"></i>
+                                <span class="lci_name fl">
+                                    累计综合票房：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    首周综合票房：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    首日综合票房：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="mvname_ulint mvname_ulint1 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_cyan"></i>
+                                <span class="lci_name fl">
+                                    累计分账票房：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    首周分账票房：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    首日分账票房：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput">
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!--想看用户画像-->
+                <li class="relpos_li">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>想看用户画像</legend>
+                    </fieldset>
+                    <div class="w1140">
+                        <ul class="mvname_ulint mvname_ulint3 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_purple"></i>
+                                <span class="lci_name fl">
+                                    男：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" placeholder="输入百分比">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    女：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput"  placeholder="输入百分比">
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="mvname_ulint mvname_ulint2 clearfix">
+                            <li class="lci_li clearfix">
+                                <i class="line_purple"></i>
+                                <span class="lci_name fl">
+                                    一线城市：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" placeholder="输入百分比">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    二线城市：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" placeholder="输入百分比">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    三线城市：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" placeholder="输入百分比">
+                                </span>
+                            </li>
+                            <li class="lci_li clearfix">
+                                <span class="lci_name fl">
+                                    四线城市：
+                                </span>
+                                <span class="lci_value fl">
+                                    <input type="text" truetype="textinput" class="textinput" placeholder="输入百分比">
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!--营销事件-->
+                <li class="relpos_li">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>营销事件</legend>
+                    </fieldset>
+                    <div class="w1140">
+                        <div class="addbtn_box ">
+                            <input type="submit" value="新增" class="primary button margin_top10" onclick="addico2()">
+                        </div>
+                        <table class="mytable3">
+                                <thead>
+                                <tr>
+                                    <th>事件类型</th>
+                                    <th>时间</th>
+                                    <th>标题</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr class="isClickTr">
+                                    <td>线下活动</td>
+                                    <td>2017-7-29</td>
+                                    <td>获外媒肯定：接近好莱坞战争大片，《战狼2》用命拼出重工业水准</td>
+                                    <td style="text-align: center;">
+                                        <span class="edt_btn" onclick="addico2()">编辑</span>
+                                        <span class="delete_btn" onclick="">删除</span>
+                                    </td>
+                                </tr>
+                                <tr class="isClickTr">
+                                    <td>线下活动</td>
+                                    <td>2017-7-29</td>
+                                    <td>获外媒肯定：接近好莱坞战争大片，《战狼2》用命拼出重工业水准</td>
+                                    <td style="text-align: center;">
+                                        <span class="edt_btn" onclick="addico2()">编辑</span>
+                                        <span class="delete_btn" onclick="">删除</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        <div class="l-panel-pagebar">
+                            <div class="pageNumber" autorender="false">
+                                <span class="current prev">上一页</span>
+                                <span class="current">1</span>
+                                <a>2</a><a class="next">下一页</a>
+                                <div style="clear:both;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--制作发行-->
+                <li class="relpos_li">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>制作发行</legend>
+                    </fieldset>
+                    <div class="w1140">
+                        <div class="addbtn_box ">
+                            <input type="submit" value="新增" class="primary button margin_top10 " onclick="addico3()">
+                        </div>
+                        <table class="mytable3">
+                            <thead>
+                            <tr>
+                                <th>参与项目</th>
+                                <th>公司名称</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr class="isClickTr">
+                                <td>出品</td>
+                                <td>北京登峰国际文化传播有限公司</td>
+                                <td style="text-align: center;">
+                                    <span class="edt_btn" onclick="addico3()">编辑</span>
+                                    <span class="delete_btn" onclick="">删除</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="l-panel-pagebar">
+                            <div class="pageNumber" autorender="false">
+                                <span class="current prev">上一页</span>
+                                <span class="current">1</span>
+                                <a>2</a><a class="next">下一页</a>
+                                <div style="clear:both;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clearfix">
+                <input type="submit" value="提交" class="primary button margin_top10 fr">
+                <input type="button" value="重置" class="button fr margin_top10">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="backtop" style="display: none;"><img src="./images/backtop.png" alt=""></div>
+
+<script type="text/javascript">
+    //新增表单
+    var newmvname_ulint ='<ul class="mvname_ulint mvname_ulint1 clearfix">'
+        +'<li class="lci_li clearfix">'
+        +'<i class="line_purple"></i>'
+        +'<span class="lci_name fl">'
+        +'姓名：'
+        +'</span>'
+        +'<span class="lci_value fl">'
+        +'<input type="text" truetype="textinput" class="textinput">'
+        +'</span>'
+        +'</li>'
+        +'<li class="lci_li clearfix">'
+        +'<span class="lci_name fl">'
+        +'英文名：'
+    +'</span>'
+    +'<span class="lci_value fl">'
+        +'<input type="text" truetype="textinput" class="textinput">'
+        +'</span>'
+        +'</li>'
+        +'<li class="lci_li clearfix">'
+        +'<span class="lci_name fl">'
+        +'饰演的角色：'
+    +'</span>'
+    +'<span class="lci_value fl">'
+        +'<input type="text" truetype="textinput" class="textinput">'
+        +'</span>'
+        +'</li>'
+        +'</ul>'
+    $('.addico').on('click',function () {
+        $(this).closest('.w1140').append(newmvname_ulint)
+    });
+
+    var yxev_box ='<div class="yxev_box">'
+        +'<ul class="mvname_ulint mvname_ulint1 clearfix">'
+        +'<li class="lci_li clearfix">'
+        +'<i class="line_blue"></i>'
+        +'<span class="lci_name fl">'
+        +'事件类型：'
+        +'</span>'
+        +'<span class="lci_value fl">'
+        +'<select name="" id="" truetype="select" class="my_select">'
+        +'<option value="">线下活动</option>'
+         +'<option value="">物料发布</option>'
+         +'</select>'
+         +'</span>'
+         +'</li>'
+         +'</ul>'
+         +'<ul class="mvname_ulint mvname_ulint1 clearfix">'
+         +'<li class="lci_li clearfix">'
+         +'<i class="line_blue"></i>'
+         +'<span class="lci_name fl">'
+         +'时间：'
+         +'</span>'
+         +'<span class="lci_value fl">'
+         +'<input type="text" truetype="textinput" class="textinput">'
+         +'</span>'
+         +'</li>'
+         +'</ul>'
+         +'<ul class="mvname_ulint mvname_ulint3 clearfix">'
+         +'<li class="lci_li clearfix">'
+         +'<i class="line_blue"></i>'
+         +'<span class="lci_name fl">'
+         +'标题：'
+         +'</span>'
+         +'<span class="lci_value fl">'
+         +'<input type="text" truetype="textinput" class="textinput">'
+         +'</span>'
+         +'</li>'
+         +'</ul>'
+         +'<ul class="mvname_ulint mvname_ulint3 clearfix">'
+         +'<li class="lci_li clearfix">'
+         +'<i class="line_blue"></i>'
+         +'<span class="lci_name fl">'
+         +'内容：'
+         +'</span>'
+         +'<span class="lci_value fl">'
+         +'<textarea name="" id="" cols="30" rows="10" style="width: 600px;" truetype="textarea" class="textarea"></textarea>'
+         +'</span>'
+         +'</li>'
+         +'</ul>'
+         +'</div>';
+    function addico2() {
+        layer.open({
+            type:1,
+            title:  ['编辑营销事件', 'font-size:18px;'],
+            area: ['70%', '75%'],
+            content:yxev_box,
+            btn: ['提交', '取消']
+        });
+    };
+    var addicobox3 ='   <ul class="mvname_ulint mvname_ulint3 clearfix">'
+          +'<li class="lci_li clearfix" style="float: none;">'
+          +'<i class="line_cyan"></i>'
+          +'<span class="lci_name fl">'
+          +'参与项目：'
+          +'</span>'
+          +'<span class="lci_value fl">'
+          +'<select name="" id="" truetype="select" class="my_select">'
+          +'<option value="">出品</option>'
+          +'<option value="">联合出品</option>'
+          +'<option value="">发行</option>'
+          +'<option value="">联合发行</option>'
+          +'<option value="">宣传</option>'
+          +'</select>'
+          +'</span>'
+          +'</li>'
+          +'<li class="lci_li clearfix" style="float: none;">'
+          +'<i class="line_cyan"></i>'
+          +'<span class="lci_name fl">'
+          +'公司名称：'
+          +'</span>'
+          +'<span class="lci_value fl">'
+          +'<input type="text" truetype="textinput" class="textinput">'
+          +'</span>'
+          +'</li>'
+          +'</ul>'
+    function addico3() {
+        layer.open({
+            type:1,
+            title:  ['制作发行公司编辑', 'font-size:18px;'],
+            area: ['100%', '100%'],
+            content:addicobox3,
+            btn: ['提交', '取消']
+        });
+    }
+</script>
+</body>
+</html>

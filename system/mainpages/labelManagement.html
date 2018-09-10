@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>采访标签管理</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <script type="text/javascript" src="../../libs/js/nav/basicTab.js"></script>
+    <!--数据表格start-->
+    <script src="../../libs/js/table/quiGrid.js" type="text/javascript"></script>
+    <!--数据表格end-->
+    <script type="text/javascript" src="../../libs/js/form/datePicker/WdatePicker.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <link rel="stylesheet" href="layer/skin/default/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <style>
+        #xttybq_grid,#yhzdybq_grid {
+            width: 100%!important;
+            margin-top: 10px;
+            box-sizing: content-box;
+        }
+        .l-panel-topbar.l-toolbar {
+            box-sizing: content-box;
+        }
+    </style>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox">
+    <div class="basicTab">
+        <div name="系统通用标签">
+            <div id="xttybq_grid"></div>
+        </div>
+    </div>
+   <!-- <div class="tab_change">
+        <div class="tab_change_hd">
+            <div class="tab_change_hd_cell actived">系统通用标签</div>
+            <div class="tab_change_hd_cell">用户自定义标签</div>
+        </div>
+        <div class="tab_change_con">
+            <div class="tab_change_con_cell actived">
+                <div id="yhzdybq_grid"></div>
+            </div>
+            <div class="tab_change_con_cell">
+                <div id="xttybq_grid"></div>
+            </div>
+        </div>
+    </div>-->
+
+   <!-- <div class="basicTab">
+        <div name="系统通用标签">
+            <div class="p10">
+               <div>
+                   可选：<input type="radio" id="sel_yes" name="lab_select" value="是" /><label for="sel_yes" class="hand">是</label><input type="radio" id="sel_no" name="lab_select" value="否"  /><label for="sel_no" class="hand">否</label>
+               </div>
+            </div>
+            <ul class="ul_label_mg clearfix">
+                <li class="li_label_mg"><span class="label_txt">宏观经济</span></li>
+                <li class="li_label_mg"><span class="label_txt">宏观经济</span></li>
+                <li class="li_label_mg"><span class="label_txt">宏观经济</span></li>
+                <li class="li_label_mg"><span class="label_txt">宏观经济</span></li>
+            </ul>
+        </div>
+        <div name="用户自定义标签">
+            <div class="p10">
+                <div>
+                    前台展示：<input type="radio" id="show_yes" name="lab_select" value="是" /><label for="show_yes" class="hand">是</label><input type="radio" id="show_no" name="lab_select" value="否"  /><label for="show_no" class="hand">否</label>
+                </div>
+                <div>
+                    前台可选：<input type="radio" id="sel_yes2" name="lab_select" value="是" /><label for="sel_yes2" class="hand">是</label>
+
+                    <input type="radio" id="sel_no2" name="lab_select" value="否"  /><label for="sel_no2" class="hand">否</label>
+                </div>
+                <div>
+                    多选：<input type="radio" id="sel_yes3" name="lab_select" value="是" /><label for="sel_yes3" class="hand">是</label>
+
+                    <input type="radio" id="sel_no3" name="lab_select" value="否"  /><label for="sel_no3" class="hand">否</label>
+                </div>
+            </div>
+            <div class="ope_btn">
+                <div class="ope_btn_cell">
+                    <span class="fa fa-plus-circle"></span><span>新增自定义标签</span>
+                </div>
+            </div>
+            <ul class="ul_label_mg clearfix">
+                <li class="li_custom_label_mg">
+                    <span class="label_txt">自定义标签1</span>
+                    <span class="ope_label_box">
+                        <i class="fa fa-trash txtred" title="删除"></i>
+                        <i class="fa fa-edit blue_txt" title="编辑"></i>
+                    </span>
+                </li>
+                <li class="li_custom_label_mg">
+                    <span class="label_txt">自定义标签2</span>
+                    <span class="ope_label_box">
+                        <i class="fa fa-trash txtred" title="删除"></i>
+                        <i class="fa fa-edit blue_txt" title="编辑"></i>
+                    </span>
+                </li>
+
+            </ul>
+        </div>
+    </div>-->
+</div>
+
+<script type="text/javascript">
+    /*系统通用标签数据*/
+    var testData1={"form.paginate.pageNo":1,"form.paginate.totalRows":13,"rows":[
+        {'id':'1','label_name':'宏观经济','if_opt':'<input type="radio" id="sel_yes1" name="lab_select1" value="是" /><label for="sel_yes1" class="hand">是</label><input type="radio" id="sel_no1" name="lab_select1" value="否"  /><label for="sel_no1" class="hand">否</label>'},
+        {'id':'2','label_name':'传媒','if_opt':'<input type="radio" id="sel_yes2" name="lab_select2" value="是" /><label for="sel_yes2" class="hand">是</label><input type="radio" id="sel_no2" name="lab_select2" value="否"  /><label for="sel_no2" class="hand">否</label>'},
+        {'id':'3','label_name':'资产重组','if_opt':'<input type="radio" id="sel_yes3" name="lab_select3" value="是" /><label for="sel_yes3" class="hand">是</label><input type="radio" id="sel_no3" name="lab_select3" value="否"  /><label for="sel_no3" class="hand">否</label>'}
+    ]};
+
+    //数据表格使用
+    var g1;
+
+    function initComplete(){
+        g1 = $("#xttybq_grid").quiGrid({
+            columns: [
+                { display: '标签名称', name: 'label_name', align: 'center',  width: "50%"},
+                { display: '是否可选', name: 'if_opt', align: 'center' , width: "50%"},
+                { display: '操作', isAllowHide: false, align: 'left', width: 120,
+                    render: function (rowdata, rowindex, value, column){
+                        return '<div class="grid_opp_container">'
+                            + '<span class="grid_opp_edit" onclick="onEdit(' + rowdata.id + ')">修改</span>'
+                            + '<span class="grid_opp_delete" onclick="onDelete(' + rowdata.id+','+rowindex + ')">删除</span>'
+                            + '</div>';
+                    }
+                }
+            ], data:testData1, pageSize: 10, rownumbers:true, checkbox:true,percentWidthMode:true,showPageTotalRow:true,
+            height: '100%', width:"100%",
+            toolbar:{
+                items:[
+                    {text: '新增', click: addUnit,    iconClass: 'icon_add'},
+                    { line : true },
+                    {text: '批量删除', click: deleteUnit, iconClass: 'icon_delete'},
+
+                ]
+            }
+
+        });
+
+
+
+
+    }
+    function onView(rowid){
+       /* top.Toast("showNoticeToast", "选择的记录Id是:" + rowid );*/
+    }
+
+    function onEdit(rowid){
+
+    }
+
+    function onDelete(rowid,rowidx){
+
+    }
+    function addUnit(){
+        top.Toast("showNoticeToast", "新增");
+    }
+    function deleteUnit(){
+        top.Toast("showNoticeToast", "批量删除");
+    }
+
+
+</script>
+
+</body>
+</html>

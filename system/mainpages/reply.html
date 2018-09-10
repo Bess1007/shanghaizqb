@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title></title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <!--引入提示下拉框脚本-->
+    <script type='text/javascript' src='../../libs/js/form/suggestion.js'></script>
+
+    <script type="text/javascript" src="js/shzqbqui.js"></script>
+
+    <link rel="stylesheet" href="css/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+
+    <style>
+        /******12-26互动改*******/
+        .mystylebox {
+            position: relative;
+        }
+        .interactionTableBox {
+            padding:15px;
+            padding-top: 0;
+            display:table;
+            width: 100% ;
+            height: 100%;
+        }
+        .ita_leftnav,.ita_rightcon {
+            float: none;
+            display:table-cell;
+            width: auto;
+            height:100%;
+            vertical-align: top;
+        }
+        .ita_leftnav {
+            width: 135px;
+        }
+
+        .sendMsTableBox {
+            display:table;
+            width: 100%;
+        }
+        .sendMsTbCell {
+            display:table-cell;
+            vertical-align: top;
+        }
+        .sendmes {
+            width:98%;
+        }
+        .ita_hideli .selectbox {
+            width:100%!important;
+        }
+        .right-sendMsTbCell {
+            width: 220px;
+            height: 100%;
+            background-color: #f0f0f0;
+        }
+        .textalign_right {
+            width:100px;
+        }
+
+        /*接收人*/
+        .sctRecipient-tit {
+            border-bottom:1px solid #ddd;
+            line-height:34px;
+            padding-left: 10px;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        .recipientBox {
+            width: 100%;
+            padding: 5px 10px;
+            border:1px solid #D8E3EF;
+            min-height: 30px;
+            border-radius:3px;
+            margin-bottom: 10px;
+
+        }
+        .sctRecipient {
+            width: 152px;
+        }
+        .sctRecipientInpBox {
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+        .suggestion_input {
+            width: 152px;
+        }
+        .selectRecipientBtn {
+            margin-right: 0;
+            padding:0 10px;
+        }
+        .allContacts {
+            height: 400px;
+            overflow: auto;
+        }
+        .allContactsTit {
+            padding-left: 10px;
+            line-height: 30px;
+            background-color: #e6e6e6;
+            font-size: 12px;
+        }
+        .contactsPart {
+            position: relative;
+            font-size: 12px;
+        }
+        .contactsPart .DropdownContorlBtn {
+            position: absolute;
+            line-height: 30px;
+            width: 30px;
+            text-align: center;
+            top: 0;
+            left: 0;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .contactsPart-tit {
+            padding-left: 30px;
+            line-height: 30px;
+            font-weight:bold;
+        }
+        .contactsPart-people {
+            width: 100%;
+            padding-left: 30px;
+            line-height: 26px;
+            cursor: pointer;
+        }
+        .contactsPart-people:hover {
+            background-color: #8cb7e6;
+        }
+        .contactsPart-people-box {/*分组联系人默认收起*/
+            display:none;
+        }
+
+        /*选择的联系人*/
+        .recipient-cell {
+            display:inline-block;
+            word-break: keep-all;
+            cursor: default;
+            font-size: 12px;
+            line-height: 20px;
+            margin:3px 5px;
+
+            moz-user-select: -moz-none;
+            -moz-user-select: none;
+            -o-user-select:none;
+            -khtml-user-select:none;
+            -webkit-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+        }
+        .recipient-cell:hover {
+            background-color: #d6e4f2;
+        }
+        .recipient-cell.actived {
+            background-color: #b3d0ef;
+        }
+        .ita_rightconul,.ita_hideli,.sendMsTableBox,.right-sendMsTbCell {
+            height:100%;
+        }
+        /******12-26互动改end*******/
+
+        /******1-26 加回复框*****/
+        .reply_box {
+            width: 100%;
+            height:auto;
+            min-height: 300px;
+            border:1px solid #D8E3EF;
+            padding: 5px;
+        }
+        .bc_gray_box {
+            background-color: #efefef;
+            font-size: 12px;
+            padding: 8px;
+            line-height: 20px;
+            margin: 5px 0;
+        }
+        .reply_box h5 {
+            font-weight:400;
+            color: #000;
+        }
+        .reply_box textarea {
+            width: 100%;
+            border:0;
+        }
+        .old_txt {
+            line-height: 1.5;
+            font-size: 13px;
+            min-height: 200px;
+        }
+    </style>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox" style="padding: 10px;">
+    <table style="width: 100%;">
+        <tbody>
+        <tr>
+            <td class="textalign_right">发送人：</td>
+            <td>信披</td>
+            <input id="sender" name="sender" value="信披" type="hidden" truetype="hidden">
+            <input id="userid" name="userid" value="249" type="hidden" truetype="hidden">
+        </tr>
+        <tr class="receivep">
+            <td class="textalign_right">接收人：</td>
+            <td class="clearfix">
+                <div class="recipientBox" id="recipientBox"><!--选择的联系人--结果-->
+                    <span class="recipient-cell" title="管理员"><i class="recipient-cell-name">管理员</i><i class="recipient-cell-separate"></i></span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="textalign_right">标题：</td>
+            <td><input id="title" type="text" style="width: 100%;margin-bottom: 10px;" name="title" value="" truetype="textinput" class="textinput"></td>
+        </tr>
+        <tr>
+            <td class="textalign_right">相关附件：</td>
+            <td class="fjtdbox">
+                <div class="clearfix xgfj">
+                    <div class="file-container-main" style="width: 212px;"><div class="file-container" style="width: 212px;"><table cellspacing="0" cellpadding="0" style="border-style:none;position:absolute;z-index:10;"><tbody><tr><td class="ali01" style="border-style:none;padding:0;margin:0;"><input type="text" class="textinput" style="width: 138px;"></td><td class="ali01" style="border-style:none;;padding:0;margin:0;"><input type="button" keepdefaultstyle="true" class="fileBtn" value="" style="width: 60px;"></td></tr></tbody></table><input type="file" style="width: 300px; position: absolute; z-index: 20; font-size: 118px; opacity: 0; left: 0px; top: -30px;" class="fl fileinput-button fileComponent" truetype="file"></div></div>
+                    <!--<ul class="filelist-ul"></ul>-->
+                    <!--<span class="fa fa-plus-square-o fl addfj"></span>-->
+                </div>
+                <div class="clearfix xgfj">
+                    <ul class="filelist-ul"></ul>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="textalign_right">消息内容：</td>
+            <td>
+                <div class="reply_box">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <h5>------------------ 原始邮件 ------------------</h5>
+                    <div class="bc_gray_box">
+                        <div><b>发件人:</b>&nbsp;"Only one";&lt;thisgood@foxmail.com&gt;;</div>
+                        <div><b>发送时间:</b>&nbsp;2018年1月26日(星期五) 下午3:25</div>
+                        <div><b>收件人:</b>&nbsp;"漂浮在sk"&lt;2689055561@qq.com&gt;;<wbr></div>
+                        <div><b>主题:</b>&nbsp;测试一下</div>
+                    </div>
+                    <textarea name="" id="" cols="30" rows="5" style="background-color: #efefef;line-height: 22px;color: #000;text-indent: 0;height: auto;border-radius:0;">
+发件人:"Only one";thisgood@foxmail.com
+发送时间:2018年1月26日(星期五) 下午3:25
+收件人:"漂浮在sk"2689055561@qq.com;
+主题: 测试一下
+                    </textarea>
+                    <div class="old_txt">
+                        <textarea name="" id="" cols="30" rows="10">啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</textarea>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="ali02">
+                <input type="button" onclick="send(0);" value="发送" class="primary  button">&nbsp;
+                <input type="reset" value="重置" class="button">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

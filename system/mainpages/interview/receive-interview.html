@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>接收稿件</title>
+    <!--框架必需start-->
+    <link href="../../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="../skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <script type="text/javascript" src="../../../libs/js/form/datePicker/WdatePicker.js"></script>
+    <!--数据表格start-->
+    <script src="../../../libs/js/table/quiGrid.js" type="text/javascript"></script>
+    <!--数据表格end-->
+
+    <link rel="stylesheet" href="../css/layer.css">
+    <script type="text/javascript" src="../layer/layer.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/shzqb.css">
+    <link rel="stylesheet" href="../css/industryExpert.css">
+    <link rel="stylesheet" href="../css/interview-form.css">
+    <style>
+        .l-panel-topbar.l-toolbar {
+            box-sizing: content-box;
+        }
+    </style>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox publishinfo">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <span>接收稿件</span>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix">
+       <!-- <div class="oppContent margin_bottom10">
+            <div class="">
+                <span class="leftButton icon_ok"  style="width: 79px;">录用</span>
+                <span class="centerButton icon_no" style="width: 79px;">不录用</span>
+            </div>
+        </div>-->
+
+        <div id="maingrid"></div>
+    </div>
+</div>
+
+<!--数据表格-->
+<script type="text/javascript">
+    var testData={"form.paginate.pageNo":1,"form.paginate.totalRows":13,"rows":[
+        {"name":"范子萌","manuscript_title":"<a href='interview-textpage.html'>稿件标题</a>","attachment":"<span class='attachment-ico fa fa-paperclip'></span>3","send_titme":"14:46"},
+        {"name":"刘阳","manuscript_title":"稿件标题","attachment":"","send_titme":"13:20"},
+        {"name":"雷洁琼","manuscript_title":"稿件标题","attachment":"","send_titme":"09:00"},
+        {"name":"尹志栋","manuscript_title":"稿件标题","attachment":"","send_titme":"5-14"},
+        {"name":"毛佳慧","manuscript_title":"稿件标题","attachment":"","send_titme":"5-14"}
+
+    ]};
+
+
+    //数据表格使用
+    var g;
+    function initComplete(){
+        g = $("#maingrid").quiGrid({
+            columns: [
+                { display: '发件人', name: 'name', align: 'center',  width: "10%"},
+                { display: '稿件标题', name: 'manuscript_title', align: 'center' , width: "55%"},
+                { display: '附件', name: 'attachment', align: 'center' , width: "10%"},
+                { display: '发送时间', name: 'send_titme',  align: 'center' , width: "25%"}
+               /* { display: '操作', isAllowHide: false, align: 'left', width:160,
+                    render: function (rowdata, rowindex, value, column){
+                        return '<div class="grid_opp_container">'
+                            +'<span class="grid_opp_view" onclick="addltb()" style="margin-left: 18px;">编辑</span>'
+                            + '<span class="grid_opp_delete" onclick="">删除</span>'
+                            + '</div>';
+                    }
+                }*/
+            ], data:testData, pageSize: 10, rownumbers:true, checkbox:true,percentWidthMode:true,
+            height: '100%', width:"100%",
+            toolbar:{
+                items:[
+                    {text: '录用',   iconClass: 'icon_ok'},
+                    { line : true },
+                    {text: '不录用', iconClass: 'icon_no'}
+                ]
+            }
+
+        });
+    }
+</script>
+<!--数据表格 end-->
+</body>
+</html>

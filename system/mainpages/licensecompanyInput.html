@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>持牌公司录入</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue"
+          positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin"
+          skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+
+    <link rel="stylesheet" href="css/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <script type="text/javascript" src="js/shzqbqui.js"></script>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox">
+    <div class="mygroupTitle clearfix hyzsk">
+        <span>持牌公司</span>
+        <i class="titico_i">◇</i>
+        <i>录入</i>
+        <div class="fr ss" style="margin-top: 0;">
+            <div class="fr">
+                <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix">
+
+        <div class="edite_tablebox w1080">
+            <ul class="licCompanyinput">
+                <li class="lci_li clearfix">
+                    <i class="line_blue"></i>
+                    <span class="lci_name fl">
+                        公司名称：
+                    </span>
+                    <span class="lci_value fl">
+                        <input type="text" >
+                    </span>
+                </li>
+                <li class="lci_li clearfix">
+                    <i class="line_cyan"></i>
+                    <span class="lci_name fl">公司CODE：</span>
+                    <span class="lci_value fl">
+                        <input type="text" placeholder="输入公司CODE">
+                    </span>
+                </li>
+                <li class="lci_li clearfix">
+                    <i class="line_purple"></i>
+                    <span class="lci_name fl">
+                        股票代码：
+                    </span>
+                    <span class="lci_value fl">
+                        <input type="text" placeholder="输入股票代码">
+                    </span>
+                </li>
+                <li class="lci_li clearfix">
+                    <i class="line_blue"></i>
+                    <span class="lci_name fl">区域选择：</span>
+                    <span class="lci_value fl">
+                        <select name="" id="">
+                            <option value="">选择区域</option>
+                            <option value="">安徽省</option>
+                            <option value="">内蒙古</option>
+                        </select>
+                    </span>
+                </li>
+                <li class="lci_li clearfix">
+                    <i class="line_cyan"></i>
+                    <span class="lci_name fl">持牌名称：</span>
+                    <span class="lci_value fl">
+                        <select name="" id="">
+                            <option value="">持牌类型选择</option>
+                            <option value="">第三方支付</option>
+                            <option value="">保险</option>
+                        </select>
+                    </span>
+                </li>
+
+            </ul>
+            <div class="clearfix">
+                <input type="submit" value="提交" class="primary button margin_top10 fr">
+                <input type="button" value="重置" class="button fr margin_top10">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

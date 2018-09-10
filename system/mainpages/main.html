@@ -1,0 +1,658 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<title></title>
+<!--框架必需start-->
+<link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+<link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+<link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollX="true"/>
+<!--newadd fontawsome-->
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
+<!--newadd shzqbcss-->
+<link rel="stylesheet" href="css/shzqb.css" />
+<script type="text/javascript" src="../../libs/js/jquery.js"></script>
+<script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+<script type="text/javascript" src="../../libs/js/main.js"></script>
+<!--框架必需end-->
+
+<!--弹窗组件start-->
+<script type="text/javascript" src="../../libs/js/popup/drag.js"></script>
+<script type="text/javascript" src="../../libs/js/popup/dialog.js"></script>
+<!--弹窗组件end-->
+
+<!--引入提示组件start-->
+<script type="text/javascript" src="../../libs/js/popup/toast.js"></script>
+<script type="text/javascript" src="../../libs/js/popup/notice.js"></script>
+<!--引入提示组件end-->
+
+<!--左侧导航start-->
+<script type="text/javascript" src="../../libs/js/nav/menuNav.js"></script>
+<!--左侧导航end-->
+
+<!--信件箱start-->
+<link rel="stylesheet" type="text/css" href="../../libs/skins/skyblue/msgbox.css" />
+<script type="text/javascript" src="../../libs/js/popup/msgbox.js"></script>
+<!--信件箱end-->
+
+	<!--轮播图-->
+	<!--<script type="text/javascript" src="../../libs/js/pic/gallery.js"></script>
+	<link href="css/gallery.css" rel="stylesheet"/>-->
+	<!--轮播图 end-->
+
+ <!--layer-->
+    <link rel="stylesheet" href="layer/skin/default/layer.css"/>
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <!--主题样式-->
+
+	<link rel="stylesheet" href="css/szRed.css">
+	<style>
+		body{
+			width: 100%!important;
+			margin: 0;
+			padding:0;
+		}
+		/*修改小铃铛样式*/
+		.right_tip{
+			width: 60px;
+			height: 50px;
+			margin-left: 0;
+			cursor: pointer;
+		}
+		.tip_icon{
+			margin-top: 12px;
+		}
+		.tip_balloons{
+			margin-top: 5px;
+		}
+		.tip_toggle_content{
+			top: 50px;
+			right: -16px;
+		}
+		.tip_allcontent_win,
+		.tip_allcontent{
+			top: 0px;
+		}
+		.tip_icon{
+			background: url(skin/page_head_ico.png) 0 -60px no-repeat;
+		}
+		.tip_icon_win:hover .tip_icon{
+			background: url(skin/page_head_ico.png) 0 -60px no-repeat;
+		}
+		#positionContent{
+			float: left;
+			width: 265px;
+			height: 50px;
+			line-height: 50px;
+			/*color: #fff;*/
+			margin-left: 20px;
+		}
+		.szRed,.szBlue {
+			display:inline-block;
+			width: 15px;
+			height: 15px;
+			border-radius:3px;
+			line-height:25px;
+			cursor: pointer;
+			position: relative;
+			top:2px;
+		}
+		.szRed{
+			background-color: #e60012;
+		}
+		.szBlue{
+			background-color: #1b92e6;}
+		.skinbox {
+			display:inline-block!important;
+			padding:3px!important;
+			cursor: pointer;
+		}
+
+		/*12-4二维码新增样式*/
+		i {
+			font-style: normal;
+		}
+		.twoEwmBox {
+			overflow: hidden;
+			width: 100%;
+			text-align: center;
+			display: table;
+
+		}
+		.twoEwmBox span.tbCell {
+			display: table-cell;
+			padding:0 15px;
+		}
+		.twoEwmBox i {
+			display:block;
+			color: #fff;
+			margin-top: 10px;
+		}
+		.twoEwmBox b.fa {
+			font-weight:400;
+			font-size: 22px;
+			margin-right: 8px;
+		}
+		.twoEwmBox img{
+			width: 300px;
+			display:inline-block;
+		}
+		.popEwmBigBox {
+			background: transparent;
+			padding: 10px;
+			padding-top: 25px;
+		}
+
+	</style>
+</head>
+<body class="szbStyle">
+<div id="mainFrame">
+<!--头部与导航start-->
+	<div id="hbox"></div>
+<!--头部与导航end-->
+	<div  class="table_win">
+		<table width="100%" cellpadding="0" cellspacing="0" class="table_border0">
+			<tr>
+				<!--左侧区域start-->
+				<td id="hideCon" class="ver01 ali01">
+						<div id="lbox">
+							<div id="lbox_topcenter">
+								<div class="LeftNav_title">
+									<b></b>
+									<div class="clear"></div>
+								</div>
+								<div class="logo_win">
+									<img src="images/shzqwhitelogowhite.png" class='biglogo'/ >
+									<img src="images/whiteicologo.png" class='littlelogo'/>
+								<!--	<p>上海证券报</p>-->
+								</div>
+							</div>
+							<div id="lbox_middlecenter">
+								<div id="lbox_middleleft">
+									<div id="lbox_middleright">
+										<div id="bs_left">
+
+
+											<div class="LeftNav_win">
+
+												<div class="stair_win" id="stair_win">
+													<img src="" alt="" />
+												</div>
+											</div>
+										</div>
+										<!--更改左侧栏的宽度需要修改id="bs_left"的样式-->
+									</div>
+								</div>
+							</div>
+							<div id="lbox_bottomcenter">
+								<div id="lbox_bottomleft">
+									<div id="lbox_bottomright">
+										<div class="lbox_foot"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				<!--左侧区域end-->
+
+				<!--右侧区域start-->
+				<td class="ali01 ver01" width="100%">
+						<div id="rbox">
+							<div id="rbox_topcenter">
+								<div>
+									<span class="fa fa-navicon mynavicon" style="display:none;cursor:pointer;font-size: 18px;color: #4ca1dc;"></span>
+									<span>您好，欢迎访问系统应用！</span>
+									<div id="positionContent">首页</div>
+									<ul>
+										<li><a href="index.html" target="frmright"><i class="fa fa-home fl" style="margin:7px 3px"></i><span class="fl">系统首页</span></a></li>
+										<li><b></b></li>
+                                        <li><a href="informationcont1.html" target="_blank"><i class="fa fa-file-text-o fl" style="margin:7px 3px"></i><span class="fl"> 资讯</span></a> </li>
+										<!--<li><b></b></li>
+                                        <li><a href="mycalendar.html" target="_blank"><i class="fa fa-calendar fl" style="margin:7px 3px"></i><span class="fl"> 信披日历</span></a> </li>-->
+                                        <li><b></b></li>
+										<li><a href="http://112.27.198.23:8081/shzq/companydetails/indexse.jhtml" target="_blank"><i class="fa fa-search-plus fl" style="margin:7px 3px"></i><span class="fl"> 洞察</span></a> </li>
+										<li><b></b></li>
+										<li><a href="financialReports.html" target="_blank"><i class="fa fa-support fl" style="margin:7px 3px"></i><span class="fl"> 数据服务</span></a> </li>
+                                        <li><b></b></li>
+										<li><a href="workSchedule.html" target="frmright"><i class="fa fa-calendar fl" style="margin:7px 3px"></i><span class="fl"> 工作日程</span></a> </li>
+										<li><b></b></li>
+										<li><a href="javascript:appewm();" title="上证金宝APP"><i class="fl fa fa-mobile-phone" style="margin:7px 3px;font-size: 18px;line-height: 14px;"></i><span class="fl" style="color: #e60012;">上证金宝</span></a> </li>
+										<li><b></b></li>
+										<li><a href="" ><i class="fa fa-chrome fl" style="margin:7px 3px"></i><span class="fl"> 下载谷歌</span></a> </li>
+										<li><b></b></li>
+                                        <li><div class="changeTheme">换肤: <span class="skinbox"><i class="szRed"></i></span><span class="skinbox"><i class="szBlue"></i></span></div></li>
+										<li><b></b></li>
+										<li><a href="" title="使用说明"><i class="fa fa-question-circle fl fz18" style="margin:7px 3px"></i><span class="fl"></span></a> </li>
+										<li><b></b></li>
+										<li><a href="" title="客服"><span style="margin-top: 7px;"><img src="images/customerService.png" alt="" width="18"></span></a> </li>
+										<li><b></b></li>
+										<li><span style="display:inline-block;" onclick="top.Dialog.confirm('确定要退出系统吗',function(){});"><i class="fa fa-power-off fl fz18" style="margin:7px 6px" title="退出系统"></i></span></li>
+										<div class="clear"></div>
+									</ul>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div id="rbox_middlecenter">
+								<div id="rbox_middleleft">
+									<div id="rbox_middleright">
+										<div id="bs_right">
+											<IFRAME style="box-sizing: border-box; background: white;" height="100%" width="100%" frameBorder=0 id=frmright name=frmright src="index-simple.html" allowTransparency="true"></IFRAME>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="rbox_bottomcenter">
+								<div id="rbox_bottomleft">
+									<div id="rbox_bottomright">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				<!--右侧区域end-->
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+<!--浏览器resize事件修正start-->
+<div id="resizeFix"></div>
+<!--浏览器resize事件修正end-->
+
+<!--窗口任务栏区域start-->
+<div id="dialogTask" class="dialogTaskBg" style="display:none;"></div>
+<!--窗口任务栏区域end-->
+
+<!--载进度条start-->
+<div class="progressBg" id="progress" style="display:none;"><div class="progressBar"></div></div>
+<!--载进度条end-->
+
+<!--更新提示-->
+<!--<div class="update-prompt">
+	<div class="black-bc"></div>
+	<div class="prompt-cont">
+		<h4>
+			<span>更新提示</span>
+			<span class="fr layui-layer-ico layui-layer-close layui-layer-close1 close-updatebox"></span>
+		</h4>
+		<div class="prompt-con">
+			<div id="gallery" class="ad-gallery">
+				<div class="ad-image-wrapper">
+				</div>
+				<div class="ad-controls">
+				</div>
+				<div class="ad-nav">
+					<div class="ad-thumbs">
+						<ul class="ad-thumb-list">
+							<li>
+								<a href="images/updates.jpg">
+									<img src="images/updates.jpg" class="image0">
+								</a>
+							</li>
+							<li>
+								<a href="images/updates.jpg">
+									<img src="images/updates.jpg" class="image1">
+								</a>
+							</li>
+							<li>
+								<a href="images/updates.jpg">
+									<img src="images/updates.jpg" class="image2">
+								</a>
+							</li>
+							<li>
+								<a href="images/updates.jpg">
+									<img src="images/updates.jpg" class="image3">
+								</a>
+							</li>
+							<li>
+								<a href="images/updates.jpg">
+									<img src="images/updates.jpg" class="image4">
+								</a>
+							</li>
+							<li>
+								<a href="images/updates.jpg">
+									<img src="images/updates.jpg"  class="image5">
+								</a>
+							</li>
+							<li>
+								<a href="images/updates.jpg">
+									<img src="images/updates.jpg" class="image6">
+								</a>
+							</li>
+							<li>
+								<a href="images/updates.jpg">
+									<img src="images/updates.jpg" class="image7">
+								</a>
+							</li>
+							<li>
+								<a href="images/updates.jpg">
+									<img src="images/updates.jpg" class="image8">
+								</a>
+							</li>
+							<li>
+								<a href="images/updates.jpg">
+									<img src="images/updates.jpg" class="image9">
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>-->
+<!--更新提示 end-->
+
+<!--更新提示-->
+<div class="update-prompt update-prompt2">
+    <div class="black-bc"></div>
+    <div class="prompt-cont clearfix">
+        <!--<span class="fr fa fa-close close-updatebox close-btn"></span>-->
+        <div class="update-hd-img"></div>
+        <div class="prompt-con">
+            <h5 class="prompt-tit">更新说明</h5>
+            <div class="update-list">
+                <p>1、优化系统流程，整体视觉效果和细节调整</p>
+                <p>2、修复已知BUG，提升性能和稳定性</p>
+            </div>
+        </div>
+        <div class="update-bt-btn">
+            <button class="close-btn">确 定</button>
+        </div>
+    </div>
+</div>
+<!--更新提示 end-->
+
+<script type="text/javascript">
+   /* $(function() {
+        var galleries = $('.ad-gallery').adGallery();
+        $('#switch-effect').change(
+            function() {
+                galleries[0].settings.effect = $(this).val();
+                return false;
+            }
+        );
+        $('#toggle-slideshow').click(
+            function() {
+                galleries[0].slideshow.toggle();
+                return false;
+            }
+        );
+        $('#toggle-description').click(
+            function() {
+                if(!galleries[0].settings.description_wrapper) {
+                    galleries[0].settings.description_wrapper = $('#descriptions');
+                } else {
+                    galleries[0].settings.description_wrapper = false;
+                }
+                return false;
+            }
+        );
+    });*/
+    $('body').on('click','.black-bc',function () {
+		$('.update-prompt').hide()
+    });
+	$('body').on('click','.close-btn',function () {
+        $('.update-prompt').hide()
+    });
+	var data = [
+		{ "news": "请假正在审批中" },
+		{ "news": "请各位周五前提交周报" },
+		{ "news": "上海证券报" }
+	];
+	tip_construction(data, ".right_tip", 10000); //数据，div的class或者id，定时器时间
+	
+	var menuData=[
+	/*{ "id":"2", "parentId":"0", "name":"资讯","url":"information.html", "target":"_blank","icon": "","backgroundPosition":"-188px -79px","img":""},*/
+	
+	
+	{ "id":"1", "parentId":"0", "name":"个人中心", "isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"-162px -15px","img":"./skin/topIcons/icon01.png"},
+/*	{ "id":"101", "parentId":"1", "name":"搜索","icon": "./skin/index_icon.png","backgroundPosition":"-1px 0"},
+	{ "id":"1101", "parentId":"101", "name":"全文搜索","url":"fulltextsearch.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"1102", "parentId":"101", "name":"搜索历史","url":"searchhistory.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},*/
+	{ "id":"102", "parentId":"1", "name":"我的关注","icon": "./skin/index_icon.png","backgroundPosition":"-188px -16px"},
+	{ "id":"10201", "parentId":"102", "name":"关注的公司","url":"acompany.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"10202", "parentId":"102", "name":"关注的行业","url":"aIndustry.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"103", "parentId":"1", "name":"我的收藏","url":"mycollect.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-16px -49px"},
+	/*{ "id":"104", "parentId":"1", "name":"网站监控","url":"websiteMonitor.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-207px -15px"},*/
+	/*{ "id":"105", "parentId":"1", "name":"定制数据收集任务","url":"dataCollect.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-209px -63px"},*/
+	/*{ "id":"106", "parentId":"1", "name":"热点主题设置","url":"hotTopics.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-226px 0"},*/
+	{ "id":"107", "parentId":"1", "name":"通讯录维护","url":"addressList.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-112px -48px"},
+	{ "id":"1014", "parentId":"1", "name":"通讯录Demo","url":"addressListDemo.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-112px -48px"},
+	{ "id":"108", "parentId":"1", "name":"修改密码","url":"changePassword.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-225px -117px"},
+	/*{ "id":"109", "parentId":"1", "name":"信披信息联络列表","url":"xpcontactList.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-47px -65px"},*/
+	/*{ "id":"1012", "parentId":"1", "name":"排名综合页","url":"ranking.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-131px -112px"},
+	{ "id":"1013", "parentId":"1", "name":"业绩快报","url":"pfmExpress.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-131px -112px"},*/
+
+
+	/*{ "id":"3", "parentId":"0", "name":"消息中心", "isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"-82px 0","img":"./skin/topIcons/icon03.png"},*/
+	
+	/*{ "id":"301", "parentId":"3", "name":"区域性新闻", "url":"areaNews.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-187px -80px"},*/
+/*	{ "id":"302", "parentId":"3", "name":"工作日程", "url":"workSchedule.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-224px -18px"},
+	{ "id":"303", "parentId":"3", "name":"预警信息", "url":"infoWarn.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-225px -37px"},
+	{ "id":"304", "parentId":"3", "name":"上市公司涉诉提醒", "url":"infoSstx.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-66px 0"},*/
+	/*{ "id":"305", "parentId":"3", "name":"股转公司重要文件", "url":"infoZywj.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-226px -52px"},*/
+	/*{ "id":"306", "parentId":"3", "name":"推送设置", "url":"infoPushsetting.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-224px -76px"},*/
+
+	
+	{ "id":"4", "parentId":"0", "name":"系统管理", "isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"-97px -65px","img":"./skin/topIcons/icon04.png"},
+        { "id":"4015", "parentId":"4", "name":"统计图表", "url":"smStatistics.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"4016", "parentId":"4", "name":"统计图表2", "url":"smStatistics2.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+
+/*hide*/
+	{ "id":"4011", "parentId":"4", "name":"持牌类型表", "url":"licensetypeTb.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"4012", "parentId":"4", "name":"持牌公司录入", "url":"licensecompanyInput.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"4013", "parentId":"4", "name":"行业数据库录入", "url":"culturalMediaint.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"4014", "parentId":"4", "name":"电影排名录入", "url":"mvranking.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	 { "id":"401", "parentId":"4", "name":"配置固化搜索项", "url":"searchParam.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"402", "parentId":"4", "name":"用户管理", "url":"userManagerment.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"403", "parentId":"4", "name":"组织机构管理", "url":"orgManagerment.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"404", "parentId":"4", "name":"权限管理", "url":"authManagerment.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"405", "parentId":"4", "name":"角色管理", "url":"roleManagerment.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"406", "parentId":"4", "name":"系统参数设置", "url":"paramManagerment.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"407", "parentId":"4", "name":"系统字典表维护", "url":"dicManagerment.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"408", "parentId":"4", "name":"日志管理", "url":"logManagerment.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"409", "parentId":"4", "name":"行业分类管理", "url":"industryManagerment.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	{ "id":"4010", "parentId":"4", "name":"资讯栏目管理", "url":"catManagerment.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+	
+
+
+
+	 { "id":"12", "parentId":"0", "name":"知识库", "isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"-98px -33px","img":"./skin/topIcons/icon04.png"},
+        { "id":"1201", "parentId":"12", "name":"行业知识库", "url":"industryKB.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"1202", "parentId":"12", "name":"成功案例", "url":"caseIntroduction.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"1203", "parentId":"12", "name":"专家库", "url":"expertLibrary.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+
+
+        {"id":"7", "parentId":"0", "name":"互动","url":"interaction.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"-99px -15px","img":"./skin/topIcons/icon05.png"},
+
+        { "id":"13", "parentId":"0", "name":"信息反馈", "isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"-67px 0","img":"./skin/topIcons/icon04.png"},
+        { "id":"1301", "parentId":"13", "name":"拟IPO项目信息", "url":"infoList1.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"1302", "parentId":"13", "name":"股权质押", "url":"", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"1303", "parentId":"13", "name":"并购卖方", "url":"", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"1304", "parentId":"13", "name":"并购买方", "url":"", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"1305", "parentId":"13", "name":"特定股东增持减", "url":"", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"1306", "parentId":"13", "name":"股权激励", "url":"", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"1307", "parentId":"13", "name":"产业并购基金", "url":"", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"1308", "parentId":"13", "name":"信贷项目信息", "url":"", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"1309", "parentId":"13", "name":"债权项目信息", "url":"", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"13010", "parentId":"13", "name":"投资理财项目", "url":"", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+
+
+        {"id":"14", "parentId":"0", "name":"项目线索","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"-18px 0","img":"./skin/topIcons/icon05.png"},
+        { "id":"1401", "parentId":"14", "name":"质押到期", "url":"xsZydq.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"1402", "parentId":"14", "name":"限售解禁", "url":"xsXsjj.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"1403", "parentId":"14", "name":"减持预披露", "url":"xsJcypl.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+
+
+        {"id":"15", "parentId":"0", "name":"过滤器测试","url":"filterTest.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"0 0","img":"./skin/topIcons/icon05.png"},
+        {"id":"16", "parentId":"0", "name":"左树右表","url":"filterTest2.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"0 0","img":"./skin/topIcons/icon05.png"},
+
+
+	/*{ "id":"5", "parentId":"0", "name":"数据服务", "isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"-193px -50px","img":"./skin/topIcons/icon05.png"},
+		{ "id":"501", "parentId":"5", "name":"数据定制服务", "url":"dataCustomization.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+		{ "id":"502", "parentId":"5", "name":"定期财务报告", "url":"financialReports.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+
+		{"id":"6", "parentId":"0", "name":"行业知识库","url":"industryKB.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"-98px -33px","img":"./skin/topIcons/icon05.png"},
+		{"id":"9", "parentId":"0", "name":"行业数据库","url":"industryDB.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"-188px -80px","img":"./skin/topIcons/icon05.png"},
+
+		{"id":"8", "parentId":"0", "name":"信息申报表","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"-112px -47px","img":"./skin/topIcons/icon05.png"},
+        	{ "id":"801", "parentId":"8", "name":"拟IPO项目信息表","url":"infotablelist.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        	{ "id":"802", "parentId":"8", "name":"股权质押项目调查表","url":"infotablelist2.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        	{ "id":"803", "parentId":"8", "name":"并购重组项目信息调查表列表","url":"infotablelist3.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        	{ "id":"804", "parentId":"8", "name":"上市公司调查表","url":"infotablelist4.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        {"id":"10", "parentId":"0", "name":"公司分布","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"-48px -65px","img":"./skin/topIcons/icon05.png"},
+        { "id":"1001", "parentId":"10", "name":"区域分类","url":"statisticArea.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        { "id":"1002", "parentId":"10", "name":"行业分类","url":"statisticTrade.html", "target":"frmright","icon": "./skin/index_icon.png","backgroundPosition":"-191px -32px"},
+        {"id":"11", "parentId":"0", "name":"牌照公司","url":"licenseCompany.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"-225px -97px"}
+*/
+        {"id":"17", "parentId":"0", "name":"采访","url":"interviewLabelDemo.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"0 0","img":"./skin/topIcons/icon05.png"},
+        {"id":"18", "parentId":"0", "name":"标签页面","url":"labelfilterDemo.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"0 0","img":"./skin/topIcons/icon05.png"},
+        {"id":"19", "parentId":"0", "name":"转发采访","url":"interview/forward-interview.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"0 0","img":"./skin/topIcons/icon05.png"},
+        {"id":"20", "parentId":"0", "name":"接收稿件","url":"interview/receive-interview.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"0 0","img":"./skin/topIcons/icon05.png"},
+        {"id":"21", "parentId":"0", "name":"我的稿件","url":"interview/mymanuscript.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"0 0","img":"./skin/topIcons/icon05.png"},
+        {"id":"22", "parentId":"0", "name":"	录入更新信息","url":"entryupdateinfo.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"0 0","img":"./skin/topIcons/icon05.png"},
+        {"id":"23", "parentId":"0", "name":"	董事长标签","url":"chairman-label.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"0 0","img":"./skin/topIcons/icon05.png"},
+        {"id":"24", "parentId":"0", "name":"	下属调查表","url":"subordinate-qs.html", "target":"frmright","isParent": "true","icon": "./skin/index_icon.png","backgroundPosition":"0 0","img":"./skin/topIcons/icon05.png"},
+];
+
+var setting = {
+	data: {
+		simpleData: {
+			idKey: "id",
+			pIdKey: "parentId",
+			enable: true,
+		},
+		key: {
+			children: "children"
+		}
+        /*state:"min"*//*默认左侧导航收起*/
+	}
+};
+$(function(){
+	initMenuNav(menuData,setting);
+})
+function lockScreen(){
+	top.Dialog.confirm("确定要锁屏吗，锁屏后只有重新输入密码才能解除。",function(){
+		openLockWindow();
+	});
+}
+function openLockWindow(){
+	var diag = new top.Dialog();
+		diag.Title = "系统锁屏";
+		diag.ID = "a1";
+		diag.URL="../../sample_skin/normal/lock.html";
+		diag.Width=350;
+		diag.Height=150;
+		diag.ShowCloseButton=false;
+		diag.ShowCancelButton=false;
+		diag.ShowOkButton=false;
+		diag.ButtonAlign="center";
+		diag.AllowChangeIndex=false;
+		diag.show();
+		diag.addButton("btn1","注销系统",function(){
+			top.Dialog.confirm("确定要退出系统吗",function(){top.Dialog.close();});
+		})
+		diag.addButton("btn2","确定解锁",function(){
+			top.Dialog.close();
+		})
+}
+</script>
+<!--侧边栏出现隐藏-->
+<script type="text/javascript">
+	/*$('#hideCon').hide();*/
+	function hideleftcon() {
+        $('.mynavicon').show();
+        $('#hideCon').hide();
+    };
+	$('.mynavicon').on('click',function () {
+		$('#hideCon').show();
+		$(this).hide();
+    });
+   /* $('.icon_home').click(function () {
+        hideleftcon()
+    });*/
+$('body').on('click','#copyrightinfo',function () {
+    $(this).hide()
+})
+	$('#stair_win').on('click','.style1:eq(3) .style2:eq(1)',function () {
+        hideleftcon()
+    })
+</script>
+<!--end 侧边栏出现隐藏-->
+<!--换肤-->
+<script src="js/base2.js"></script>
+<script>
+$('.skinbox').click(function () {
+   var skinboxindex = $(this).index();
+
+
+    var dynamicLoading = {
+        css: function(path){
+            if(!path || path.length === 0){
+                throw new Error('argument "path" is required !');
+            }
+            var head = document.getElementsByTagName('head')[0];
+            var link = document.createElement('link');
+            link.href = path;
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            head.appendChild(link);
+        },
+        js: function(path){
+            if(!path || path.length === 0){
+                throw new Error('argument "path" is required !');
+            }
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.src = path;
+            script.type = 'text/javascript';
+            head.appendChild(script);
+        }
+    };
+    layer.closeAll();
+    layer.open({
+        className: 'delPop',
+        title: ['温馨提示', 'background-color: #fff;'],
+        content: '确认换肤？'
+        ,btn: ['确定', '取消']
+        ,yes: function(index){
+            localStorage.setItem('keya',skinboxindex);//将skinboxindex存到keya里使得别的页面可以调用
+            window.location.reload();
+            if(skinboxindex == 0){
+                dynamicLoading.css("css/szRed.css");
+            }else{
+                dynamicLoading.css("css/szBlue.css");
+            }
+            layer.close(index);
+        }
+    });
+
+});
+</script>
+<!--换肤end-->
+<script>
+	/*弹出二维码*/
+	function appewm() {
+        layer.open({
+            type: 1,
+            title: false,
+            area: ['660px', '340px'],
+            offset: '100px',
+            closeBtn: 0,
+            shadeClose: true,
+            skin: 'popEwmBigBox',
+            content: '<div class="twoEwmBox">' +
+			'<span	class="tbCell"><img src="images/szmbApp.png" width="300"><i><b class="fa fa-android"></b>Android下载</i></span>' +
+			'<span	class="tbCell"><img src="images/szmbApp.png" width="300"><i><b class="fa fa-apple"></b>iphone下载</i></span>' +   /*苹果二维码预留位置*/
+			'</div>'
+
+        });
+    }
+</script>
+</body>
+</html>

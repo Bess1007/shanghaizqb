@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title></title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <!--数据表格start-->
+    <script src="../../libs/js/table/quiGrid.js" type="text/javascript"></script>
+    <!--数据表格end-->
+    <!-- 树组件start -->
+    <script type="text/javascript" src="../../libs/js/tree/ztree/ztree.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../libs/js/tree/ztree/ztree.css">
+    <!-- 树组件end -->
+
+    <!-- 树形下拉框start -->
+    <script type="text/javascript" src="../../libs/js/form/selectTree.js"></script>
+    <!-- 树形下拉框end -->
+
+    <link rel="stylesheet" href="layer/skin/default/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <style>
+
+    </style>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox">
+
+    <div class="undermygroupTitle clearfix" style="padding: 5px;padding-top: 10px;">
+        <div>
+            <div class="searchContent2 margin_top15 margin_bottom15" >
+                <form id="queryForm" action="" method="post">
+                    <!-- <input name="parentId" id="parentId" type="hidden" value="1" truetype="hidden">-->
+                   <div class="clearfix">
+                       <label for="" class="fl margin_right6">行业标签选择：</label>
+                       <div class="selectTree" id="selectTree9" multiMode="true" data='{"treeNodes":[{ "id":"1", "parentId":"0", "name":"部门1", "open": "true","myFlag":"部门1-自定义属性"},{ "id":"11", "parentId":"1", "name":"员工1","myFlag":"员工1-自定义属性"},{ "id":"12", "parentId":"1", "name":"员工2","myFlag":"员工2-自定义属性"},{ "id":"13", "parentId":"1", "name":"员工3","myFlag":"员工3-自定义属性"},{ "id":"2", "parentId":"0", "name":"部门2", "open": "true","myFlag":"部门2-自定义属性"},{ "id":"21", "parentId":"2", "name":"员工4","myFlag":"员工4-自定义属性"}]}'></div>
+                   </div>
+                </form>
+            </div>
+            <div class="clear"></div>
+            <div id="maingrid"></div>
+        </div>
+    </div>
+</div>
+<!--数据表格-->
+<script type="text/javascript">
+    var testData={"form.paginate.pageNo":1,"form.paginate.totalRows":13,"rows":[
+        {"label":"标签1","time":"2017-09-27","title":"项目标题1"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"},
+        {"label":"标签2","time":"2017-09-27","title":"项目标题2"}
+
+    ]};
+
+
+    //数据表格使用
+    var g;
+    function initComplete(){
+        g = $("#maingrid").quiGrid({
+            columns: [
+                { display: '标签', name: 'label', align: 'center',  width: "25%"},
+                { display: '发布日期', name: 'time', align: 'center' , width: "25%"},
+                { display: '项目标题', name: 'title', align: 'center',  width: "50%"}
+            ], data:testData, pageSize: 20, rownumbers:true, checkbox:false,percentWidthMode:true,
+            height: '100%', width:"100%"
+        });
+    }
+
+
+</script>
+<!--end 数据表格-->
+</body>
+</html>

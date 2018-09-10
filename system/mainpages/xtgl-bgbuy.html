@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>系统管理-并购买方</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <!--数据表格start-->
+    <script src="../../libs/js/table/quiGrid.js" type="text/javascript"></script>
+    <!--数据表格end-->
+    <!--时间选择器-->
+    <script type="text/javascript" src="../../libs/js/form/datePicker/WdatePicker.js"></script>
+    <!--时间选择器end-->
+
+    <!--提示下拉框start-->
+    <script type='text/javascript' src='../../libs/js/form/selectSuggestion.js'></script>
+    <!--提示下拉框end-->
+    <link rel="stylesheet" href="layer/skin/default/layer.css"/>
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/shzqb.css"/>
+    <style>
+        /*11-6新增筛选样式*/
+        .filterBox {
+            margin:10px 0;
+        }
+        .filterLibox {display:inline-block;
+            margin-right: 6px;}
+        .selectSuggestion.mainCon {
+            float: none;
+            position: relative;
+            top:10px;
+        }
+        /*11-6新增筛选样式end*/
+    </style>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <span>并购买方</span>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--筛选-->
+    <div class="filterBox" style="margin: 0 15px;">
+
+        <ul>
+            <li class="filterLibox">
+                <i class="blue_txt fz18">◆</i>
+                <span>选择项目状态：</span>
+                <div style="display: inline-block;position: relative;top: 11px;">
+                    <select name="" id="">
+                        <option value="">全部</option>
+                        <option value="">关注中</option>
+                        <option value="">接触中</option>
+                        <option value="">谈判中</option>
+                        <option value="">成功</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--筛选end-->
+
+    <div class="undermygroupTitle clearfix" style="padding: 5px;padding-top: 10px;">
+        <div id="maingrid" class="lhmin"></div>
+    </div>
+</div>
+
+<!--更新内容-->
+<div id="updateC" style="display:none;">
+    <ul>
+        <li>董事会秘书1</li>
+        <li>董事会秘书2</li>
+    </ul>
+</div>
+<!--更新内容end-->
+
+<!--数据表格-->
+<script type="text/javascript">
+    var testData={"form.paginate.pageNo":1,"form.paginate.totalRows":13,"rows":[
+        {"projectName":"名称1","projectState":"关注中","applicant":"张三","dept":"信批部","dateOfdec":"2017-12-2"},
+        {"projectName":"名称1","projectState":"关注中","applicant":"张三","dept":"信批部","dateOfdec":"2017-12-3"},
+        {"projectName":"名称1","projectState":"关注中","applicant":"张三","dept":"信批部","dateOfdec":"2017-12-4"},
+        {"projectName":"名称1","projectState":"关注中","applicant":"张三","dept":"信批部","dateOfdec":"2017-12-6"}
+    ]};
+
+    //数据表格使用
+    var g;
+    function initComplete(){
+        g = $("#maingrid").quiGrid({
+            columns: [
+                { display: '项目名称',name: 'projectName', align: 'center',  width: "20%"},
+                { display: '项目状态', name: 'projectState', align: 'center' , width: "20%"},
+                { display: '项目申报人', name: 'applicant',  align: 'center' , width: "20%"},
+                { display: '申报人所属部门', name: 'dept',  align: 'center' , width: "20%"},
+                { display: '项目申报日期', name: 'dateOfdec',  align: 'center' , width: "20%"}
+            ], data:testData, pageSize: 20, rownumbers:true, checkbox:false,percentWidthMode:true,
+            height: '100%', width:"100%"
+        });
+
+    }
+
+
+</script>
+
+<!--end 数据表格-->
+</body>
+
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>我的稿件</title>
+    <!--框架必需start-->
+    <link href="../../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="../skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <script type="text/javascript" src="../../../libs/js/form/datePicker/WdatePicker.js"></script>
+
+    <link rel="stylesheet" href="../css/layer.css">
+    <script type="text/javascript" src="../layer/layer.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/shzqb.css">
+    <link rel="stylesheet" href="../css/industryExpert.css">
+    <link rel="stylesheet" href="../css/interview-form.css">
+    <style>
+        /******12-26互动改*******/
+        .mystylebox {
+            position: relative;
+        }
+        .interactionTableBox {
+            padding:15px;
+            padding-top: 0;
+            display:table;
+            width: 100% ;
+            height: 100%;
+        }
+        .ita_leftnav,.ita_rightcon {
+            float: none;
+            display:table-cell;
+            width: auto;
+            height:100%;
+            vertical-align: top;
+        }
+        .ita_leftnav {
+            width: 135px;
+        }
+
+        .sendMsTableBox {
+            display:table;
+            width: 100%;
+        }
+        .sendMsTbCell {
+            display:table-cell;
+            vertical-align: top;
+        }
+        .sendmes {
+            width:98%;
+        }
+        .ita_hideli .selectbox {
+            width:100%!important;
+        }
+        .right-sendMsTbCell {
+            width: 220px;
+            height: 100%;
+            background-color: #f0f0f0;
+        }
+        .textalign_right {
+            width:100px;
+        }
+
+        /*接收人*/
+        .sctRecipient-tit {
+            border-bottom:1px solid #ddd;
+            line-height:34px;
+            padding-left: 10px;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        .recipientBox {
+            width: 100%;
+            padding: 5px 10px;
+            border:1px solid #D8E3EF;
+            min-height: 30px;
+            border-radius:3px;
+            margin-bottom: 10px;
+
+        }
+        .sctRecipient {
+            width: 152px;
+        }
+        .sctRecipientInpBox {
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+        .suggestion_input {
+            width: 152px;
+        }
+        .selectRecipientBtn {
+            margin-right: 0;
+            padding:0 10px;
+        }
+        .allContacts {
+            height: 400px;
+            overflow: auto;
+        }
+        .allContactsTit {
+            padding-left: 10px;
+            line-height: 30px;
+            background-color: #e6e6e6;
+        }
+        .contactsPart {
+            position: relative;
+        }
+        .contactsPart .DropdownContorlBtn {
+            position: absolute;
+            line-height: 30px;
+            width: 30px;
+            text-align: center;
+            top: 0;
+            left: 0;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .contactsPart-tit {
+            padding-left: 30px;
+            line-height: 30px;
+            font-weight:bold;
+        }
+        .contactsPart-people {
+            width: 100%;
+            padding-left: 30px;
+            line-height: 26px;
+            cursor: pointer;
+        }
+        .contactsPart-people:hover {
+            background-color: #8cb7e6;
+        }
+        .contactsPart-people-box {/*分组联系人默认收起*/
+            display:none;
+        }
+
+        /*选择的联系人*/
+        .recipient-cell {
+            display:inline-block;
+            word-break: keep-all;
+            cursor: default;
+            font-size: 12px;
+            line-height: 20px;
+            margin:3px 5px;
+
+            moz-user-select: -moz-none;
+            -moz-user-select: none;
+            -o-user-select:none;
+            -khtml-user-select:none;
+            -webkit-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+        }
+        .recipient-cell:hover {
+            background-color: #d6e4f2;
+        }
+        .recipient-cell.actived {
+            background-color: #b3d0ef;
+        }
+        .ita_rightconul,.ita_hideli,.sendMsTableBox,.right-sendMsTbCell {
+            height:100%;
+        }
+        /******12-26互动改end*******/
+        </style>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <span>我的稿件</span>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix">
+        <div class="interactionTableBox">
+            <div class="ita_leftnav">
+                <ul class="ita_leftnavul">
+                    <!--<li class="actived">收到的消息</li>-->
+                    <li class="actived">已发送</li>
+                    <!--<li class="">发消息</li>-->
+                    <li class="">草稿箱</li>
+                </ul>
+            </div>
+            <div class="ita_rightcon">
+                <ul class="ita_rightconul">
+                    <li class="ita_hideli actived">
+                        <ul class="xmxxfkcon">
+                            <li>
+                                <div class="xmxxfkcon_a">
+                                    <a href="interview-textpage.html" class="xmxxfkcon_atit" title="中元股份公司的信披费用还没有到账，请催款">
+                                        <i class="txt_gray">【2017-08-08】</i>中元股份公司的信披费用还没有到账，请催款
+                                    </a>
+                                    <span class="xmxxfkcon_abtn">
+                                        <i class="xmxxfkcon_abtni">资讯编辑部</i>
+                                        <i class="xmxxfkcon_abtni">已录用</i>
+                                        <i class="">
+                                            <span class="fa fa-paperclip"></span><span class="attachment-num">(3)</span>
+                                        </i>
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="xmxxfkcon_a">
+                                    <a href="interview-textpage.html" class="xmxxfkcon_atit" title="中元股份公司的信披费用还没有到账，请催款">
+                                        <i class="txt_gray">【2017-08-08】</i>中元股份公司的信披费用还没有到账，请催款
+                                    </a>
+                                    <span class="xmxxfkcon_abtn">
+                                        <i class="xmxxfkcon_abtni">资讯编辑部</i>
+                                        <i class="xmxxfkcon_abtni">已录用</i>
+                                        <i class="">
+                                            <span class="fa fa-paperclip"></span><span class="attachment-num">(3)</span>
+                                        </i>
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="xmxxfkcon_a">
+                                    <a href="interview-textpage.html" class="xmxxfkcon_atit" title="中元股份公司的信披费用还没有到账，请催款">
+                                        <i class="txt_gray">【2017-08-08】</i>中元股份公司的信披费用还没有到账，请催款
+                                    </a>
+                                    <span class="xmxxfkcon_abtn">
+                                        <i class="xmxxfkcon_abtni">资讯编辑部</i>
+                                        <i class="xmxxfkcon_abtni">已录用</i>
+                                        <i class="">
+                                            <span class="fa fa-paperclip"></span><span class="attachment-num">(3)</span>
+                                        </i>
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="xmxxfkcon_a">
+                                    <a href="interview-textpage.html" class="xmxxfkcon_atit" title="中元股份公司的信披费用还没有到账，请催款">
+                                        <i class="txt_gray">【2017-08-08】</i>中元股份公司的信披费用还没有到账，请催款
+                                    </a>
+                                    <span class="xmxxfkcon_abtn">
+                                        <i class="xmxxfkcon_abtni">资讯编辑部</i>
+                                        <i class="xmxxfkcon_abtni">已录用</i>
+                                        <i class="">
+                                            <span class="fa fa-paperclip"></span><span class="attachment-num">(3)</span>
+                                        </i>
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="xmxxfkcon_a">
+                                    <a href="interview-textpage.html" class="xmxxfkcon_atit" title="中元股份公司的信披费用还没有到账，请催款">
+                                        <i class="txt_gray">【2017-08-08】</i>中元股份公司的信披费用还没有到账，请催款
+                                    </a>
+                                    <span class="xmxxfkcon_abtn">
+                                        <i class="xmxxfkcon_abtni">资讯编辑部</i>
+                                        <i class="xmxxfkcon_abtni">已录用</i>
+                                        <i class="">
+                                            <span class="fa fa-paperclip"></span><span class="attachment-num">(3)</span>
+                                        </i>
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="xmxxfkcon_a">
+                                    <a href="interview-textpage.html" class="xmxxfkcon_atit" title="中元股份公司的信披费用还没有到账，请催款">
+                                        <i class="txt_gray">【2017-08-08】</i>中元股份公司的信披费用还没有到账，请催款
+                                    </a>
+                                    <span class="xmxxfkcon_abtn">
+                                        <i class="xmxxfkcon_abtni">资讯编辑部</i>
+                                        <i class="xmxxfkcon_abtni">已录用</i>
+                                        <i class="">
+                                            <span class="fa fa-paperclip"></span><span class="attachment-num">(3)</span>
+                                        </i>
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="xmxxfkcon_a">
+                                    <a href="interview-textpage.html" class="xmxxfkcon_atit" title="中元股份公司的信披费用还没有到账，请催款">
+                                        <i class="txt_gray">【2017-08-08】</i>中元股份公司的信披费用还没有到账，请催款
+                                    </a>
+                                    <span class="xmxxfkcon_abtn">
+                                        <i class="xmxxfkcon_abtni">资讯编辑部</i>
+                                        <i class="xmxxfkcon_abtni">已录用</i>
+                                        <i class="">
+                                            <span class="fa fa-paperclip"></span><span class="attachment-num">(3)</span>
+                                        </i>
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="xmxxfkcon_a">
+                                    <a href="interview-textpage.html" class="xmxxfkcon_atit" title="中元股份公司的信披费用还没有到账，请催款">
+                                        <i class="txt_gray">【2017-08-08】</i>中元股份公司的信披费用还没有到账，请催款
+                                    </a>
+                                    <span class="xmxxfkcon_abtn">
+                                        <i class="xmxxfkcon_abtni">资讯编辑部</i>
+                                        <i class="xmxxfkcon_abtni">已录用</i>
+                                        <i class="">
+                                            <span class="fa fa-paperclip"></span><span class="attachment-num">(3)</span>
+                                        </i>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="l-panel-pagebar">
+                            <div class="pageNumber" autorender="false">
+                                <span class="current prev">上一页</span>
+                                <span class="current">1</span>
+                                <a>2</a><a class="next">下一页</a>
+                                <div style="clear:both;"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="ita_hideli">
+                        <ul class="xmxxfkcon">
+                            <li>
+                                <div class="xmxxfkcon_a">
+                                    <a href="interview-textpage.html" class="xmxxfkcon_atit" title="中元股份公司的信披费用还没有到账，请催款">
+                                        <i class="txt_gray">【2017-08-08】</i>中元股份公司的信披费用还没有到账，请催款
+                                    </a>
+                                    <span class="xmxxfkcon_abtn">
+                                        <i class="xmxxfkcon_abtni">资讯编辑部</i>
+                                        <i class="">
+                                            <span class="fa fa-paperclip"></span><span class="attachment-num">(3)</span>
+                                        </i>
+                                        <i class="fr forwardBtn" style="cursor: pointer;margin-right: 15px;">
+                                            <span class="fa fa-trash-o red_txt fw700 fz18"><i style="color: #4d4d4d;font-size: 14px;margin-left: 6px;">删除</i></span>
+                                        </i>
+                                        <i class="fr forwardBtn" style="cursor: pointer;margin-right: 15px;">
+                                            <span class="fa fa-edit blue_txt fw700 fz18"><i style="color: #4d4d4d;font-size: 14px;margin-left: 6px;">编辑</i></span>
+                                        </i>
+                                        <i class="fr forwardBtn" style="cursor: pointer;margin-right: 15px;">
+                                            <span class="fa fa-send-o blue_txt fw700 fz18"><i style="color: #4d4d4d;font-size: 14px;margin-left: 6px;">一键发送</i></span>
+                                        </i>
+                                </span>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <div class="l-panel-pagebar">
+                            <div class="pageNumber" autorender="false">
+                                <span class="current prev">上一页</span>
+                                <span class="current">1</span>
+                                <a>2</a><a class="next">下一页</a>
+                                <div style="clear:both;"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--tab切换-->
+<script type="text/javascript">
+    $('.ita_leftnav li').on('click',function () {
+        var index = $(this).index();
+        $(this).addClass('actived').siblings('li').removeClass('actived');
+        $('.ita_hideli').eq(index).show().siblings('.ita_hideli').hide()
+    })
+</script>
+<!--end tab切换-->
+</body>
+</html>

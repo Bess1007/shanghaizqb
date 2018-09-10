@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title></title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+
+    <link rel="stylesheet" href="css/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <style>
+        .mytitlestyle {
+            background-color: #fff;
+            position: relative;
+        }
+        .undermygroupTitle {
+            background-color: #fff;
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            top: 60px;
+            bottom: 10px;
+        }
+        .left-tree-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 150px;
+            border-right:1px solid #D8E3EF;
+            overflow: auto;
+            padding-top: 20px;
+        }
+        .right-cont {
+            position: absolute;
+            top: 0;
+            left: 150px;
+            right: 0;
+            bottom: 0;
+            overflow: auto;
+            padding: 20px;
+        }
+        .left-tree-node {
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            line-height: 20px;
+            color: #657180;
+            font-size: 13px;
+            cursor: pointer;
+            border-left: 4px solid transparent;
+            margin-bottom: 5px;
+            transition: all .3s ease-in-out;
+        }
+        .left-tree-node:hover {
+            background: #f1f6f9;
+        }
+        .left-tree-node.actived {
+            border-left: 4px solid #2DA9FA;
+            background: #f1f6f9;
+        }
+        .subord-cell-box {
+            overflow: hidden;
+        }
+        .subord-cell {
+            float: left;
+            border:1px solid #D8E3EF;
+            border-top:3px solid #D8E3EF;
+            margin: 0 14px 14px 0;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            box-shadow: 1px 1px 6px #D8E3EF;
+            transition: all .3s ease-in-out;
+        }
+        .subord-lnk {
+            display: block;
+            padding: 20px 26px;
+            color: #333;
+            font-size: 14px;
+            line-height: 30px;
+        }
+        .subord-cell:hover {
+            color: #2DA9FA;
+            box-shadow: 1px 1px 16px #ced4ef;
+        }
+        .subord-lnk .fa {
+            color: #c8d3ef;
+            margin-right: 5px;
+            font-size: 24px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .sub-name {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content ">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <span>下属调查表</span>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix" style="padding: 5px;padding-top: 10px;">
+        <div class="left-tree-box">
+            <ul>
+                <li class="left-tree-node actived">第一部分</li>
+                <li class="left-tree-node">第二部分</li>
+                <li class="left-tree-node">第三部分</li>
+                <li class="left-tree-node">第四部分</li>
+                <li class="left-tree-node">第五部分</li>
+                <li class="left-tree-node">第六部分</li>
+            </ul>
+        </div>
+        <div class="right-cont">
+            <ul class="subord-cell-box">
+                <li class="subord-cell">
+                    <a href="" class="subord-lnk clearfix">
+                        <div class="sub-name"><span class="fa fa-user-circle-o "></span><i>测试1</i></div>
+                        <div class="department-txt">部门：<i>新闻部</i></div>
+                        <div class="sub-company-num">跟踪公司数：<i>33</i></div>
+                    </a>
+                </li>
+                <li class="subord-cell">
+                    <a href="" class="subord-lnk clearfix">
+                        <div class="sub-name"><span class="fa fa-user-circle-o "></span><i>测试1</i></div>
+                        <div class="department-txt">部门：<i>新闻部</i></div>
+                        <div class="sub-company-num">跟踪公司数：<i>33</i></div>
+                    </a>
+                </li>
+                <li class="subord-cell">
+                    <a href="" class="subord-lnk clearfix">
+                        <div class="sub-name"><span class="fa fa-user-circle-o "></span><i>测试1</i></div>
+                        <div class="department-txt">部门：<i>新闻部</i></div>
+                        <div class="sub-company-num">跟踪公司数：<i>33</i></div>
+                    </a>
+                </li>
+                <li class="subord-cell">
+                    <a href="" class="subord-lnk clearfix">
+                        <div class="sub-name"><span class="fa fa-user-circle-o "></span><i>测试1</i></div>
+                        <div class="department-txt">部门：<i>新闻部</i></div>
+                        <div class="sub-company-num">跟踪公司数：<i>33</i></div>
+                    </a>
+                </li>
+                <li class="subord-cell">
+                    <a href="" class="subord-lnk clearfix">
+                        <div class="sub-name"><span class="fa fa-user-circle-o "></span><i>测试1</i></div>
+                        <div class="department-txt">部门：<i>新闻部</i></div>
+                        <div class="sub-company-num">跟踪公司数：<i>33</i></div>
+                    </a>
+                </li>
+                <li class="subord-cell">
+                    <a href="" class="subord-lnk clearfix">
+                        <div class="sub-name"><span class="fa fa-user-circle-o "></span><i>测试1</i></div>
+                        <div class="department-txt">部门：<i>新闻部</i></div>
+                        <div class="sub-company-num">跟踪公司数：<i>33</i></div>
+                    </a>
+                </li>
+                <li class="subord-cell">
+                    <a href="" class="subord-lnk clearfix">
+                        <div class="sub-name"><span class="fa fa-user-circle-o "></span><i>测试1</i></div>
+                        <div class="department-txt">部门：<i>新闻部</i></div>
+                        <div class="sub-company-num">跟踪公司数：<i>33</i></div>
+                    </a>
+                </li>
+                <li class="subord-cell">
+                    <a href="" class="subord-lnk clearfix">
+                        <div class="sub-name"><span class="fa fa-user-circle-o "></span><i>测试1</i></div>
+                        <div class="department-txt">部门：<i>新闻部</i></div>
+                        <div class="sub-company-num">跟踪公司数：<i>33</i></div>
+                    </a>
+                </li>
+                <li class="subord-cell">
+                    <a href="" class="subord-lnk clearfix">
+                        <div class="sub-name"><span class="fa fa-user-circle-o "></span><i>测试1</i></div>
+                        <div class="department-txt">部门：<i>新闻部</i></div>
+                        <div class="sub-company-num">跟踪公司数：<i>33</i></div>
+                    </a>
+                </li>
+                <li class="subord-cell">
+                    <a href="" class="subord-lnk clearfix">
+                        <div class="sub-name"><span class="fa fa-user-circle-o "></span><i>测试1</i></div>
+                        <div class="department-txt">部门：<i>新闻部</i></div>
+                        <div class="sub-company-num">跟踪公司数：<i>33</i></div>
+                    </a>
+                </li>
+              <!--  <li class="subord-cell">
+                    <a href="" class="subord-lnk">
+                        <span class="fa fa-user-circle-o"></span>
+                        <span class="sub-name">测试1</span>
+                    </a>
+                </li>
+                <li class="subord-cell">
+                    <a href="" class="subord-lnk">
+                        <span class="fa fa-user-circle-o"></span>
+                        <span class="sub-name">测试1</span>
+                    </a>
+                </li>
+                <li class="subord-cell">
+                    <a href="" class="subord-lnk">
+                        <span class="fa fa-user-circle-o"></span>
+                        <span class="sub-name">测试1</span>
+                    </a>
+                </li>
+                <li class="subord-cell">
+                    <a href="" class="subord-lnk">
+                        <span class="fa fa-user-circle-o"></span>
+                        <span class="sub-name">测试1</span>
+                    </a>
+                </li>-->
+
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $('body').on('click','.left-tree-box .left-tree-node',function () {
+        $(this).addClass('actived').siblings('.left-tree-node').removeClass('actived');
+    })
+</script>
+</body>
+</html>

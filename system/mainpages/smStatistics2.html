@@ -1,0 +1,574 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="min-width:1200px;overflow-x: auto">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>系统管理-统计图表</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <!-- 日期选择框start -->
+    <script type="text/javascript" src="../../libs/js/form/datePicker/WdatePicker.js"></script>
+    <!-- 日期选择框end -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <!--8-28新引入-->
+    <style>
+        .w1200 {
+            width: 1200px;
+            margin:0 auto;
+        }
+        .rydlqkBox{
+            width: 1200px;
+            overflow-x: scroll;
+        }
+        .w-half.p10 {
+            padding: 10px;
+            width: 50%;
+            min-width: 600px;
+            float: left;
+            margin-bottom: 20px;
+        }
+        .commondiv {
+            width: 100%;
+            /*box-shadow: 0 0 8px #ccc;*/
+            border:1px solid #ccc;
+            border-radius:0 0 6px 6px;
+
+        }
+        .mr10 {
+            margin-right: 10px;
+        }
+        .commonTit {
+            overflow: hidden;
+            height: 40px;
+            line-height: 40px;
+            background-color: #576a80;
+            color: #fff;
+            padding:0 10px;
+            margin-top: 0;
+        }
+        .commonTit .fa {
+            float: right;
+            color: #fff;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+        }
+
+        .tjmk-filter label {
+            position: relative;
+            padding-left: 8px;
+        }
+        .tjmk-filter label:before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 14px;
+            background-color: #1b82d2;
+            left: 0;
+            top: 50%;
+            margin-top: -7px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+    </style>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox" style="min-height: 910px;overflow: auto">
+    <div class="mytitlestyle">
+        <div class="mygroupTitle clearfix hyzsk" >
+            <span>系统管理</span>
+            <div class="fr ss" style="margin-top: 0;">
+                <div class="fr">
+                    <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                    <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="undermygroupTitle clearfix" style="min-width: 1220px;padding: 10px;">
+        <form class="clearfix tjmk-filter">
+            <div class="timeSelectBox fl">
+                <label>时间范围选择:</label>
+                <input type="text" id="beginTime" class="dateIcon" />
+                <input type="text" id="endTime" class="dateIcon" />
+            </div>
+            <div class="selectbox2 fl margin_left15">
+                <label class="fl margin_right6">选择部门:</label>
+                <select name="" id="">
+                    <option value="">部门1</option>
+                    <option value="">部门2</option>
+                    <option value="">部门3</option>
+                </select>
+            </div>
+            <div class="selectbox2 fl margin_left15">
+                <label class="fl margin_right6">选择部门:</label>
+                <select name="" id="">
+                    <option value="">部门1</option>
+                    <option value="">部门2</option>
+                    <option value="">部门3</option>
+                </select>
+            </div>
+            <button type="button" class="button fl margin_left15">确定</button>
+        </form>
+        <div style="height: 20px;"></div>
+        <div class="clearfix">
+
+            <div class="p10 w-half">
+                <div class="commondiv">
+                    <!--小块标题-->
+                    <div class="commonTit">
+                       <i>日程填报情况</i>
+                       <a class="fa fa-chevron-circle-right" href=""></a>
+                   </div>
+                    <div id="rctbqk" style="width:100%;height: 450px;"></div>
+                </div>
+            </div>
+            <div class="p10 w-half">
+                <div class="commondiv">
+                    <!--小块标题-->
+                    <div class="commonTit">
+                        <i>采访填报</i>
+                        <a class="fa fa-chevron-circle-right" href=""></a>
+                    </div>
+                    <div id="cftbqk" style="width:100%;height: 450px;"></div>
+                </div>
+            </div>
+
+            <div class="p10 w-half">
+                <div class="commondiv">
+                    <!--小块标题-->
+                    <div class="commonTit">
+                        <i>项目申请情况</i>
+                        <a class="fa fa-chevron-circle-right" href=""></a>
+                    </div>
+                    <div id="xmsqqk" style="width:100%;height: 450px;"></div>
+                </div>
+            </div>
+            <div class="p10 w-half">
+                <div class="commondiv">
+                    <!--小块标题-->
+                    <div class="commonTit">
+                        <i>公司跟踪情况</i>
+                        <a class="fa fa-chevron-circle-right" href=""></a>
+                    </div>
+                    <div id="gsgzqk" style="width:100%;height: 450px;"></div>
+                </div>
+            </div>
+            <div class="p10 w-half" style="width: 100%;">
+                <div class="commondiv">
+                    <!--小块标题-->
+                    <div class="commonTit">
+                        <i>项目填报情况</i>
+                        <a class="fa fa-chevron-circle-right" href=""></a>
+                    </div>
+                    <div id="xmtbqk" style="width:100%;height: 450px;"></div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+<script type="text/javascript">
+    /*****时间范围选择****/
+    var dateSkin = "blue";
+
+    function initComplete() {
+        //获取当前主题风格，用于设置日期控件的皮肤
+        try {
+            dateSkin = themeColor;
+        } catch(e) {}
+
+        //自定义点击触发日期控件
+        document.getElementById('beginTime').onfocus = function() {
+            var endtimeTf = $dp.$('endTime');
+            WdatePicker({
+                skin: dateSkin,
+                onpicked: function() {
+                    endtimeTf.focus();
+                },
+                maxDate: '#F{$dp.$D(\'endTime\')}'
+            });
+        };
+        document.getElementById('endTime').onfocus = function() {
+            //这里设置了最大日期为当前日期，如果不需要则把maxDate:'%y-%M-%d'去掉
+            WdatePicker({
+                skin: dateSkin,
+                minDate: '#F{$dp.$D(\'beginTime\')}'
+            });
+        }
+
+        //平面显示
+        WdatePicker({
+            skin: dateSkin,
+            eCont: 'div1',
+            onpicked: function(dp) {
+                top.Toast("showNoticeToast", '你选择的日期是:' + dp.cal.getDateStr())
+            }
+        })
+
+        document.getElementById('date-11').onfocus = function() {
+            WdatePicker({
+                skin: dateSkin,
+                maxDate: '%y-%M-%d'
+            });
+        }
+    }
+
+    //动态生成
+    function createDate() {
+        var $date = $('<input type="text" class="date" style="width:200px;" dateFmt="yyyy-MM-dd HH:mm:ss"/>');
+        $("#testBtn").after($date);
+        $date.render();
+    }
+
+    //设为不可用
+    function disableSelect() {
+        $("#date-8").attr("disabled", true);
+    }
+    //设为可用
+    function enableSelect() {
+        $("#date-8").attr("disabled", false);
+    }
+
+    //动态赋值
+    function setValue() {
+        $("#date-7").val("2012-07-08");
+    }
+</script>
+<script type="text/javascript">
+    /*********echarts*******/
+    //初始化数据
+    var category = [
+            '人员1(资讯部)', '人员2(资讯部)', '人员3(资讯部)', '人员4(资讯部)', '人员5(资讯部)', '人员6(资讯部)', '人员7(资讯部)','人员8(资讯部)','人员9(资讯部)','人员10(资讯部)','人员11(资讯部)', '人员12(资讯部)', '人员13(资讯部)', '人员14(资讯部)', '人员15(资讯部)', '人员16(资讯部)',
+            '人员17(资讯部)','人员18(资讯部)','人员19(资讯部)','人员20(资讯部)','人员21(资讯部)', '人员22(资讯部)', '人员23(资讯部)', '人员24(资讯部)', '人员25(资讯部)', '人员26(资讯部)', '人员27(资讯部)','人员28(资讯部)','人员29(资讯部)','人员30(资讯部)','人员31(资讯部)'
+        ];
+    var barData = [
+        300, 212, 128, 581, 431, 383, 163,310, 212, 121, 581, 431, 383, 163,300, 212,
+        118, 581, 431, 383, 163, 300, 242, 128, 581, 431, 383, 163,354,367,544,842
+    ];
+    var barData2 = [
+        400, 100, 300, 400, 500, 600, 120, 230, 310, 210, 460, 320, 450, 230,431, 342,
+        118, 581, 431, 383, 163, 300, 242, 128, 581, 431, 287, 190, 520, 532, 356, 670
+    ];
+
+
+    // 基于准备好的dom，初始化echarts实例
+    var mychart1 = echarts.init(document.getElementById('rctbqk'));
+    var mychart2 = echarts.init(document.getElementById('xmtbqk'));
+    var mychart3 = echarts.init(document.getElementById('xmsqqk'));
+    var mychart4 = echarts.init(document.getElementById('gsgzqk'));
+    var mychart5 = echarts.init(document.getElementById('cftbqk'));
+
+    // 指定图表的配置项和数据
+
+    //统计情况
+    var option1 = {
+       /* backgroundColor: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+
+            // 0% 处的颜色
+            offset: 0, color: '#71cbf5'  },
+            {
+
+                // 100% 处的颜色
+                offset: 1, color: '#38b3ec'
+            }], false),*/
+        color: ['#3398DB'],
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+
+        xAxis : {
+            type: 'category',
+            data: category,
+            axisLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#333'
+                }
+            },
+            z: 10
+        },
+
+        yAxis: {
+            show:false,
+            splitLine: {show: false},
+            axisLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            offset: 10,
+        },
+
+
+        dataZoom: [
+            {
+                show: true,
+                realtime: true,
+                start: 0,
+                end: 50
+            },
+            {
+                type: 'inside',
+                realtime: true,
+                start: 0,
+                end: 50
+            }
+        ],
+        series: [
+            {
+                show:false,
+                type: 'bar',
+                data: barData,
+                barGap: '50%',
+                smooth: true,
+                label: {
+                    normal: {
+//                        color: 'rgba(0,0,0,0.05)',
+                        color: '#fff',
+                        barBorderRadius:50,
+                        barWidth:10,
+                        borderWidth:0,
+
+                    }
+
+                },
+                itemStyle: {
+                    emphasis: {
+                        barBorderRadius: 50
+                    },
+                    normal: {
+                        barBorderRadius: 50,
+//                        color: 'rgba(255,255,255,0.4)'
+                        color: 'rgba(27,130,210,0.7)',
+                        label : {show: true}
+                    }
+                }
+            }
+        ]
+
+    };
+    var option2 = {
+        /* backgroundColor: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+
+             // 0% 处的颜色
+             offset: 0, color: '#71cbf5'  },
+             {
+
+                 // 100% 处的颜色
+                 offset: 1, color: '#38b3ec'
+             }], false),*/
+        color: ['#3398DB'],
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+
+        xAxis : {
+            type: 'category',
+            data: category,
+            axisLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#333'
+                }
+            },
+            z: 10
+        },
+
+        yAxis: {
+            show:false,
+            splitLine: {show: false},
+            axisLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            offset: 10,
+        },
+
+
+        dataZoom: [
+            {
+                show: true,
+                realtime: true,
+                start: 0,
+                end: 30
+            },
+            {
+                type: 'inside',
+                realtime: true,
+                start: 0,
+                end: 50
+            }
+        ],
+        series: [
+            {
+                name:'更新项目数',
+                show:false,
+                type: 'bar',
+                data: barData,
+                barWidth:20,
+                barGap: '50%',
+                smooth: true,
+                label: {
+                    normal: {
+//                        color: 'rgba(0,0,0,0.05)',
+                        color: '#fff',
+                        barBorderRadius:50,
+                        barWidth:10,
+                        borderWidth:0,
+
+                    }
+
+                },
+                itemStyle: {
+                    emphasis: {
+                        barBorderRadius: 50
+                    },
+                    normal: {
+                        barBorderRadius: 50,
+//                        color: 'rgba(255,255,255,0.4)'
+                        color: 'rgba(27,130,210,0.7)',
+                        label : {show: true}
+                    }
+                }
+            },
+            {
+                name:'成功发布项目数',
+                show:false,
+                type: 'bar',
+                data: barData2,
+                barWidth:20,
+                barGap: '50%',
+                smooth: true,
+                label: {
+                    normal: {
+//                        color: 'rgba(0,0,0,0.05)',
+                        color: '#fff',
+                        barBorderRadius:50,
+                        barWidth:10,
+                        borderWidth:0,
+
+                    }
+
+                },
+                itemStyle: {
+                    emphasis: {
+                        barBorderRadius: 50
+                    },
+                    normal: {
+                        barBorderRadius: 50,
+//                        color: 'rgba(255,255,255,0.4)'
+                        color: 'rgba(111,124,244,0.7)',
+                        label : {show: true}
+                    }
+                }
+            }
+        ]
+
+    };
+
+
+    var dataMap = {};
+    function dataFormatter(obj) {
+        var pList = ['人员A','人员B','人员C','人员D','人员E','人员F','人员G','人员H','人员I','人员J'];
+        var temp;
+        for (var month = 1; month <= 12; month++) {
+            var max = 0;
+            var sum = 0;
+            temp = obj[month];
+            for (var i = 0, l = temp.length; i < l; i++) {
+                max = Math.max(max, temp[i]);
+                sum += temp[i];
+                obj[month][i] = {
+                    name : pList[i],
+                    value : temp[i]
+                }
+            }
+            obj[month + 'max'] = Math.floor(max / 100) * 100;
+            obj[month + 'sum'] = sum;
+        }
+        return obj;
+    }
+
+    dataMap.dataSI = dataFormatter({
+        //max : 26600,
+        1:[100,200,300,150,260,340,430,110,229,312],
+        2:[300,200,300,500,260,340,430,110,229,312],
+        3:[440,200,300,150,200,340,430,110,229,312],
+        4:[100,302,300,150,260,340,430,110,229,312],
+        5:[200,200,300,150,260,340,430,110,229,312],
+        6:[360,200,300,150,260,340,430,110,229,312],
+        7:[570,200,300,150,260,340,430,110,229,312],
+        8:[250,200,300,150,260,340,430,110,229,312],
+        9:[210,200,300,150,260,340,430,110,229,312],
+        10:[320,200,200,150,260,290,430,110,229,312],
+        11:[100,200,300,150,260,340,430,110,229,312],
+        12:[110,200,300,150,260,340,430,110,229,312]
+    });
+
+    dataMap.dataTI = dataFormatter({
+        //max : 25000,
+        1:[100,200,300,150,260,340,430,110,229,312],
+        2:[100,200,300,150,260,340,430,110,229,312],
+        3:[360,200,300,150,260,340,430,110,229,312],
+        4:[570,200,300,150,260,340,430,110,229,312],
+        5:[100,200,300,150,260,340,430,110,229,312],
+        6:[100,200,300,150,260,340,430,110,229,312],
+        7:[320,200,200,150,260,290,430,110,229,312],
+        8:[100,200,300,150,260,340,430,110,229,312],
+        9:[100,200,300,150,260,340,430,110,229,312],
+        10:[320,200,200,150,260,290,430,110,229,312],
+        11:[100,200,300,150,260,340,430,110,229,312],
+        12:[100,200,300,150,260,340,430,110,229,312]
+    });
+
+    // 使用刚指定的配置项和数据显示图表。
+    mychart1.setOption(option1);
+    mychart2.setOption(option2);
+    mychart3.setOption(option1);
+    mychart4.setOption(option1);
+    mychart5.setOption(option1);
+</script>
+</body>
+
+</html>

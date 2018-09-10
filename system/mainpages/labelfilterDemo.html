@@ -1,0 +1,699 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>标签选择</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+
+    <!--自动提示框-->
+    <script type='text/javascript' src='../../libs/js/form/suggestion.js'></script>
+    <!--自动提示框end-->
+    <!-- 组合下拉框start -->
+    <script type="text/javascript" src="../../libs/js/form/selectCustom.js"></script>
+    <!-- 组合拉框end -->
+    <!-- 条件过滤器 start -->
+    <script type="text/javascript" src="../../libs/js/form/filter.js"></script>
+    <!-- 条件过滤器 end -->
+    <link rel="stylesheet" href="css/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <link rel="stylesheet" href="css/label.css">
+
+    <style>
+        .toTop_btn {
+            color: #1b92e6;
+            cursor: pointer;
+        }
+        .ipo_a .xmtxt_tit {
+            max-width: 768px;
+        }
+        .ipo_a .failure-project-watermark {
+            display: none;
+        }
+        .failure-project div.failure-project-watermark {
+            display: block;
+        }
+        .failure-project {
+            position: relative;
+        }
+        .failure-project-watermark {
+            width: 60px;
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+            left: 50%;
+        }
+        .failure-project-watermark img {
+            width: 60px;
+        }
+        .xm_btns .gznum {
+            float: left;
+            line-height: 16px;
+        }
+        .zhiding {
+            float: left;
+            margin-left: 13px;
+            font-size: 12px;
+            width: 40px;
+            height: 24px;
+            text-align: center;
+            line-height: 24px;
+            color: #fff;
+            background-color: orangered;
+        }
+        .zhiding-line {
+            position: relative;
+        }
+        .zhiding-line:after {
+            content: '';
+            width: 100%;
+            height: 3px;
+            background-color: #aaa;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body class="bclightblue padding10">
+<div   id="labelBox" v-cloak>
+    <div class="page_content mystylebox publishinfo">
+        <div class="mytitlestyle">
+            <div class="mygroupTitle clearfix hyzsk" >
+                <span>发布的信息表</span>
+                <div class="fr ss" style="margin-top: 0;">
+                    <div class="fr">
+                        <button type="button" onclick="javascript:location.reload()" class="button"><i class="fa fa-refresh margin_right3"></i>刷新</button>
+                        <button type="button" onclick="javascript:history.back(-1);" class="button"><i class="fa fa-long-arrow-left margin_right3"></i>返回</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="undermygroupTitle clearfix">
+            <!--标题检索和概要检索-->
+            <div class="searchrs_box clearfix " style="margin-bottom: 15px;margin-top: 0;">
+                <div class="px_box fl margin_right10">
+                    <i class="deep-search-value">标题检索 <span class="fa fa-angle-down"></span></i>
+                    <ul class="deep-search-select-types">
+                        <li class="active deep-search-select-lists">标题检索</li>
+                        <li class="deep-search-select-lists">概要检索</li>
+                    </ul>
+                </div>
+                <input type="text" style="width:600px!important;margin-right: 6px;" truetype="textinput" class="textinput fl" placeholder="请输入关键词" value="">
+                <input type="button" class="primary button fl margin_right0" value="搜索" onclick="">
+            </div>
+            <!--标题检索和概要检索 end-->
+
+            <!--所有筛选选项-->
+            <div class="w910">
+                <div class="allFilterBox">
+                    <ul>
+                        <!--筛选结果-->
+                        <li class="filtersingleBox clearfix filter-rs">
+                            <div class="fl filt_leftLabel">
+                                <span>您已选择：</span>
+                            </div>
+                            <div class="fl filt_right_box">
+                                <div class="filt_rightRs">
+                                    <!--清除所有筛选项-->
+                                    <div class="clearAllfilter">
+                                        <a class="clearAllfilterbtn fa fa-trash" href="#" @click="clearAllLabel()"> 清除</a>
+                                    </div>
+                                    <ul class="clearfix">
+                                        <template v-for="(item,index) in selectedLable">
+                                            <li class="filtRsCell" :title="item.name" :id="item.id" @click="deleteItself(index)">
+                                                <span class="rs_innerTxt">{{item.name}}</span>
+                                                <span class=" del_rs"> × </span>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <!--筛选结果 end-->
+                        <!--行业/产业-->
+                        <li class="filtersingleBox clearfix">
+                            <div class="fl filt_leftLabel"><span>行业/产业：</span></div>
+                            <div class="fl filt_right_box">
+                                <div class="filt_rightOpt">
+                                    <div class="suggestion" id="suggestion2" ></div>
+                                    <input type="button" @click="selectIndustry()" value="确定" class="selectIndustryBtn ">
+                                </div>
+                            </div>
+                        </li>
+                        <!--项目类型-->
+                        <li class="filtersingleBox clearfix">
+                            <div class="fl filt_leftLabel"><span>项目类型：</span></div>
+                            <div class="fl filt_right_box">
+                                <!--更多-->
+                                <span class="moreLabelBtn" v-if="projectTypeLen>8" @click="projectTypeMore()">更多 <i class="fa fa-angle-right"></i></span>
+                                <!--更多 end-->
+                                <ul class="rightFilterList clearfix">
+                                    <template v-for="(item,index) in projectTypeDefault">
+                                        <li class="rightLabel" :class="{'haveSonLabel':item.childList.length>0}"><!--haveSonLabel-->
+                                            <!--一级标签-->
+                                            <a class="label_txt" :title="item.name" :id="item.id" @click="addselectedLable(item)" :class="{ 'actived': selectedLableId.indexOf(item.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item.id) >= 0 }" >{{item.name}}</a>
+                                            <span class="fa fa-angle-down openSon_btn" v-if="item.childList.length>0"></span><!--展开下一级按钮-->
+                                            <ul class="labelSonbox labelBox_sonLevel_1" >
+                                                <li class="rightLabel labelCell_sonLevel_1"  :class="{'haveSonLabel':item2.childList.length>0}"  v-for="(item2,index) in item.childList">
+                                                    <!--二级标签-->
+                                                    <a class="label_txt" :title="item2.name" :id="item2.id"  @click="addselectedLable(item2)"  :class="{ 'actived': selectedLableId.indexOf(item2.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item2.id) >= 0 }" >{{item2.name}}</a>
+                                                    <span class="fa fa-angle-down openSon_btn" v-if="item2.childList.length>0"></span><!--展开下一级按钮-->
+                                                    <ul class="labelSonbox labelBox_sonLevel_2 clearfix">
+                                                        <li class="rightLabel"  :class="{'haveSonLabel':item3.childList.length>0}"  v-for="(item3,index) in item2.childList">
+                                                            <!--三级标签-->
+                                                            <a class="label_txt" :title="item3.name" :id="item3.id" @click="addselectedLable(item3)" :class="{ 'actived': selectedLableId.indexOf(item3.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item3.id) >= 0 }" >{{item3.name}}</a>
+                                                            <span class="fa fa-angle-down openSon_btn"  v-if="item3.childList.length>0"></span><!--展开下一级按钮-->
+                                                            <ul class="labelSonbox labelBox_sonLevel_3 clearfix">
+                                                                <li class="rightLabel" :class="{'haveSonLabel':item4.childList.length>0}"  v-for="(item4,index) in item3.childList">
+                                                                    <!--四级标签-->
+                                                                    <a class="label_txt" :title="item4.name" :id="item4.id" @click="addselectedLable(item4)" :class="{ 'actived': selectedLableId.indexOf(item4.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item4.id) >= 0 }" >{{item4.name}}</a>
+                                                                    <span class="fa fa-angle-down openSon_btn"  v-if="item4.childList.length>0"></span><!--展开下一级按钮-->
+                                                                    <ul class="labelSonbox labelBox_sonLevel_4 clearfix">
+                                                                        <li class="rightLabel" :class="{'haveSonLabel':item5.childList.length>0}"  v-for="(item5,index) in item4.childList">
+                                                                            <!--五级标签-->
+                                                                            <a class="label_txt" :title="item5.name" :id="item5.id" @click="addselectedLable(item5)" :class="{ 'actived': selectedLableId.indexOf(item5.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item5.id) >= 0 }" >{{item5.name}}</a>
+                                                                            <span class="fa fa-angle-down openSon_btn"  v-if="item5.childList.length>0"></span><!--展开下一级按钮-->
+                                                                            <ul class="labelSonbox labelBox_sonLevel_5 clearfix">
+
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </li>
+                        <!--项目状态-->
+                        <li class="filtersingleBox clearfix">
+                            <div class="fl filt_leftLabel"><span>项目状态：</span></div>
+                            <div class="fl filt_right_box">
+                                <!--更多-->
+                                <span class="moreLabelBtn" v-if="projectStatusLen>8" @click="projectStatusMore()">更多 <i class="fa fa-angle-right"></i></span>
+                                <!--更多 end-->
+                                <ul class="rightFilterList clearfix">
+                                    <template v-for="(item,index) in projectStatusDefault">
+                                        <li class="rightLabel" :class="{'haveSonLabel':item.childList.length>0}"><!--haveSonLabel-->
+                                            <a class="label_txt" :title="item.name" :id="item.id" @click="addselectedLable(item)" :class="{ 'actived': selectedLableId.indexOf(item.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item.id) >= 0 }" >{{item.name}}</a><!--一级标签-->
+                                            <span class="fa fa-angle-down openSon_btn" v-if="item.childList.length>0"></span><!--展开下一级按钮-->
+                                            <ul class="labelSonbox labelBox_sonLevel_1" >
+                                                <li class="rightLabel labelCell_sonLevel_1"  :class="{'haveSonLabel':item2.childList.length>0}"  v-for="(item2,index) in item.childList">
+                                                    <a class="label_txt" :title="item2.name" :id="item2.id"  @click="addselectedLable(item2)"  :class="{ 'actived': selectedLableId.indexOf(item2.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item2.id) >= 0 }" >{{item2.name}}</a><!--二级标签-->
+                                                    <span class="fa fa-angle-down openSon_btn" v-if="item2.childList.length>0"></span><!--展开下一级按钮-->
+                                                    <ul class="labelSonbox labelBox_sonLevel_2 clearfix">
+                                                        <li class="rightLabel"  :class="{'haveSonLabel':item3.childList.length>0}"  v-for="(item3,index) in item2.childList">
+                                                            <a class="label_txt" :title="item3.name" :id="item3.id" @click="addselectedLable(item3)" :class="{ 'actived': selectedLableId.indexOf(item3.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item3.id) >= 0 }" >{{item3.name}}</a><!--三级标签-->
+                                                            <span class="fa fa-angle-down openSon_btn"  v-if="item3.childList.length>0"></span><!--展开下一级按钮-->
+                                                            <ul class="labelSonbox labelBox_sonLevel_3 clearfix">
+                                                                <li class="rightLabel" v-for="(item4,index) in item3.childList">
+                                                                    <a class="label_txt" :title="item4.name" :id="item4.id" @click="addselectedLable(item4)" :class="{ 'actived': selectedLableId.indexOf(item4.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item4.id) >= 0 }" >{{item4.name}}</a><!--四级标签-->
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </li>
+                        <!--严格标签-->
+                        <li class="filtersingleBox clearfix">
+                            <div class="fl filt_leftLabel"><span>严格标签：</span></div>
+                            <div class="fl filt_right_box">
+                                <!--更多-->
+                                <span class="moreLabelBtn" v-if="strictLabelLen>8" @click="strictLabelMore()">更多 <i class="fa fa-angle-right"></i></span>
+                                <!--更多 end-->
+
+                                <!--页面可展示的标签-->
+                                <ul class="rightFilterList clearfix">
+                                    <template v-for="(item,index) in strictLabelDefault">
+                                        <li class="rightLabel" :class="{'haveSonLabel':item.childList.length>0}"><!--haveSonLabel-->
+                                            <a class="label_txt" :title="item.name" :id="item.id" @click="addselectedLable(item)" :class="{ 'actived': selectedLableId.indexOf(item.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item.id) >= 0 }" >{{item.name}}</a><!--一级标签-->
+                                            <span class="fa fa-angle-down openSon_btn" v-if="item.childList.length>0"></span><!--展开下一级按钮-->
+                                            <ul class="labelSonbox labelBox_sonLevel_1" >
+                                                <li class="rightLabel labelCell_sonLevel_1"  :class="{'haveSonLabel':item2.childList.length>0}"  v-for="(item2,index) in item.childList">
+                                                    <a class="label_txt" :title="item2.name" :id="item2.id"  @click="addselectedLable(item2)"  :class="{ 'actived': selectedLableId.indexOf(item2.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item2.id) >= 0 }" >{{item2.name}}</a><!--二级标签-->
+                                                    <span class="fa fa-angle-down openSon_btn" v-if="item2.childList.length>0"></span><!--展开下一级按钮-->
+                                                    <ul class="labelSonbox labelBox_sonLevel_2 clearfix">
+                                                        <li class="rightLabel"  :class="{'haveSonLabel':item3.childList.length>0}"  v-for="(item3,index) in item2.childList">
+                                                            <a class="label_txt" :title="item3.name" :id="item3.id" @click="addselectedLable(item3)" :class="{ 'actived': selectedLableId.indexOf(item3.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item3.id) >= 0 }" >{{item3.name}}</a><!--三级标签-->
+                                                            <span class="fa fa-angle-down openSon_btn"  v-if="item3.childList.length>0"></span><!--展开下一级按钮-->
+                                                            <ul class="labelSonbox labelBox_sonLevel_3 clearfix">
+                                                                <li class="rightLabel" v-for="(item4,index) in item3.childList">
+                                                                    <a class="label_txt" :title="item4.name" :id="item4.id" @click="addselectedLable(item4)" :class="{ 'actived': selectedLableId.indexOf(item4.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item4.id) >= 0 }" >{{item4.name}}</a><!--四级标签-->
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </template>
+                                </ul>
+                                <!--页面可展示的标签 end-->
+                            </div>
+                        </li>
+                        <!--模糊标签-->
+                        <li class="filtersingleBox clearfix">
+                            <div class="fl filt_leftLabel"><span>模糊标签：</span></div>
+                            <div class="fl filt_right_box">
+                                <!--更多-->
+                                <span class="moreLabelBtn"  v-if="fuzzyLabelLen>8" @click="fuzzyLabelMore()">更多 <i class="fa fa-angle-right"></i></span>
+                                <!--更多 end-->
+                                <!--页面可展示的标签-->
+                                <ul class="rightFilterList clearfix">
+                                    <template v-for="(item,index) in fuzzyLabelDefault">
+                                        <li class="rightLabel" :class="{'haveSonLabel':item.childList.length>0}"><!--haveSonLabel-->
+                                            <a class="label_txt" :title="item.name" :id="item.id" @click="addselectedLable(item)" :class="{ 'actived': selectedLableId.indexOf(item.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item.id) >= 0 }" >{{item.name}}</a><!--一级标签-->
+                                            <span class="fa fa-angle-down openSon_btn" v-if="item.childList.length>0"></span><!--展开下一级按钮-->
+                                            <ul class="labelSonbox labelBox_sonLevel_1" >
+                                                <li class="rightLabel labelCell_sonLevel_1"  :class="{'haveSonLabel':item2.childList.length>0}"  v-for="(item2,index) in item.childList">
+                                                    <a class="label_txt" :title="item2.name" :id="item2.id"  @click="addselectedLable(item2)"  :class="{ 'actived': selectedLableId.indexOf(item2.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item2.id) >= 0 }" >{{item2.name}}</a><!--二级标签-->
+                                                    <span class="fa fa-angle-down openSon_btn" v-if="item2.childList.length>0"></span><!--展开下一级按钮-->
+                                                    <ul class="labelSonbox labelBox_sonLevel_2 clearfix">
+                                                        <li class="rightLabel"  :class="{'haveSonLabel':item3.childList.length>0}"  v-for="(item3,index) in item2.childList">
+                                                            <a class="label_txt" :title="item3.name" :id="item3.id" @click="addselectedLable(item3)" :class="{ 'actived': selectedLableId.indexOf(item3.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item3.id) >= 0 }" >{{item3.name}}</a><!--三级标签-->
+                                                            <span class="fa fa-angle-down openSon_btn"  v-if="item3.childList.length>0"></span><!--展开下一级按钮-->
+                                                            <ul class="labelSonbox labelBox_sonLevel_3 clearfix">
+                                                                <li class="rightLabel" v-for="(item4,index) in item3.childList">
+                                                                    <a class="label_txt" :title="item4.name" :id="item4.id" @click="addselectedLable(item4)" :class="{ 'actived': selectedLableId.indexOf(item4.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item4.id) >= 0 }" >{{item4.name}}</a><!--四级标签-->
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </template>
+                                </ul>
+                                <!--页面可展示的标签 end-->
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="w910">
+                <div class="ita_rightcon"><!--默认最多一页显示十条-->
+                    <ul>
+                        <li class="ipo_a failure-project">
+                            <!--失效水印-->
+                            <div class="failure-project-watermark"><img src="images/failureproject-wm.png" alt=""></div>
+                            <!--失效水印 end-->
+                            <a href="tableDetail.html" class="fl display_block">
+                                    <span class="dataspan">
+                                        <span class="day_tit">拟</span>
+                                        <span class="day_under">IPO</span>
+                                    </span>
+                                <span class="xmtxt">
+                                    <span class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</span>
+                                    <span class="xm_btns">
+                                        <i class="gzstate dgz">待关注</i>
+                                        <i class="gznum"><i class="fa fa-star"></i>0</i>
+                                        <i class="zhiding ">置顶</i>
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="fr txt_gray">
+                                <div class="toTop_btn">置顶</div>
+                                <div>2017-8-9</div>
+                            </div>
+                        </li>
+                        <li class="zhiding-line">
+                            <a href="" class="ipo_a ">
+                                    <span class="dataspan">
+                                        <span class="day_tit">股权</span>
+                                        <span class="day_under">质押</span>
+                                    </span>
+                                <span class="xmtxt">
+                                        <span class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</span>
+                                        <span class="xm_btns">
+                                            <i class="gzstate gzz">关注中</i>
+                                           <i class="gznum"><i class="fa fa-star"></i>36</i>
+                                            <i class="fr txt_gray">2017-8-9</i>
+                                        </span>
+                                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="ipo_a">
+                                    <span class="dataspan">
+                                        <span class="day_tit">并购</span>
+                                        <span class="day_under">卖方</span>
+                                    </span>
+                                <span class="xmtxt">
+                                        <span class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</span>
+                                        <span class="xm_btns">
+                                            <i class="gzstate jcz">接触中</i>
+                                           <i class="gznum"><i class="fa fa-star"></i>36</i>
+                                            <i class="fr txt_gray">2017-8-9</i>
+                                        </span>
+                                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="ipo_a">
+                                    <span class="dataspan">
+                                        <span class="day_tit">并购</span>
+                                        <span class="day_under">买方</span>
+                                    </span>
+                                <span class="xmtxt">
+                                        <span class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</span>
+                                        <span class="xm_btns">
+                                            <i class="gzstate tpz">谈判中</i>
+                                           <i class="gznum"><i class="fa fa-star"></i>36</i>
+                                            <i class="fr txt_gray">2017-8-9</i>
+                                        </span>
+                                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="ipo_a">
+                                    <span class="dataspan">
+                                        <span class="day_tit">特定</span>
+                                        <span class="day_under">股东</span>
+                                    </span>
+                                <span class="xmtxt">
+                                        <span class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</span>
+                                        <span class="xm_btns">
+                                            <i class="gzstate tpz">谈判中</i>
+                                           <i class="gznum"><i class="fa fa-star"></i>36</i>
+                                            <i class="fr txt_gray">2017-8-9</i>
+                                        </span>
+                                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="ipo_a">
+                                    <span class="dataspan">
+                                        <span class="day_tit">股权</span>
+                                        <span class="day_under">激励</span>
+                                    </span>
+                                <span class="xmtxt">
+                                        <span class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</span>
+                                        <span class="xm_btns">
+                                            <i class="gzstate tpz">谈判中</i>
+                                           <i class="gznum"><i class="fa fa-star"></i>36</i>
+                                            <i class="fr txt_gray">2017-8-9</i>
+                                        </span>
+                                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="ipo_a">
+                                    <span class="dataspan">
+                                        <span class="day_tit">产业</span>
+                                        <span class="day_under">并购</span>
+                                    </span>
+                                <span class="xmtxt">
+                                        <span class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</span>
+                                        <span class="xm_btns">
+                                            <i class="gzstate tpz">谈判中</i>
+                                           <i class="gznum"><i class="fa fa-star"></i>36</i>
+                                            <i class="fr txt_gray">2017-8-9</i>
+                                        </span>
+                                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="ipo_a">
+                                    <span class="dataspan">
+                                        <span class="day_tit">信贷</span>
+                                        <span class="day_under">项目</span>
+                                    </span>
+                                <span class="xmtxt">
+                                        <span class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</span>
+                                        <span class="xm_btns">
+                                            <i class="gzstate tpz">谈判中</i>
+                                           <i class="gznum"><i class="fa fa-star"></i>36</i>
+                                            <i class="fr txt_gray">2017-8-9</i>
+                                        </span>
+                                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="ipo_a">
+                                    <span class="dataspan">
+                                        <span class="day_tit">债权</span>
+                                        <span class="day_under">项目</span>
+                                    </span>
+                                <span class="xmtxt">
+                                        <span class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</span>
+                                        <span class="xm_btns">
+                                            <i class="gzstate tpz">谈判中</i>
+                                           <i class="gznum"><i class="fa fa-star"></i>36</i>
+                                            <i class="fr txt_gray">2017-8-9</i>
+                                        </span>
+                                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="ipo_a">
+                                    <span class="dataspan">
+                                        <span class="day_tit">投资</span>
+                                        <span class="day_under">理财</span>
+                                    </span>
+                                <span class="xmtxt">
+                                        <span class="xmtxt_tit">项目标题项目标题项目标题项目标题项目标题项目标题项目标题项目标题</span>
+                                        <span class="xm_btns">
+                                            <i class="gzstate tpz">谈判中</i>
+                                           <i class="gznum"><i class="fa fa-star"></i>36</i>
+                                            <i class="fr txt_gray">2017-8-9</i>
+                                        </span>
+                                    </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="l-panel-pagebar">
+                        <div class="pageNumber" autorender="false">
+                            <span class="current prev">上一页</span>
+                            <span class="current">1</span>
+                            <a>2</a><a class="next">下一页</a>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--项目类型弹框-->
+    <div id="projectTypePop" class="popLabelBox" style="display: none">
+        <ul class="rightFilterList clearfix">
+            <template v-for="(item,index) in projectType">
+                <li class="rightLabel" :class="{'haveSonLabel':item.childList.length>0}"><!--haveSonLabel-->
+                    <a class="label_txt" :title="item.name" :id="item.id" @click="addselectedLable(item)" :class="{ 'actived': selectedLableId.indexOf(item.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item.id) >= 0 }" >{{item.name}}</a><!--一级标签-->
+                    <span class="fa fa-angle-down openSon_btn" v-if="item.childList.length>0"></span><!--展开下一级按钮-->
+                    <ul class="labelSonbox labelBox_sonLevel_1" >
+                        <li class="rightLabel labelCell_sonLevel_1"  :class="{'haveSonLabel':item2.childList.length>0}"  v-for="(item2,index) in item.childList">
+                            <a class="label_txt" :title="item2.name" :id="item2.id"  @click="addselectedLable(item2)"  :class="{ 'actived': selectedLableId.indexOf(item2.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item2.id) >= 0 }" >{{item2.name}}</a><!--二级标签-->
+                            <span class="fa fa-angle-down openSon_btn" v-if="item2.childList.length>0"></span><!--展开下一级按钮-->
+                            <ul class="labelSonbox labelBox_sonLevel_2 clearfix">
+                                <li class="rightLabel"  :class="{'haveSonLabel':item3.childList.length>0}"  v-for="(item3,index) in item2.childList">
+                                    <a class="label_txt" :title="item3.name" :id="item3.id" @click="addselectedLable(item3)" :class="{ 'actived': selectedLableId.indexOf(item3.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item3.id) >= 0 }" >{{item3.name}}</a><!--三级标签-->
+                                    <span class="fa fa-angle-down openSon_btn"  v-if="item3.childList.length>0"></span><!--展开下一级按钮-->
+                                    <ul class="labelSonbox labelBox_sonLevel_3 clearfix">
+                                        <li class="rightLabel" v-for="(item4,index) in item3.childList">
+                                            <a class="label_txt" :title="item4.name" :id="item4.id" @click="addselectedLable(item4)" :class="{ 'actived': selectedLableId.indexOf(item4.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item4.id) >= 0 }" >{{item4.name}}</a><!--四级标签-->
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </template>
+        </ul>
+    </div>
+
+    <!--项目状态弹框-->
+    <div id="projectStatusPop"  class="popLabelBox"  style="display: none">
+        <template v-for="(item,index) in projectStatus">
+            <li class="rightLabel" :class="{'haveSonLabel':item.childList.length>0}"><!--haveSonLabel-->
+                <a class="label_txt" :title="item.name" :id="item.id" @click="addselectedLable(item)" :class="{ 'actived': selectedLableId.indexOf(item.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item.id) >= 0 }" >{{item.name}}</a><!--一级标签-->
+                <span class="fa fa-angle-down openSon_btn" v-if="item.childList.length>0"></span><!--展开下一级按钮-->
+                <ul class="labelSonbox labelBox_sonLevel_1" >
+                    <li class="rightLabel labelCell_sonLevel_1"  :class="{'haveSonLabel':item2.childList.length>0}"  v-for="(item2,index) in item.childList">
+                        <a class="label_txt" :title="item2.name" :id="item2.id"  @click="addselectedLable(item2)"  :class="{ 'actived': selectedLableId.indexOf(item2.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item2.id) >= 0 }" >{{item2.name}}</a><!--二级标签-->
+                        <span class="fa fa-angle-down openSon_btn" v-if="item2.childList.length>0"></span><!--展开下一级按钮-->
+                        <ul class="labelSonbox labelBox_sonLevel_2 clearfix">
+                            <li class="rightLabel"  :class="{'haveSonLabel':item3.childList.length>0}"  v-for="(item3,index) in item2.childList">
+                                <a class="label_txt" :title="item3.name" :id="item3.id" @click="addselectedLable(item3)" :class="{ 'actived': selectedLableId.indexOf(item3.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item3.id) >= 0 }" >{{item3.name}}</a><!--三级标签-->
+                                <span class="fa fa-angle-down openSon_btn"  v-if="item3.childList.length>0"></span><!--展开下一级按钮-->
+                                <ul class="labelSonbox labelBox_sonLevel_3 clearfix">
+                                    <li class="rightLabel" v-for="(item4,index) in item3.childList">
+                                        <a class="label_txt" :title="item4.name" :id="item4.id" @click="addselectedLable(item4)" :class="{ 'actived': selectedLableId.indexOf(item4.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item4.id) >= 0 }" >{{item4.name}}</a><!--四级标签-->
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </template>
+    </div>
+
+    <!--严格标签弹框-->
+    <div id="strictLabelPop"  class="popLabelBox" style="display: none">
+        <template v-for="(item,index) in strictLabel">
+            <li class="rightLabel" :class="{'haveSonLabel':item.childList.length>0}"><!--haveSonLabel-->
+                <a class="label_txt" :title="item.name" :id="item.id" @click="addselectedLable(item)" :class="{ 'actived': selectedLableId.indexOf(item.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item.id) >= 0 }" >{{item.name}}</a><!--一级标签-->
+                <span class="fa fa-angle-down openSon_btn" v-if="item.childList.length>0"></span><!--展开下一级按钮-->
+                <ul class="labelSonbox labelBox_sonLevel_1" >
+                    <li class="rightLabel labelCell_sonLevel_1"  :class="{'haveSonLabel':item2.childList.length>0}"  v-for="(item2,index) in item.childList">
+                        <a class="label_txt" :title="item2.name" :id="item2.id"  @click="addselectedLable(item2)"  :class="{ 'actived': selectedLableId.indexOf(item2.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item2.id) >= 0 }" >{{item2.name}}</a><!--二级标签-->
+                        <span class="fa fa-angle-down openSon_btn" v-if="item2.childList.length>0"></span><!--展开下一级按钮-->
+                        <ul class="labelSonbox labelBox_sonLevel_2 clearfix">
+                            <li class="rightLabel"  :class="{'haveSonLabel':item3.childList.length>0}"  v-for="(item3,index) in item2.childList">
+                                <a class="label_txt" :title="item3.name" :id="item3.id" @click="addselectedLable(item3)" :class="{ 'actived': selectedLableId.indexOf(item3.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item3.id) >= 0 }" >{{item3.name}}</a><!--三级标签-->
+                                <span class="fa fa-angle-down openSon_btn"  v-if="item3.childList.length>0"></span><!--展开下一级按钮-->
+                                <ul class="labelSonbox labelBox_sonLevel_3 clearfix">
+                                    <li class="rightLabel" v-for="(item4,index) in item3.childList">
+                                        <a class="label_txt" :title="item4.name" :id="item4.id" @click="addselectedLable(item4)" :class="{ 'actived': selectedLableId.indexOf(item4.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item4.id) >= 0 }" >{{item4.name}}</a><!--四级标签-->
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </template>
+    </div>
+
+    <!--模糊标签弹框-->
+    <div id="fuzzyLabelPop" class="popLabelBox"  style="display: none">
+        <template v-for="(item,index) in fuzzyLabel">
+            <li class="rightLabel" :class="{'haveSonLabel':item.childList.length>0}"><!--haveSonLabel-->
+                <a class="label_txt" :title="item.name" :id="item.id" @click="addselectedLable(item)" :class="{ 'actived': selectedLableId.indexOf(item.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item.id) >= 0 }" >{{item.name}}</a><!--一级标签-->
+                <span class="fa fa-angle-down openSon_btn" v-if="item.childList.length>0"></span><!--展开下一级按钮-->
+                <ul class="labelSonbox labelBox_sonLevel_1" >
+                    <li class="rightLabel labelCell_sonLevel_1"  :class="{'haveSonLabel':item2.childList.length>0}"  v-for="(item2,index) in item.childList">
+                        <a class="label_txt" :title="item2.name" :id="item2.id"  @click="addselectedLable(item2)"  :class="{ 'actived': selectedLableId.indexOf(item2.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item2.id) >= 0 }" >{{item2.name}}</a><!--二级标签-->
+                        <span class="fa fa-angle-down openSon_btn" v-if="item2.childList.length>0"></span><!--展开下一级按钮-->
+                        <ul class="labelSonbox labelBox_sonLevel_2 clearfix">
+                            <li class="rightLabel"  :class="{'haveSonLabel':item3.childList.length>0}"  v-for="(item3,index) in item2.childList">
+                                <a class="label_txt" :title="item3.name" :id="item3.id" @click="addselectedLable(item3)" :class="{ 'actived': selectedLableId.indexOf(item3.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item3.id) >= 0 }" >{{item3.name}}</a><!--三级标签-->
+                                <span class="fa fa-angle-down openSon_btn"  v-if="item3.childList.length>0"></span><!--展开下一级按钮-->
+                                <ul class="labelSonbox labelBox_sonLevel_3 clearfix">
+                                    <li class="rightLabel" v-for="(item4,index) in item3.childList">
+                                        <a class="label_txt" :title="item4.name" :id="item4.id" @click="addselectedLable(item4)" :class="{ 'actived': selectedLableId.indexOf(item4.id+'selected') >= 0,'notOpt': disallowSelect.indexOf(item4.id) >= 0 }" >{{item4.name}}</a><!--四级标签-->
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </template>
+    </div>
+
+</div>
+
+
+<!--行业/产业输入框筛选-->
+<script>
+    function initComplete(){
+        /*初始化自动提示框*/
+        $("#suggestion2").data("data",listdata);
+        $("#suggestion2").render();
+        /*初始化自动提示框end*/
+    }
+
+    var listdata={"list":[
+        {value:"1",key:"北京",suggest:"北京|beijing|bj"},
+        {value:"2",key:"广州",suggest:"广州|guangzhou|gz"},
+        {value:"3",key:"深圳",suggest:"深圳|shenzhen|sz"},
+        {value:"4",key:"上海",suggest:"上海|shanghai|sh"},
+        {value:"5",key:"长沙",suggest:"长沙|changsha|cs"},
+        {value:"6",key:"成都",suggest:"成都|chengdu|cd"},
+        {value:"7",key:"贵阳",suggest:"贵阳|guiyang|gy"},
+        {value:"8",key:"海口",suggest:"海口|haikou|hk"},
+        {value:"9",key:"杭州",suggest:"杭州|hangzhou|hz"},
+        {value:"10",key:"昆明",suggest:"昆明|kunming|km"},
+        {value:"11",key:"南昌",suggest:"南昌|nanchang|nc"},
+        {value:"12",key:"南京",suggest:"南京|nanjing|nj"},
+        {value:"13",key:"三亚",suggest:"三亚|sanya|sy"},
+        {value:"14",key:"沈阳",suggest:"沈阳|shenyang|sy"},
+        {value:"15",key:"温州",suggest:"温州|wenzhou|wz"},
+        {value:"16",key:"武汉",suggest:"武汉|wuhan|wh"},
+        {value:"17",key:"厦门",suggest:"厦门|xiamen|xm"},
+        {value:"18",key:"西安",suggest:"西安|xian|xa"},
+        {value:"19",key:"郑州",suggest:"郑州|zhenghou|zz"},
+        {value:"20",key:"汕头",suggest:"汕头|shantou|st"},
+        {value:"21",key:"太原",suggest:"太原|taiyuan|ty"},
+        {value:"22",key:"天津",suggest:"天津|tianjin|tj"}]};
+
+    function selectIndustry() {
+        var selectRsLisLength = $('.selectRsBox .selectRsLis').length;
+        var relText = $("#suggestion2").attr("relText");
+        var relValue = $("#suggestion2").attr("relValue");
+        var j = 0;
+        console.log(selectRsLisLength);
+        for(var i=0;i < selectRsLisLength;i++){
+            if($('.selectRsBox .selectRsLis').eq(i).attr('title') == relText){
+                j++;
+            }
+        }
+     /*   if(j==0&&relText!=''){
+            var selectRsLis = '<li class="selectRsLis" value="'+$("#suggestion2").attr("relValue")+'" title="'+$("#suggestion2").attr("relText")+'"><a class="selInnerTxt">'+$("#suggestion2").attr("relText")+'</a><span class="fa fa-close closeOptionBtn"></span></li>';
+            $('.selectRsBox').append(selectRsLis);
+        }*/
+
+    }
+</script>
+<!--行业/产业输入框筛选 end-->
+<!--标签js-->
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="js/labeljs.js"></script>
+<script type="text/javascript" src="js/labelVue.js"></script>
+<script>
+        /*标题检索和概要检索选择*/
+        $("body").on("click",".deep-search-value",function () {
+            $(this).siblings(".deep-search-select-types").toggleClass("show");
+        });
+        $("body").on("click",".deep-search-select-types .deep-search-select-lists",function(){
+            $(this).closest(".deep-search-select-types").removeClass("show");
+            var oldValue=$(this).html();
+            $(this).closest(".deep-search-select-types").siblings(".deep-search-value").html(oldValue+' <span class="fa fa-angle-down"></span>');
+        });
+        $(document).bind("click",function(e){
+            var target = $(e.target);
+            if(target.closest(".deep-search-value").length == 0&&target.closest(".deep-search-select-types").length == 0){
+                $('.deep-search-select-types').removeClass('show')
+            };
+        })
+
+        /*5-4新增鼠标移出展开项收起*/
+        $('body').on('mouseleave','.labelSonbox ',function () {
+            $(this).css('display','none');
+        })
+        /*或*/
+     /*   $('body').on('mouseleave','.labelSonbox.labelBox_sonLevel_1 ',function () {
+            $(this).css('display','none');
+        })*/
+    /*end 标题检索和概要检索选择*/
+</script>
+</body>
+
+</html>

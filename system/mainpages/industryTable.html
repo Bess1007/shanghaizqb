@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>所有行业列表</title>
+    <!--框架必需start-->
+    <link href="../../libs/css/import_main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../libs/skins/skyblue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="skyblue" positionTarget="positionContent"/>
+    <link href="skin/style.css" rel="stylesheet" type="text/css" id="skin" skinPath="system/style1_accordion_skyblue/skin/" scrollerX="true"/>
+    <link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="../../libs/js/framework.js"></script>
+    <!--框架必需end-->
+    <!-- 树组件start -->
+    <script type="text/javascript" src="../../libs/js/tree/ztree/ztree.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../libs/js/tree/ztree/ztree.css">
+    <!-- 树组件end -->
+
+    <!-- 树形双选器start -->
+    <script type="text/javascript" src="../../libs/js/form/listerTree.js"></script>
+    <!-- 树形双选器end -->
+
+
+    <link rel="stylesheet" href="layer/skin/default/layer.css">
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shzqb.css">
+    <style>
+        .maingrid_content{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            border: 1px solid #EEEEEE;
+            z-index: 99999;
+            margin-right: -100%;
+            box-shadow: -1px 0 3px #d3d8db;
+            display: none;
+        }
+        .oppContent{
+            width: 340px;
+            height: 40px;
+            float: left;
+        }
+        .searchContent{
+            width: 600px;
+            height: 40px;
+            position: absolute;
+            right: 0;
+        }
+        /*11-30树按钮改*/
+        .ali02 {
+            padding-right:45px!important;
+        }
+        .but_icon1 {
+            background: #6bc1f2 url(../../libs/skins/skyblue/form/right1.png) no-repeat center right;
+            position: relative;
+        }
+        .but_icon1:before {
+            content: '添加关注';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            line-height:30px;
+            top:0;
+            left: 4px;
+            font-size: 12px;
+            color: #fff;
+        }
+        .but_icon2 {
+            background: #6bc1f2 url(../../libs/skins/skyblue/form/left1.png) no-repeat center left;
+            position: relative;
+        }
+        .but_icon2:before {
+            content: '取消关注';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: right;
+            line-height:30px;
+            top:0;
+            right: 4px;
+            font-size: 12px;
+            color: #fff;
+        }
+        .but_icon {
+            width: 70px;
+        }
+    </style>
+</head>
+<body class="bclightblue padding10">
+<div class="page_content mystylebox">
+    <div class="undermygroupTitle clearfix" style="padding: 5px;padding-top: 10px;">
+       <div style="width: 860px;margin: 15px auto;">
+          <div style="margin-bottom: 10px;">
+              <input type="text" class="textinput" placeholder="行业名称">
+              <button class="primary button" style="padding-left: 5px;" type="button"><span class="icon_find" style="font-size: 14px; cursor: default;">查询</span></button>
+          </div>
+           <div class="listerTree" keepGroup="true"  listerWidth="400" listerHeight="500"
+                data='{"toList":[],
+             "fromList":[
+             {"id":"1","parentId":"0","open":"false","name":"有色金属","oldParentId":"null","drag":"false"},
+             {"id":"11","parentId":"1","open":"true","name":"稀有金属","oldParentId":"1","drag":"false"},
+             {"id":"111","parentId":"11","name":"锂","oldParentId":"11"},
+             {"id":"112","parentId":"11","name":"稀土","oldParentId":"11"},
+             {"id":"113","parentId":"11","name":"钨","oldParentId":"11"},
+             {"id":"113","parentId":"11","name":"其他稀有小金属","oldParentId":"11"},
+             {"id":"12","parentId":"1","open":"true","name":"金属非金属新材料","oldParentId":"1","drag":"false"},
+             {"id":"121","parentId":"12","name":"金属新材料","oldParentId":"12"},
+             {"id":"122","parentId":"12","name":"非金属新材料","oldParentId":"12"},
+             {"id":"123","parentId":"12","name":"磁性材料","oldParentId":"12"}
+             ]}'>
+
+           </div>
+       </div>
+    </div>
+</div>
+<!--<script type="text/javascript">
+    //动态设置data
+    function initComplete(){
+        var selData={"toList":[],"fromList":[{"id":"1","parentId":"0","open":"true","name":"部门1","oldParentId":"null","drag":"false"},{"id":"11","parentId":"1","name":"员工1","oldParentId":"1"},{"id":"12","parentId":"1","name":"员工2","oldParentId":"1"},{"id":"13","parentId":"1","name":"员工3","oldParentId":"1"}]}
+        //赋给data属性
+        $("#listerTree4").data("data",selData)
+        $("#listerTree4").render();
+
+        //获取json数据
+
+        $.post("/quickui/organizationAction.do?method=getTreeLister",{},function(result){
+            //赋给data属性
+            $("#listerTree5").data("data",result);
+            $("#listerTree5").render();
+
+        },"json");
+
+
+        $("#listerTree14").bind("itemClick",function(e){
+            top.Toast("showNoticeToast", "触发事件")
+        })
+
+        $("#listerTree18").bind("itemClick",function(e){
+            var treeId1=$("#listerTree18").find("td").eq(0).find("ul").eq(0).attr("id");
+            var treeId2=$("#listerTree18").find("td").eq(2).find("ul").eq(0).attr("id");
+            var treeObj1 = $.fn.zTree.getZTreeObj(treeId1);
+            var treeObj2 = $.fn.zTree.getZTreeObj(treeId2);
+            $("#listerTree18-value1").val(JSON.stringify(treeObj1.getNodes()));
+            $("#listerTree18-value2").val(JSON.stringify(treeObj2.getNodes()));
+        })
+    }
+
+    //获取值
+    function getValue(){
+        top.Toast("showNoticeToast", $("#listerTree1").attr("relValue"));
+    }
+    //获取选中项文本
+    function getText(){
+        top.Toast("showNoticeToast", $("#listerTree1").attr("relText"));
+    }
+    //获取数据
+    function getData(){
+        top.Toast("showNoticeToast", JSON.stringify($("#listerTree1").data("selectedNodes")));
+    }
+
+    function getText2(){
+        top.Toast("showNoticeToast", $("#listTree12").attr("relText"));
+    }
+    //获取隐藏域值
+    function getHiddenValue(){
+        top.Toast("showNoticeToast", $("input:hidden[name='listerTree7']").val());
+    }
+
+    //启用
+    function enableLister(){
+        $("#listerTree8").attr("disabled",false);
+        //刷新双选器
+        $("#listerTree8").render();
+    }
+
+    //禁用
+    function disableLister(){
+        $("#listerTree8").attr("disabled",true);
+        //刷新双选器
+        $("#listerTree8").render();
+    }
+
+    //动态生成
+    function dynamicLister1(){
+
+        var $listerTree=$('<div class="listerTree"></div>');
+        $listerTree.attr("url","/quickui/organizationAction.do?method=getTreeLister");
+        $listerTree.attr("params",'{"orgid":"1"}');
+        //将树形双选器加到按钮的后面
+        $("#testBtn").after($listerTree);
+        //渲染树形双选器
+        $listerTree.render();
+
+    }
+
+    //动态生成
+    function dynamicLister2(){
+
+        $.post("/quickui/organizationAction.do?method=getTreeLister",{"orgid":"1"},function(result){
+            var $listerTree=$('<div class="listerTree"></div>');
+            //赋给data属性
+            $listerTree.data("data",result)
+            //将树形双选器加到按钮的后面
+            $("#testBtn2").after($listerTree);
+            //渲染树形双选器
+            $listerTree.render();
+        },"json");
+
+    }
+
+
+    //动态选中
+    function selectItems(){
+        $("#listTree12").selectValue("13")
+    }
+    //动态反选
+    function unSelectItems(){
+        $("#listTree12").unSelectValue("11")
+    }
+    //动态赋值
+    function setValues(){
+        $("#listTree12").setValue("12,13")
+    }
+
+    //添加项
+    function appendItem(){
+        $("#listTree12").addItem({"id":"22","parentId":"2","name":"员工5","oldParentId":"1"});
+    }
+    //删除项
+    function removeItem(){
+        $("#listTree12").removeItem("11");
+    }
+
+    //表单重置
+    function resetForm(){
+        $("#form-13")[0].reset();
+        $("#form-13 .listerTree").resetValue();
+    }
+</script>-->
+
+
+</body>
+</html>
