@@ -34,6 +34,7 @@
             border-radius: 4px;
             border: 1px solid #D8E3EF;
             color: #657180;
+            cursor: pointer;
         }
         .custom-select:after {
             content: "\f107";
@@ -81,13 +82,17 @@
             color: #ffffff;
             background: #6bc1f2;
         }
+        .currentVal {
+            line-height: 30px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="">
 <div class="page_content">
     <label for="">项目编辑人：</label>
     <div class="custom-select">
-        <span class="currentVal">张三</span>
+        <input class="currentVal" value="张三" readonly>
         <ul class="custom-options">
             <li class="opt-cell actived">张三</li>
             <li class="opt-cell">李四</li>
@@ -101,7 +106,6 @@
     /*点击下拉选项框显示隐藏下拉选项*/
     $('body').on('click','.custom-select',function () {
         var optBox = $(this).find('.custom-options');
-
         optBox.toggleClass("show");
     });
 
@@ -116,7 +120,7 @@
     $('body').on('click','.custom-options .opt-cell',function () {
         var currentValbox = $(this).closest('.custom-options').siblings('.currentVal');
         var curenttxt = $(this).text();
-        currentValbox.text(curenttxt);
+        currentValbox.val(curenttxt);
         $(this).addClass('actived').siblings('.opt-cell').removeClass('actived');
     })
 </script>
