@@ -27,11 +27,12 @@
         .chairmanImg-link {
             text-decoration: underline;
             color: #1b92e6;
+            cursor: pointer;
         }
         .chairmanImg-link:hover {
             text-decoration: underline;
         }
-        
+
         div.zhuygcfx_tit {
             height: 42px;
         }
@@ -39,6 +40,7 @@
             padding:0 15px;
             margin-right: 10px;
             position: relative;
+            cursor: pointer;
         }
         .zhuygcfx_tit_txt.actived {
             color: #1b92e6;
@@ -59,44 +61,12 @@
         }
 
         /*8-2 改*/
-        .zhuygcfx_tit_txt,.chairmanImg-link {
-            cursor: pointer;
-        }
-        /*渐变色*/
-        .gradientC1 {
-            background-color: #00EAFF;
-            background-image: linear-gradient( 135deg, #3C8CE7 10%, #00EAFF 100%);
-        }
-        .gradientC2 {
-            background-color: #0396FF;
-            background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
-        }
-        /*渐变色 end*/
-        .cm-label {
-            position: absolute;
-            color: #fff;
-            padding: 10px;
-            line-height: 22px;
-            font-size: 14px;
-            width: 118px;
-            height: auto;
-            word-break: break-all;
-            white-space:normal;
-        }
-        .cm-img img{
-            width: 100%;
-        }
-        .cm-img img {
-            width: 100%;
-        }
         .zhuygcfx_con {
             position: relative;
         }
-
         .dsz-lable-box {
-            overflow: hidden;
+            /*overflow: hidden;*/
             min-height: 300px;
-            
         }
         .dsz_imgbox,.label-xt,.label-zdy {
             float: left;
@@ -149,7 +119,42 @@
             border:1px solid #9680ff;
             color: #9680ff;
         }
+        .layer-style2 .layui-layer-content{
+            padding: 10px 20px;
+        }
 
+        .label-item {
+            position: relative;
+        }
+        .label-item p {
+            display: none;
+            text-align: left;
+            background-color: #f0f0f0;
+            padding: 15px;
+            width: 200px;
+            position: absolute;
+            border-radius: 3px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            right: -4px;
+            color: #333;
+            font-size: 14px;
+            line-height: 1.4;
+            z-index: 9;
+            white-space: normal;
+        }
+        .label-item p:before{
+            position: absolute;
+            content: '';
+            width:0;
+            height: 0;
+            border:6px solid transparent;
+            border-bottom-color:#f0f0f0;
+            right:10px;
+            top:-12px;
+        }
+        .label-item:hover p {
+            display: block;
+        }
     </style>
 </head>
 <body class="bclightgray">
@@ -207,6 +212,9 @@
             </li>
             <li class="fl nav_list_node">
                 <a href="company_industry.html" class="nav_list_node_link">行业</a>
+            </li>
+            <li class="fl nav_list_node">
+                <a href="f9/company_f9.html" class="nav_list_node_link">F9</a>
             </li>
         </ul>
     </div>
@@ -312,12 +320,15 @@
                 </div>
             </div>
             <div class="zhuygcfx_con" style="display:none;">
-                <ul class="dsz-lable-box">
+                <ul class="dsz-lable-box clearfix">
                     <li class="dsz_imgbox">
                         <img src="../images/usericon.png" alt="">
                     </li>
                     <li class="label-item label-xt">
                         音乐
+                        <p>
+                            张三打了此标签张三打了此标签张三打了此标签张三打了此标签张三打了此标签张三打了此标签
+                        </p>
                     </li>
                     <li class="label-item label-xt">
                         古风汉服
@@ -344,34 +355,6 @@
                         总裁
                     </li>
                 </ul>
-               <!-- <div id="container" style="position: relative">
-                    <div class="cm-img cm-label" style="padding: 0;"><img src="../images/usericon.png" alt=""></div>
-                    <div class="cm-label ">1</div>
-                    <div class="cm-label ">22222</div>
-                    <div class="cm-label ">3343544</div>
-                    <div class="cm-label ">sgfdgdffh</div>
-                    <div class="cm-label ">1</div>
-                    <div class="cm-label ">22222</div>
-                    <div class="cm-label ">fhgkdhghdjfg</div>
-                    <div class="cm-label ">sgfdgdffh</div>
-                    <div class="cm-label ">1</div>
-                    <div class="cm-label ">
-                        <p>fjhgrgjdfg</p>
-                        <p>fjhgg</p>
-                    </div>
-                    <div class="cm-label ">3343544</div>
-                    <div class="cm-label ">sgfdgdffh</div>
-                    <div class="cm-label ">快解放军第红人馆亿和人工IE欧冠万Hier;goroh</div>
-                    <div class="cm-label ">dkfjgejgdjfnjjfgjfkjhkjhtjk</div>
-                    <div class="cm-label ">jkhfjhdjvnvdnv</div>
-                    <div class="cm-label ">sgfdgdffh</div>
-                    <div class="cm-label ">sgfdgdffh</div>
-                    <div class="cm-label ">sgfdgdffh</div>
-                    <div class="cm-label ">sgfdgdffh</div>
-                    <div class="cm-label ">dfeger</div>
-                    <div class="cm-label ">dfeger</div>
-                    <div class="cm-label ">dfeger</div>
-                </div>-->
             </div>
         </div>
     </div>
@@ -385,7 +368,7 @@
             type:1,
             title:'简介',
             skin: '', //样式类名
-            closeBtn: 1, //不显示关闭按钮
+            closeBtn: 1, //显示关闭按钮
             anim: 2,
             maxmin:true,
             shade:.4,
@@ -406,55 +389,8 @@
     }
     var label_len = $('.label-item').length;
     for(var i = 0;i < label_len;i++){
-        $('.label-item').eq(i).addClass('label_style'+RandomNumBoth(1,2));
+        $('.label-item').eq(i).addClass('label_style'+RandomNumBoth(1,3));
     }
-   /* //标签瀑布流排列
-    var box = document.getElementById('container');
-    var items = document.getElementsByClassName('cm-label');
-    // 定义每一列之间的间隙 为10像素
-    var gap = 10;
-    // 一进来就调用一次
-    waterFall();
-    // 封装成一个函数
-    function waterFall() {
-        // 1- 确定列数  = 页面的宽度 / 图片的宽度
-        var pageWidth = box.clientWidth;
-        var itemWidth = items[0].offsetWidth;
-        console.log('itemW:'+itemWidth);
-        var columns = parseInt(pageWidth / (itemWidth + gap));
-        var arr = [];
-        for (var i = 0; i < items.length; i++) {
-            if (i < columns) {
-                // 2- 确定第一行
-                items[i].style.top = 0;
-                items[i].style.left = (itemWidth + gap) * i + 'px';
-                arr.push(items[i].offsetHeight);
-
-            } else {
-                // 其他行
-                // 3- 找到数组中最小高度  和 它的索引
-                var minHeight = arr[0];
-                var index = 0;
-                for (var j = 0; j < arr.length; j++) {
-                    if (minHeight > arr[j]) {
-                        minHeight = arr[j];
-                        index = j;
-                    }
-                }
-                // 4- 设置下一行的第一个盒子位置
-                // top值就是最小列的高度 + gap
-                items[i].style.top = arr[index] + gap + 'px';
-                // left值就是最小列距离左边的距离
-                items[i].style.left = items[index].offsetLeft + 'px';
-
-                // 5- 修改最小列的高度
-                // 最小列的高度 = 当前自己的高度 + 拼接过来的高度 + 间隙的高度
-                arr[index] = arr[index] + items[i].offsetHeight + gap;
-            }
-        }
-        var maxHeight = Math.max.apply(null, arr);
-        box.style.height = maxHeight + 'px';
-    }*/
     /*标签相关js end*/
 
     /*8-2 主要内容和董事长画像的tab切换*/
@@ -462,18 +398,14 @@
         var num = $(this).index();
         $(this).addClass('actived').siblings('.zhuygcfx_tit_txt').removeClass('actived');
         $('.zhuygcfx_con').eq(num).show().siblings('.zhuygcfx_con').hide();
-        waterFall();
     })
 
     //点击董事长名称切换到董事长画像
     $('body').on('click','.chairmanImg-link',function () {
         $('.zhuygcfx_tit_txt').eq(1).addClass('actived').siblings('.zhuygcfx_tit_txt').removeClass('actived');
         $('.zhuygcfx_con').eq(1).show().siblings('.zhuygcfx_con').hide();
-        waterFall();
     })
     /*8-2 主要内容和董事长画像的tab切换*/
-
-
 
 
 </script>

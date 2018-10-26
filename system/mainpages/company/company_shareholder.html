@@ -93,9 +93,9 @@
         <div class="centerBox zhuygcfx_box">
             <div class="zhuygcfx_tit">
                 <span class="zhuygcfx_tit_txt">股东人数和股价比较</span>
-              <!--  <div class="zhuygcfx_bgq ">
-                    <input type="text" placeholder="输入关键词查询" class="company_tit_input_box"><button class="company_tit_search">开始搜索</button>
-                </div>-->
+                <!--  <div class="zhuygcfx_bgq ">
+                      <input type="text" placeholder="输入关键词查询" class="company_tit_input_box"><button class="company_tit_search">开始搜索</button>
+                  </div>-->
             </div>
             <div class="zhuygcfx_con mystyle_tab">
                 <div class="c_tb_mark_txt">
@@ -105,65 +105,92 @@
                 <div id="mychart" style="width: 1300px;height: 320px;margin-left: -60px"></div>
 
                 <!--股东人数和股价比价 table-->
-                <table class="mystyle_tab2 " style="">
-                    <tbody>
-                    <tr>
-                        <td class="td_bc"><span>指标\日期</span></td>
-                        <td class="td_bc"><span>2017-09-30</span></td>
-                        <td class="td_bc"><span>2017-06-30</span></td>
-                        <td class="td_bc"><span>2017-03-31</span></td>
-                        <td class="td_bc"><span>2017-02-28</span></td>
-                        <td class="td_bc"><span>2016-12-31</span></td>
-                        <td class="td_bc"><span>2016-09-30</span></td>
-                    </tr>
-                    <tr>
-                        <td class="td_bc"><span>股东总人数</span></td>
-                        <td class="num_ta_right"><span>8.48万</span></td>
-                        <td class="num_ta_right"><span>10.66万</span></td>
-                        <td class="num_ta_right"><span>11.51万</span></td>
-                        <td class="num_ta_right"><span>12.75万</span></td>
-                        <td class="num_ta_right"><span>12.68万</span></td>
-                        <td class="num_ta_right"><span>11.73万</span></td>
-                    </tr>
-                    <tr>
-                        <td class="td_bc"><span>较上期变化</span></td>
-                        <td class="num_ta_right"><span class="text_green">-20.46%</span></td>
-                        <td class="num_ta_right"><span class="text_green">-7.39%</span></td>
-                        <td class="num_ta_right"><span class="text_green">-9.66%</span></td>
-                        <td class="num_ta_right"><span class="text_red">+0.52%</span></td>
-                        <td class="num_ta_right"><span class="text_red">+8.11%</span></td>
-                        <td class="num_ta_right"><span class="text_green">-7.37%</span></td>
-                    </tr>
-                    <tr>
-                        <td class="td_bc"><span>人均流通股（股）</span></td>
-                        <td class="num_ta_right"><span>7.67万</span></td>
-                        <td class="num_ta_right"><span>6.10万</span></td>
-                        <td class="num_ta_right"><span>5.65万</span></td>
-                        <td class="num_ta_right"><span>5.11万</span></td>
-                        <td class="num_ta_right"><span>5.13万</span></td>
-                        <td class="num_ta_right"><span>5.55万</span></td>
-                    </tr>
-                    <tr>
-                        <td class="td_bc"><span>人均流通变化</span></td>
-                        <td class="num_ta_right"><span class="text_red">+25.72%</span></td>
-                        <td class="num_ta_right"><span class="text_red">+7.98%</span></td>
-                        <td class="num_ta_right"><span class="text_red">+10.69%</span></td>
-                        <td class="num_ta_right"><span class="text_green">-0.51%</span></td>
-                        <td class="num_ta_right"><span class="text_green">-7.50%</span></td>
-                        <td class="num_ta_right"><span class="text_red">+14.38%</span></td>
-                    </tr>
-                    <tr>
-                        <td class="td_bc"><span>行业平均（户）</span></td>
-                        <td class="num_ta_right"><span>5.32万</span></td>
-                        <td class="num_ta_right"><span>5.38万</span></td>
-                        <td class="num_ta_right"><span>5.59万</span></td>
-                        <td class="num_ta_right"><span>-</span></td>
-                        <td class="num_ta_right"><span>5.94万</span></td>
-                        <td class="num_ta_right"><span>5.85万</span></td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="table-rightscroll-box clearfix">
+                    <table class="mystyle_tab2 left-fixed-lab" style="width: 209px;">
+                        <col style="width: 209px;">
+                        <tbody>
+                        <tr>
+                            <td class="td_bc"><span>指标\日期</span></td>
+                        </tr>
+                        <tr>
+                            <td class="td_bc"><span>股东总人数</span></td>
+                        </tr>
+                        <tr>
+                            <td class="td_bc"><span>较上期变化</span></td>
+                        </tr>
+                        <tr>
+                            <td class="td_bc"><span>人均流通股（股）</span></td>
+                        </tr>
+                        <tr>
+                            <td class="td_bc"><span>人均流通变化</span></td>
+                        </tr>
+                        <tr>
+                            <td class="td_bc"><span>行业平均（户）</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="right-abs-tab right-scroll-tab">
+                        <table class="mystyle_tab2 ">
+                            <tbody>
+                            <tr>
+                                <td class="td_bc"><span>2017-09-30</span></td>
+                                <td class="td_bc"><span>2017-06-30</span></td>
+                                <td class="td_bc"><span>2017-03-31</span></td>
+                                <td class="td_bc"><span>2017-02-28</span></td>
+                                <td class="td_bc"><span>2016-12-31</span></td>
+                                <td class="td_bc"><span>2016-09-30</span></td>
+                                <td class="td_bc"><span>2016-09-30</span></td>
+                            </tr>
+                            <tr>
+                                <td class="num_ta_right"><span>8.48万</span></td>
+                                <td class="num_ta_right"><span>10.66万</span></td>
+                                <td class="num_ta_right"><span>11.51万</span></td>
+                                <td class="num_ta_right"><span>12.75万</span></td>
+                                <td class="num_ta_right"><span>12.68万</span></td>
+                                <td class="num_ta_right"><span>11.73万</span></td>
+                                <td class="num_ta_right"><span>11.73万</span></td>
+                            </tr>
+                            <tr>
+                                <td class="num_ta_right"><span class="text_green">-20.46%</span></td>
+                                <td class="num_ta_right"><span class="text_green">-7.39%</span></td>
+                                <td class="num_ta_right"><span class="text_green">-9.66%</span></td>
+                                <td class="num_ta_right"><span class="text_red">+0.52%</span></td>
+                                <td class="num_ta_right"><span class="text_red">+8.11%</span></td>
+                                <td class="num_ta_right"><span class="text_green">-7.37%</span></td>
+                                <td class="num_ta_right"><span class="text_green">-7.37%</span></td>
+                            </tr>
+                            <tr>
+                                <td class="num_ta_right"><span>7.67万</span></td>
+                                <td class="num_ta_right"><span>6.10万</span></td>
+                                <td class="num_ta_right"><span>5.65万</span></td>
+                                <td class="num_ta_right"><span>5.11万</span></td>
+                                <td class="num_ta_right"><span>5.13万</span></td>
+                                <td class="num_ta_right"><span>5.55万</span></td>
+                                <td class="num_ta_right"><span>5.55万</span></td>
+                            </tr>
+                            <tr>
+                                <td class="num_ta_right"><span class="text_red">+25.72%</span></td>
+                                <td class="num_ta_right"><span class="text_red">+7.98%</span></td>
+                                <td class="num_ta_right"><span class="text_red">+10.69%</span></td>
+                                <td class="num_ta_right"><span class="text_green">-0.51%</span></td>
+                                <td class="num_ta_right"><span class="text_green">-7.50%</span></td>
+                                <td class="num_ta_right"><span class="text_red">+14.38%</span></td>
+                                <td class="num_ta_right"><span class="text_red">+14.38%</span></td>
+                            </tr>
+                            <tr>
+                                <td class="num_ta_right"><span>5.32万</span></td>
+                                <td class="num_ta_right"><span>5.38万</span></td>
+                                <td class="num_ta_right"><span>5.59万</span></td>
+                                <td class="num_ta_right"><span>-</span></td>
+                                <td class="num_ta_right"><span>5.94万</span></td>
+                                <td class="num_ta_right"><span>5.85万</span></td>
+                                <td class="num_ta_right"><span>5.85万</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
+                </div>
             </div>
         </div>
 
@@ -174,7 +201,7 @@
             </div>
             <div class="zhuygcfx_con">
                 <div class="c_tb_mark_txt">
-               前十大流通股东累计持有：<span class="blue_txt">35.02亿股</span>，累计占流通股比：<span class="blue_txt">53.82%</span>,较上期变化：<span class="text_red">1928.11万股 ↑</span>
+                    前十大流通股东累计持有：<span class="blue_txt">35.02亿股</span>，累计占流通股比：<span class="blue_txt">53.82%</span>,较上期变化：<span class="text_red">1928.11万股 ↑</span>
                 </div>
                 <div class="basicTab">
                     <div name="2017-09-30" style="width:100%">
@@ -386,6 +413,15 @@
 
 <script type="text/javascript" src="../js/echarts.min.js"></script>
 <script type="text/javascript">
+    /*让右边横向滚动的图表的每一行的高度和左边对应行高度相同*/
+    var scroll_tr_len  = $('.left-fixed-lab tr').length;
+    for(var i = 0; i < scroll_tr_len; i++){
+        var left_h = $('.left-fixed-lab tr').eq(i).height();
+        var right_h = $('.right-abs-tab tr').eq(i).height();
+        if(left_h > right_h){
+            $('.right-abs-tab tr').eq(i).height(left_h)
+        }
+    }
 
     var myChart1 = echarts.init(document.getElementById('mychart'));
 

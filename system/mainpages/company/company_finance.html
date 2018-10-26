@@ -83,6 +83,9 @@
             <li class="fl nav_list_node">
                 <a href="company_industry.html" class="nav_list_node_link">行业</a>
             </li>
+            <li class="fl nav_list_node">
+                <a href="f9/company_f9.html" class="nav_list_node_link">F9</a>
+            </li>
         </ul>
     </div>
     <!--顶部模块 end-->
@@ -99,197 +102,223 @@
                 <div id="mychart" style="width: 1350px;height: 370px;margin-left: -75px;"></div>
                 <div class="basicTab">
                     <div name="按报告期">
-                        <table class="mystyle_tab2 caiwuzb_tab" style="margin-top: 15px;">
-                            <tbody>
-                            <tr class="tr_bc">
-                                <td class="td_bc"><span>科目\年度</span></td>
-                                <td class="td_bc">
-                                    <!--<i class="table-left-more fa fa-angle-double-left"></i>--><!--在此时间之后还有有数据时显示左箭头-->
-                                    <span>
-                                        2017-12-31
-                                    </span>
-                                </td>
-                                <td class="td_bc fz-13"><span>2017-09-30</span></td>
-                                <td class="td_bc fz-13"><span>2017-06-30</span></td>
-                                <td class="td_bc fz-13"><span>2017-03-31</span></td>
-                                <td class="td_bc fz-13"><span>2016-12-31</span></td>
-                                <td class="td_bc fz-13"><span>2016-09-30</span></td>
-                                <td class="td_bc fz-13"><span>2016-06-30</span></td>
-                                <td class="td_bc fz-13"><span>2016-06-31</span></td>
-                                <td class="td_bc fz-13"><span>2016-03-31</span></td>
-                                <td class="td_bc fz-13"><span>2015-12-31</span></td>
-                                <td class="td_bc fz-13">
-                                    <span>2015-09-31</span>
-                                    <i class="table-more fa fa-angle-double-right"></i><!--还有历史数据时显示右箭头-->
-                                </td>
-                            </tr>
-                            <tr class="tr_target">
-                                <td class="td_bc td_target"><span>净利润（万元）</span></td>
-                                <td class="num_ta_right"><span>3.89亿</span></td>
-                                <td class="num_ta_right"><span>4.35亿</span></td>
-                                <td class="num_ta_right"><span>5.63亿</span></td>
-                                <td class="num_ta_right"><span>6.14亿</span></td>
-                                <td class="num_ta_right"><span>9.89亿</span></td>
-                                <td class="num_ta_right"><span>10.45亿</span></td>
-                                <td class="num_ta_right"><span>13.58亿</span></td>
-                                <td class="num_ta_right"><span>17.84亿</span></td>
-                                <td class="num_ta_right"><span>27.15亿</span></td>
-                                <td class="num_ta_right"><span>35.38亿</span></td>
-                                <td class="num_ta_right"><span>48.01亿</span></td>
+                        <div class="caiwuzb_tab cw-tb-scrollbox" style="margin-top: 15px;">
+                            <table class="mystyle_tab2 left-fixed-lab" style="width: 153px;">
+                                <col style="width: 153px;">
+                                <tbody>
+                                <tr class="tr_bc">
+                                    <td class="td_bc"><span>科目\年度</span></td>
+                                </tr>
+                                <tr class="tr_target">
+                                    <td class="td_bc td_target"><span>净利润（万元）</span></td>
+                                </tr>
+                                <tr class="tr_target">
+                                    <td class="td_bc td_target"><span>扣非净利润（万元）</span></td>
+                                </tr>
+                                <tr class="tr_target">
+                                    <td class="td_bc td_target"><span>管理费用（万元）</span></td>
+                                </tr>
+                                <tr class="tr_target">
+                                    <td class="td_bc td_target actived"><span>营业收入（万元）</span></td>
+                                </tr>
+                                <tr class="tr_target">
+                                    <td class="td_bc td_target"><span>销售费用（万元）</span></td>
+                                </tr>
+                                <tr class="tr_target">
+                                    <td class="td_bc td_target "><span>营业成本（万元）</span></td>
+                                </tr>
+                                <tr class="tr_target">
+                                    <td class="td_bc td_target"><span>财务费用（万元）</span></td>
+                                </tr>
+                                <tr class="tr_target">
+                                    <td class="td_bc td_target"><span>每股盈余（元）</span></td>
+                                </tr>
+                                <tr class="tr_target">
+                                    <td class="td_bc td_target"><span>每股净资产（元）</span></td>
+                                </tr>
+                                <tr class="tr_target">
+                                    <td class="td_bc td_target"><span>市盈率（PE）</span></td>
+                                </tr>
+                                <tr class="tr_target">
+                                    <td class="td_bc td_target"><span>市净率（PB）</span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="right-abs-tab right-scroll-tab">
+                                <table class="mystyle_tab2 ">
+                                    <tbody>
+                                    <tr class="tr_bc">
+                                        <td class="td_bc"><span>2017-12-31</span></td>
+                                        <td class="td_bc fz-13"><span>2017-09-30</span></td>
+                                        <td class="td_bc fz-13"><span>2017-06-30</span></td>
+                                        <td class="td_bc fz-13"><span>2017-03-31</span></td>
+                                        <td class="td_bc fz-13"><span>2016-12-31</span></td>
+                                        <td class="td_bc fz-13"><span>2016-09-30</span></td>
+                                        <td class="td_bc fz-13"><span>2016-06-30</span></td>
+                                        <td class="td_bc fz-13"><span>2016-06-31</span></td>
+                                        <td class="td_bc fz-13"><span>2016-03-31</span></td>
+                                        <td class="td_bc fz-13"><span>2015-12-31</span></td>
+                                        <td class="td_bc fz-13">
+                                            <span>2015-09-31</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="tr_target">
+                                        <td class="num_ta_right"><span>3.89亿</span></td>
+                                        <td class="num_ta_right"><span>4.35亿</span></td>
+                                        <td class="num_ta_right"><span>5.63亿</span></td>
+                                        <td class="num_ta_right"><span>6.14亿</span></td>
+                                        <td class="num_ta_right"><span>9.89亿</span></td>
+                                        <td class="num_ta_right"><span>10.45亿</span></td>
+                                        <td class="num_ta_right"><span>13.58亿</span></td>
+                                        <td class="num_ta_right"><span>17.84亿</span></td>
+                                        <td class="num_ta_right"><span>27.15亿</span></td>
+                                        <td class="num_ta_right"><span>35.38亿</span></td>
+                                        <td class="num_ta_right"><span>48.01亿</span></td>
 
-                            </tr>
-                            <tr class="tr_target">
-                                <td class="td_bc td_target"><span>扣非净利润（万元）</span></td>
-                                <td class="num_ta_right"><span>3.89亿</span></td>
-                                <td class="num_ta_right"><span>4.35亿</span></td>
-                                <td class="num_ta_right"><span>5.63亿</span></td>
-                                <td class="num_ta_right"><span>6.14亿</span></td>
-                                <td class="num_ta_right"><span>9.89亿</span></td>
-                                <td class="num_ta_right"><span>10.45亿</span></td>
-                                <td class="num_ta_right"><span>13.58亿</span></td>
-                                <td class="num_ta_right"><span>17.84亿</span></td>
-                                <td class="num_ta_right"><span>27.15亿</span></td>
-                                <td class="num_ta_right"><span>35.38亿</span></td>
-                                <td class="num_ta_right"><span>48.01亿</span></td>
+                                    </tr>
+                                    <tr class="tr_target">
+                                        <td class="num_ta_right"><span>3.89亿</span></td>
+                                        <td class="num_ta_right"><span>4.35亿</span></td>
+                                        <td class="num_ta_right"><span>5.63亿</span></td>
+                                        <td class="num_ta_right"><span>6.14亿</span></td>
+                                        <td class="num_ta_right"><span>9.89亿</span></td>
+                                        <td class="num_ta_right"><span>10.45亿</span></td>
+                                        <td class="num_ta_right"><span>13.58亿</span></td>
+                                        <td class="num_ta_right"><span>17.84亿</span></td>
+                                        <td class="num_ta_right"><span>27.15亿</span></td>
+                                        <td class="num_ta_right"><span>35.38亿</span></td>
+                                        <td class="num_ta_right"><span>48.01亿</span></td>
+                                    </tr>
+                                    <tr class="tr_target">
+                                        <td class="num_ta_right"><span>3.89亿</span></td>
+                                        <td class="num_ta_right"><span>4.35亿</span></td>
+                                        <td class="num_ta_right"><span>5.63亿</span></td>
+                                        <td class="num_ta_right"><span>6.14亿</span></td>
+                                        <td class="num_ta_right"><span>9.89亿</span></td>
+                                        <td class="num_ta_right"><span>10.45亿</span></td>
+                                        <td class="num_ta_right"><span>13.58亿</span></td>
+                                        <td class="num_ta_right"><span>17.84亿</span></td>
+                                        <td class="num_ta_right"><span>27.15亿</span></td>
+                                        <td class="num_ta_right"><span>35.38亿</span></td>
+                                        <td class="num_ta_right"><span>48.01亿</span></td>
 
-                            </tr>
-                            <tr class="tr_target">
-                                <td class="td_bc td_target"><span>管理费用（万元）</span></td>
-                                <td class="num_ta_right"><span>3.89亿</span></td>
-                                <td class="num_ta_right"><span>4.35亿</span></td>
-                                <td class="num_ta_right"><span>5.63亿</span></td>
-                                <td class="num_ta_right"><span>6.14亿</span></td>
-                                <td class="num_ta_right"><span>9.89亿</span></td>
-                                <td class="num_ta_right"><span>10.45亿</span></td>
-                                <td class="num_ta_right"><span>13.58亿</span></td>
-                                <td class="num_ta_right"><span>17.84亿</span></td>
-                                <td class="num_ta_right"><span>27.15亿</span></td>
-                                <td class="num_ta_right"><span>35.38亿</span></td>
-                                <td class="num_ta_right"><span>48.01亿</span></td>
+                                    </tr>
+                                    <tr class="tr_target actived">
+                                        <td class="num_ta_right"><span>1.16亿</span></td>
+                                        <td class="num_ta_right"><span>2.32亿</span></td>
+                                        <td class="num_ta_right"><span>3.06亿</span></td>
+                                        <td class="num_ta_right"><span>3.02亿</span></td>
+                                        <td class="num_ta_right"><span>1.83亿</span></td>
+                                        <td class="num_ta_right"><span>44.21亿</span></td>
+                                        <td class="num_ta_right"><span>77.9亿</span></td>
+                                        <td class="num_ta_right"><span>120.77亿</span></td>
+                                        <td class="num_ta_right"><span>210.6亿</span></td>
+                                        <td class="num_ta_right"><span>268.86亿</span></td>
+                                        <td class="num_ta_right"><span>383.35亿</span></td>
 
-                            </tr>
-                            <tr class="tr_target actived">
-                                <td class="td_bc td_target actived"><span>营业收入（万元）</span></td>
-                                <td class="num_ta_right"><span>1.16亿</span></td>
-                                <td class="num_ta_right"><span>2.32亿</span></td>
-                                <td class="num_ta_right"><span>3.06亿</span></td>
-                                <td class="num_ta_right"><span>3.02亿</span></td>
-                                <td class="num_ta_right"><span>1.83亿</span></td>
-                                <td class="num_ta_right"><span>44.21亿</span></td>
-                                <td class="num_ta_right"><span>77.9亿</span></td>
-                                <td class="num_ta_right"><span>120.77亿</span></td>
-                                <td class="num_ta_right"><span>210.6亿</span></td>
-                                <td class="num_ta_right"><span>268.86亿</span></td>
-                                <td class="num_ta_right"><span>383.35亿</span></td>
+                                    </tr>
+                                    <tr class="tr_target">
+                                        <td class="num_ta_right"><span>1.16亿</span></td>
+                                        <td class="num_ta_right"><span>2.32亿</span></td>
+                                        <td class="num_ta_right"><span>3.06亿</span></td>
+                                        <td class="num_ta_right"><span>3.02亿</span></td>
+                                        <td class="num_ta_right"><span>1.83亿</span></td>
+                                        <td class="num_ta_right"><span>44.21亿</span></td>
+                                        <td class="num_ta_right"><span>77.9亿</span></td>
+                                        <td class="num_ta_right"><span>120.77亿</span></td>
+                                        <td class="num_ta_right"><span>210.6亿</span></td>
+                                        <td class="num_ta_right"><span>268.86亿</span></td>
+                                        <td class="num_ta_right"><span>383.35亿</span></td>
 
-                            </tr>
-                            <tr class="tr_target">
-                                <td class="td_bc td_target"><span>销售费用（万元）</span></td>
-                                <td class="num_ta_right"><span>1.16亿</span></td>
-                                <td class="num_ta_right"><span>2.32亿</span></td>
-                                <td class="num_ta_right"><span>3.06亿</span></td>
-                                <td class="num_ta_right"><span>3.02亿</span></td>
-                                <td class="num_ta_right"><span>1.83亿</span></td>
-                                <td class="num_ta_right"><span>44.21亿</span></td>
-                                <td class="num_ta_right"><span>77.9亿</span></td>
-                                <td class="num_ta_right"><span>120.77亿</span></td>
-                                <td class="num_ta_right"><span>210.6亿</span></td>
-                                <td class="num_ta_right"><span>268.86亿</span></td>
-                                <td class="num_ta_right"><span>383.35亿</span></td>
+                                    </tr>
+                                    <tr class="tr_target ">
+                                        <td class="num_ta_right"><span>1.16亿</span></td>
+                                        <td class="num_ta_right"><span>2.32亿</span></td>
+                                        <td class="num_ta_right"><span>3.06亿</span></td>
+                                        <td class="num_ta_right"><span>3.02亿</span></td>
+                                        <td class="num_ta_right"><span>1.83亿</span></td>
+                                        <td class="num_ta_right"><span>44.21亿</span></td>
+                                        <td class="num_ta_right"><span>77.9亿</span></td>
+                                        <td class="num_ta_right"><span>120.77亿</span></td>
+                                        <td class="num_ta_right"><span>210.6亿</span></td>
+                                        <td class="num_ta_right"><span>268.86亿</span></td>
+                                        <td class="num_ta_right"><span>383.35亿</span></td>
 
-                            </tr>
-                            <tr class="tr_target ">
-                                <td class="td_bc td_target "><span>营业成本（万元）</span></td>
-                                <td class="num_ta_right"><span>1.16亿</span></td>
-                                <td class="num_ta_right"><span>2.32亿</span></td>
-                                <td class="num_ta_right"><span>3.06亿</span></td>
-                                <td class="num_ta_right"><span>3.02亿</span></td>
-                                <td class="num_ta_right"><span>1.83亿</span></td>
-                                <td class="num_ta_right"><span>44.21亿</span></td>
-                                <td class="num_ta_right"><span>77.9亿</span></td>
-                                <td class="num_ta_right"><span>120.77亿</span></td>
-                                <td class="num_ta_right"><span>210.6亿</span></td>
-                                <td class="num_ta_right"><span>268.86亿</span></td>
-                                <td class="num_ta_right"><span>383.35亿</span></td>
+                                    </tr>
+                                    <tr class="tr_target">
+                                        <td class="num_ta_right"><span>1.16亿</span></td>
+                                        <td class="num_ta_right"><span>2.32亿</span></td>
+                                        <td class="num_ta_right"><span>3.06亿</span></td>
+                                        <td class="num_ta_right"><span>3.02亿</span></td>
+                                        <td class="num_ta_right"><span>1.83亿</span></td>
+                                        <td class="num_ta_right"><span>44.21亿</span></td>
+                                        <td class="num_ta_right"><span>77.9亿</span></td>
+                                        <td class="num_ta_right"><span>120.77亿</span></td>
+                                        <td class="num_ta_right"><span>210.6亿</span></td>
+                                        <td class="num_ta_right"><span>268.86亿</span></td>
+                                        <td class="num_ta_right"><span>383.35亿</span></td>
 
-                            </tr>
-                            <tr class="tr_target">
-                                <td class="td_bc td_target"><span>财务费用（万元）</span></td>
-                                <td class="num_ta_right"><span>1.16亿</span></td>
-                                <td class="num_ta_right"><span>2.32亿</span></td>
-                                <td class="num_ta_right"><span>3.06亿</span></td>
-                                <td class="num_ta_right"><span>3.02亿</span></td>
-                                <td class="num_ta_right"><span>1.83亿</span></td>
-                                <td class="num_ta_right"><span>44.21亿</span></td>
-                                <td class="num_ta_right"><span>77.9亿</span></td>
-                                <td class="num_ta_right"><span>120.77亿</span></td>
-                                <td class="num_ta_right"><span>210.6亿</span></td>
-                                <td class="num_ta_right"><span>268.86亿</span></td>
-                                <td class="num_ta_right"><span>383.35亿</span></td>
+                                    </tr>
+                                    <tr class="tr_target">
+                                        <td class="num_ta_right"><span>1.16亿</span></td>
+                                        <td class="num_ta_right"><span>2.32亿</span></td>
+                                        <td class="num_ta_right"><span>3.06亿</span></td>
+                                        <td class="num_ta_right"><span>3.02亿</span></td>
+                                        <td class="num_ta_right"><span>1.83亿</span></td>
+                                        <td class="num_ta_right"><span>44.21亿</span></td>
+                                        <td class="num_ta_right"><span>77.9亿</span></td>
+                                        <td class="num_ta_right"><span>120.77亿</span></td>
+                                        <td class="num_ta_right"><span>210.6亿</span></td>
+                                        <td class="num_ta_right"><span>268.86亿</span></td>
+                                        <td class="num_ta_right"><span>383.35亿</span></td>
 
-                            </tr>
-                            <tr class="tr_target">
-                                <td class="td_bc td_target"><span>每股盈余（元）</span></td>
-                                <td class="num_ta_right"><span>1.16亿</span></td>
-                                <td class="num_ta_right"><span>2.32亿</span></td>
-                                <td class="num_ta_right"><span>3.06亿</span></td>
-                                <td class="num_ta_right"><span>3.02亿</span></td>
-                                <td class="num_ta_right"><span>1.83亿</span></td>
-                                <td class="num_ta_right"><span>44.21亿</span></td>
-                                <td class="num_ta_right"><span>77.9亿</span></td>
-                                <td class="num_ta_right"><span>120.77亿</span></td>
-                                <td class="num_ta_right"><span>210.6亿</span></td>
-                                <td class="num_ta_right"><span>268.86亿</span></td>
-                                <td class="num_ta_right"><span>383.35亿</span></td>
+                                    </tr>
+                                    <tr class="tr_target">
+                                        <td class="num_ta_right"><span>1.16亿</span></td>
+                                        <td class="num_ta_right"><span>2.32亿</span></td>
+                                        <td class="num_ta_right"><span>3.06亿</span></td>
+                                        <td class="num_ta_right"><span>3.02亿</span></td>
+                                        <td class="num_ta_right"><span>1.83亿</span></td>
+                                        <td class="num_ta_right"><span>44.21亿</span></td>
+                                        <td class="num_ta_right"><span>77.9亿</span></td>
+                                        <td class="num_ta_right"><span>120.77亿</span></td>
+                                        <td class="num_ta_right"><span>210.6亿</span></td>
+                                        <td class="num_ta_right"><span>268.86亿</span></td>
+                                        <td class="num_ta_right"><span>383.35亿</span></td>
 
-                            </tr>
-                            <tr class="tr_target">
-                                <td class="td_bc td_target"><span>每股净资产（元）</span></td>
-                                <td class="num_ta_right"><span>1.16亿</span></td>
-                                <td class="num_ta_right"><span>2.32亿</span></td>
-                                <td class="num_ta_right"><span>3.06亿</span></td>
-                                <td class="num_ta_right"><span>3.02亿</span></td>
-                                <td class="num_ta_right"><span>1.83亿</span></td>
-                                <td class="num_ta_right"><span>44.21亿</span></td>
-                                <td class="num_ta_right"><span>77.9亿</span></td>
-                                <td class="num_ta_right"><span>120.77亿</span></td>
-                                <td class="num_ta_right"><span>210.6亿</span></td>
-                                <td class="num_ta_right"><span>268.86亿</span></td>
-                                <td class="num_ta_right"><span>383.35亿</span></td>
+                                    </tr>
+                                    <tr class="tr_target">
+                                        <td class="num_ta_right"><span>1.16亿</span></td>
+                                        <td class="num_ta_right"><span>2.32亿</span></td>
+                                        <td class="num_ta_right"><span>3.06亿</span></td>
+                                        <td class="num_ta_right"><span>3.02亿</span></td>
+                                        <td class="num_ta_right"><span>1.83亿</span></td>
+                                        <td class="num_ta_right"><span>44.21亿</span></td>
+                                        <td class="num_ta_right"><span>77.9亿</span></td>
+                                        <td class="num_ta_right"><span>120.77亿</span></td>
+                                        <td class="num_ta_right"><span>210.6亿</span></td>
+                                        <td class="num_ta_right"><span>268.86亿</span></td>
+                                        <td class="num_ta_right"><span>383.35亿</span></td>
 
-                            </tr>
-                            <tr class="tr_target">
-                                <td class="td_bc td_target"><span>市盈率（PE）</span></td>
-                                <td class="num_ta_right"><span>1.16亿</span></td>
-                                <td class="num_ta_right"><span>2.32亿</span></td>
-                                <td class="num_ta_right"><span>3.06亿</span></td>
-                                <td class="num_ta_right"><span>3.02亿</span></td>
-                                <td class="num_ta_right"><span>1.83亿</span></td>
-                                <td class="num_ta_right"><span>44.21亿</span></td>
-                                <td class="num_ta_right"><span>77.9亿</span></td>
-                                <td class="num_ta_right"><span>120.77亿</span></td>
-                                <td class="num_ta_right"><span>210.6亿</span></td>
-                                <td class="num_ta_right"><span>268.86亿</span></td>
-                                <td class="num_ta_right"><span>383.35亿</span></td>
+                                    </tr>
+                                    <tr class="tr_target">
+                                        <td class="num_ta_right"><span>1.16亿</span></td>
+                                        <td class="num_ta_right"><span>2.32亿</span></td>
+                                        <td class="num_ta_right"><span>3.06亿</span></td>
+                                        <td class="num_ta_right"><span>3.02亿</span></td>
+                                        <td class="num_ta_right"><span>1.83亿</span></td>
+                                        <td class="num_ta_right"><span>44.21亿</span></td>
+                                        <td class="num_ta_right"><span>77.9亿</span></td>
+                                        <td class="num_ta_right"><span>120.77亿</span></td>
+                                        <td class="num_ta_right"><span>210.6亿</span></td>
+                                        <td class="num_ta_right"><span>268.86亿</span></td>
+                                        <td class="num_ta_right"><span>383.35亿</span></td>
 
-                            </tr>
-                            <tr class="tr_target">
-                                <td class="td_bc td_target"><span>市净率（PB）</span></td>
-                                <td class="num_ta_right"><span>1.16亿</span></td>
-                                <td class="num_ta_right"><span>2.32亿</span></td>
-                                <td class="num_ta_right"><span>3.06亿</span></td>
-                                <td class="num_ta_right"><span>3.02亿</span></td>
-                                <td class="num_ta_right"><span>1.83亿</span></td>
-                                <td class="num_ta_right"><span>44.21亿</span></td>
-                                <td class="num_ta_right"><span>77.9亿</span></td>
-                                <td class="num_ta_right"><span>120.77亿</span></td>
-                                <td class="num_ta_right"><span>210.6亿</span></td>
-                                <td class="num_ta_right"><span>268.86亿</span></td>
-                                <td class="num_ta_right"><span>383.35亿</span></td>
-
-                            </tr>
-                            </tbody>
-                        </table>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <div name="按年度">
 
@@ -305,13 +334,36 @@
     <!--主要内容 end-->
 </div>
 <script>
-  /*点击行，当前行特殊标识，上图对应展示当前科目图表*/
-  $('body').on('click','.tr_target ',function () {
-      $('.tr_target ').removeClass('actived');
-      $('.td_target ').removeClass('actived');
-      $(this).addClass('actived');
-      $(this).find('.td_target').addClass('actived')
-  })
+    /*让右边横向滚动的图表的每一行的高度和左边对应行高度相同*/
+    var scroll_tr_len  = $('.left-fixed-lab tr').length;
+    for(var i = 0; i < scroll_tr_len; i++){
+        var left_h = $('.left-fixed-lab tr').eq(i).height();
+        var right_h = $('.right-abs-tab tr').eq(i).height();
+        if(left_h > right_h){
+            $('.right-abs-tab tr').eq(i).height(left_h)
+        }
+    }
+
+    /*点击行，当前行特殊标识，上图对应展示当前科目图表*/
+    /*7-13改*/
+    $('.left-fixed-lab').on('click','.td_target ',function leftindex() {
+        var leftcnum =  $('.left-fixed-lab .td_target ').index(this);
+        $('.tr_target ').removeClass('actived');
+        $('.td_target ').removeClass('actived');
+        $(this).addClass('actived');
+        $(this).find('.td_target').addClass('actived');
+
+        $('.right-abs-tab .tr_target').eq(leftcnum).addClass('actived');
+        return leftcnum;
+    });
+    $('.right-abs-tab ').on('click','.tr_target',function rightindex() {
+        var rigthcnum = $('.right-abs-tab .tr_target').index(this);
+        $('.tr_target ').removeClass('actived');
+        $('.td_target ').removeClass('actived');
+        $(this).addClass('actived');
+
+        $('.left-fixed-lab .tr_target').eq(rigthcnum).find('.td_target').addClass('actived');
+    })
 </script>
 <script type="text/javascript" src="../js/echarts.min.js"></script>
 <script type="text/javascript">
